@@ -8,4 +8,8 @@ Compass::Frameworks.register("sadui",
 )
 
 module Sadui
+  module Rails
+    class Engine < ::Rails::Engine
+    end
+  end
 end

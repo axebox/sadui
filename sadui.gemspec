@@ -19,7 +19,8 @@ Gem::Specification.new do |s|
   s.add_dependency("sass", [">= 3.2.0"])
   s.add_dependency("compass", [">= 0.11"])
   s.add_dependency("animation", [">= 0.1.alpha.0"])
-  
+  s.add_dependency("railties", "~> 3.1")
+
   # s.add_development_dependency('rails')
   # s.add_development_dependency('sass')
   # s.add_development_dependency('uglifier')
