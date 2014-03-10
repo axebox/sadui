@@ -1,0 +1,7 @@
+@import "compass/css3";
+
+@import "conf";
+
+$ui-sprite-dimensions: true;
+@import "template/ui/*.png";
+@include all-ui-sprites;

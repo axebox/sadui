@@ -1,0 +1,614 @@
+// button
+// play-button
+// dropdown
+// modal
+// overlay
+// expand-text
+// pagination-more
+// tooltip
+// message
+// spinner
+
+@import "compass/css3";
+
+@import "../js/vendor_bower/css-spinner/sass/spinner-balls";
+
+$ui-sprite-dimensions: true;
+@import "template/ui/*.png";
+@include all-ui-sprites;
+
+.button {
+    @include inline-block;
+    @include user-select(none);
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;//required for input masking
+
+    border: 0 none;// resets default <button|input>
+
+    color: $white;
+    text-decoration: none;// resets default <a>
+
+    > * {
+        @include inline-block;
+    }
+    
+    // input masking
+    input {
+        width: 100%;
+        height: 100%;
+        line-height: 100% !important;
+        background-color: transparent;
+        border: 0 none;
+        outline: 0 none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include opacity(0);
+        cursor: pointer;
+    }
+
+    // .button-label {}
+
+    .button-icon {
+        @extend %font-icons;
+    }
+}
+
+.button-lg {
+    $base: 0.25em;
+    $baseDesktop: 0.5em;
+
+    padding-top: $base;
+    padding-bottom: $base;
+    padding-left: $base*4;
+    padding-right: $base*4;
+
+    @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
+        padding-top: $baseDesktop;
+        padding-bottom: $baseDesktop;
+        padding-left: $baseDesktop*4;
+        padding-right: $baseDesktop*4;
+    }
+
+    @extend %font-gotham-bold;
+    text-transform: uppercase;
+
+    .button-label {
+        @include adjust-font-size-to(16px);
+        @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
+            @include adjust-font-size-to(22px);
+        }
+    }
+    .button-icon {
+        @include adjust-font-size-to(16px);
+        @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
+            @include adjust-font-size-to(30px);
+        }        
+    }
+
+    > * {
+        margin-left: ($base);
+        // @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
+        //     margin-left: ($baseDesktop*4 / 2);
+        // }
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+.button-md {
+
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+
+    @extend %font-gotham-bold;
+    text-transform: uppercase;
+
+    .button-label {
+        @include adjust-font-size-to(16px);
+    }
+    .button-icon {
+        @include adjust-font-size-to(22px);
+    }
+
+    > * {
+        margin-left: (1.25em / 2);
+        padding-left: (1.25em / 2);
+        border-left: 1px solid $white;
+        &:first-child {
+            margin-left: 0;
+            padding-left: 0;
+            border-left: 0 none;
+        }
+    }
+}
+
+.button-sm {
+
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    @extend %font-gotham-bold;
+    text-transform: uppercase;
+
+    .button-label {
+        @include adjust-font-size-to(12px);
+    }
+    .button-icon {
+        @include adjust-font-size-to(16px);
+    }
+
+    > * {
+        margin-left: (1em / 2);
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+.button-default {
+
+    background: $ltBlue;
+    
+    @include box-shadow(rgba($white, 0.1) 0 2px 3px inset, 
+        rgba($white, 0.1) 1px 0 2px inset, 
+        rgba($white, 0.1) -1px 0 2px inset);
+
+    &[type="submit"],
+    &.is-submit {
+        background: $orange;
+    }
+
+}
+
+/* Special Button Cases */
+
+.button-social {
+    @include box-shadow(rgba($white, 0.2) 0 2px 3px inset);
+}
+
+.button-social-youtube {
+    @extend .button-social;
+    background-color: $socialYoutube;
+}
+
+.button-social-facebook {
+    @extend .button-social;
+    background-color: $socialFacebook;
+}
+
+.button-social-twitter {
+    @extend .button-social;
+    background-color: $socialTwitter;
+}
+
+.button-social-pinterest {
+    @extend .button-social;
+    background-color: $socialPinterest;
+}
+
+.button-group {
+    // margin-left: 1em;
+    // &:first-child {
+    //     margin-left: 0;
+    // }
+}
+
+.play-button-container {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    .play-button {
+        position: relative;
+        margin: auto;
+    }
+
+    &:hover {
+        .play-button {
+            background: rgba($black, 0.9);
+        }
+    }
+    &:active,
+    &.is-click {
+        .play-button-arrow {
+        }
+        .play-button-arrow-shadow {
+            visibility: hidden;
+        }
+    }
+}
+.play-button {
+    $arrowSize: 1.15em;
+
+    display: block;
+    background: rgba($black, 0.5);
+
+    width: 8em;
+    height: 5em;
+    
+    .play-button-arrow {
+        width: 0;
+        height: 0;
+        position: absolute;
+        z-index: $zModule+2;
+        top: 50%;
+        left: 50%;
+        margin-top: -0.95em;
+        margin-left: -0.35em;
+
+        border-top: $arrowSize solid transparent;
+        border-bottom: $arrowSize solid transparent;
+        border-left: $arrowSize solid $white;
+    }
+
+    .play-button-arrow-shadow {
+        @extend .play-button-arrow;
+        border-left-color: $black;
+        // top: 32%;
+        z-index: $zModule+1;
+    }
+}
+
+.dropdown {
+    @include inline-block;
+    @include user-select(none);
+
+    position: relative;//*crosses fingers*
+
+    cursor: pointer;
+
+    .dropdown-layer {
+        width: 100%;
+    }
+    .dropdown-label {
+    }
+    .dropdown-arrow {
+    }
+    select {
+        width: 100%;
+        position: absolute;
+        z-index: $zTemplate + 1;
+        top: 0;
+        right: 0;
+        left: 0;
+        @include opacity(0);
+        background: $white;// for some reason gives layout
+    }
+}
+
+.dropdown-pretty {
+    .dropdown-layer {
+        padding: 0;
+        position: relative;
+
+        @extend %font-opensans-bold;
+        color: lighten($dkGrey,10);
+
+        @include border-radius(0.1em);
+        border: 1px solid (darken($ltGrey, 10));
+        @include background-image(linear-gradient(top, $white, $ltGrey));
+    }
+    .dropdown-arrow-container {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-left: 1px solid (darken($ltGrey, 20));
+
+        text-align: center;
+
+        .dropdown-arrow {
+            @include hide-text;
+            @include ui-sprite(dropdown-arrow-down);
+            @include inline-block;
+            margin: auto;
+            vertical-align: middle;
+        }
+    }
+
+    select {
+        height: 100%;
+        line-height: 100%;
+        background-color: transparent;
+    }
+    
+    @include opacity(1);
+    @include transition-property(opacity);
+    @include transition-duration($transitionDurationBase / 4);
+    @include transition-timing-function(ease-out);
+
+    &.is-disabled {
+        @include opacity(0.2);
+    }
+}
+
+.dropdown-sm {
+
+}
+
+.dropdown-lg {
+
+}
+
+.dropdown-button-sm {
+
+}
+
+.dropdown-button-md {
+    $dropdownHeight: 1.25em;
+    $iconAreaWidth: 1.25em;
+
+    .dropdown-layer {
+        > * {
+            line-height: $dropdownHeight;
+            height: $dropdownHeight;
+        }
+    }
+    .dropdown-arrow-container {
+        width: $iconAreaWidth;
+    }
+}
+
+.dropdown-button-lg {
+    $dropdownHeight: 1.25em;
+    $iconAreaWidth: 1.25em;
+
+    .dropdown-layer {
+        > * {
+            line-height: $dropdownHeight;
+            height: $dropdownHeight;
+        }
+    }
+    .dropdown-arrow-container {
+        width: $iconAreaWidth;
+    }
+}
+
+.dropdown-pretty-sm {
+    $dropdownHeight: 1.25em;
+    $iconAreaWidth: 1.25em;
+
+    .dropdown-layer {
+        > * {
+            line-height: $dropdownHeight;
+            height: $dropdownHeight;
+        }
+    }
+    .dropdown-label {
+        margin-left: 0.5em;
+    }
+    .dropdown-arrow-container {
+        width: $iconAreaWidth;
+    }
+}
+
+.dropdown-pretty-lg {
+    $dropdownHeight: 2.5em;
+    $iconAreaWidth: 2.5em;
+
+    .dropdown-layer {
+        > * {
+            line-height: $dropdownHeight;
+            height: $dropdownHeight;
+        }
+    }
+    .dropdown-label {
+        margin-left: 1em;
+    }
+    .dropdown-arrow-container {
+        width: $iconAreaWidth;
+    }
+}
+
+// %radio {
+
+// }
+
+// %checkbox {
+
+// }
+
+// %input {
+
+// }
+
+// %password {
+//     @extend %input;
+// }
+
+// %textarea {
+
+// }
+
+// %scrollbar {
+
+// }
+
+// %scrollarea {
+    
+// }
+
+.modal {
+    width: 100%;
+    position: fixed;
+
+    height: 0;
+
+    .modal-wrapper {
+        display: none;
+    }
+
+    @include opacity(0);
+    @include transition-property(opacity);
+    @include transition-duration($transitionDurationBase / 2);
+    @include transition-timing-function(ease-out);
+
+    &.is-visible {
+        @include opacity(1);
+
+        height: inherit;
+
+        .modal-wrapper {
+            display: block;
+        }
+
+        @include transition-property(opacity);
+        @include transition-duration($transitionDurationBase / 2);
+        @include transition-timing-function(ease-out);
+    }
+}
+
+.modal-generic {
+
+    .modal-close-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+    }
+    
+    .close-icon {
+        @extend %font-icons;
+        @include adjust-font-size-to(12px);
+        @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
+            @include adjust-font-size-to(22px);
+        }
+    }
+
+    .modal-content-wrapper {
+        // @include adjust-font-size-to(12px);
+        // @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
+        //     @include adjust-font-size-to(22px);
+        // }
+    }
+
+}
+
+.overlay {
+
+    position: absolute;
+    z-index: $zDialog;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    overflow: auto;
+    margin: -(rhythm(2)) 0 0 0;
+    padding: 0;
+    background: rgba($black, 0.65);
+
+    height: 0;
+    @include opacity(0);
+    @include transition-property(opacity);
+    @include transition-duration($transitionDurationBase / 2);
+    @include transition-timing-function(ease-out);
+
+    &.is-visible {
+        @include opacity(1);
+        height: 1000%;
+        @include transition-property(opacity);
+        @include transition-duration($transitionDurationBase / 2);
+        @include transition-timing-function(ease-out);
+    }
+}
+
+.lt-ie9 .overlay {
+    background: $black;
+}
+
+.expand-text {
+    cursor: pointer;
+    display: none;
+
+    * {
+        @include inline-block;
+    }
+
+    &.is-visible {
+        @include inline-block;
+    }
+}
+
+.pagination-more {
+    clear: both;
+    position: relative;
+}
+
+.tooltip {
+    text-align: center;
+    color: #fff;
+    background: #111;
+    position: absolute;
+    z-index: $zTooltip;
+    padding: 15px;
+    
+    /* triangle decoration */
+    &:after {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #111;
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        margin-left: -10px;
+    }
+ 
+    &.top:after {
+        border-top-color: transparent;
+        border-bottom: 10px solid #111;
+        top: -20px;
+        bottom: auto;
+    }
+
+    &.left:after {
+        left: 10px;
+        margin: 0;
+    }
+
+    &.right:after {
+        right: 10px;
+        left: auto;
+        margin: 0;
+    }
+}
+
+.message {}
+.message-error {}
+.message-alert {}
+.message-success {}
+.message-fail {}
+.message-complete {}
+
+.spinner-wrapper {
+    
+    @include opacity(0);
+    &.is-visible {
+        @include opacity(1);
+        @include transition-property(opacity);
+        @include transition-duration($transitionDurationBase / 2);
+        @include transition-timing-function(ease-out);
+    }
+
+}
+
+@include spinner-balls();
+
+// @include spinner-balls("size15", 15px, 5, #000);
+// @include spinner-balls("size35", 35px);
+// @include spinner-balls("size55", 55px);
+// @include spinner-balls("more", 35px, 10);
+// @include spinner-balls("lime", 35px, 5, lime);
+// @include spinner-balls("colors", 35px, 5, rainbow);

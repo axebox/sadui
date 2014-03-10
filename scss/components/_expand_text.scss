@@ -1,0 +1,14 @@
+@import "sad";
+
+.expand-text {
+    cursor: pointer;
+    display: none;
+
+    * {
+        @include inline-block;
+    }
+
+    &.is-visible {
+        @include inline-block;
+    }
+}

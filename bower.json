@@ -1,0 +1,30 @@
+{
+  "name": "sadui",
+  "version": "0.0.1",
+  "homepage": "https://github.com/axebox/sad-ui",
+  "description": "Module based extensible UI JS/CSS toolkit",
+  "main": "vendor",
+  "directory": "vendor",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": null,
+    "almond": null,
+    "r.js": "~2.1.9",
+    "requirejs-plugins": null,
+
+    "respond": null,
+    "responsejs": null,
+    
+    "jquery.fullscreen": "git@github.com:kayahr/jquery-fullscreen-plugin.git",
+    "jquery.backgroundSize": null,
+
+    "fitvids": "~1.0.3"
+  }
+}

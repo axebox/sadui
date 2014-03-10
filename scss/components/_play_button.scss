@@ -1,0 +1,56 @@
+@import "sad";
+
+.play-button-container {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    .play-button {
+        position: relative;
+        margin: auto;
+    }
+
+    &:hover {
+        .play-button {
+            background: rgba($black, 0.9);
+        }
+    }
+    &:active,
+    &.is-click {
+        .play-button-arrow {
+        }
+        .play-button-arrow-shadow {
+            visibility: hidden;
+        }
+    }
+}
+.play-button {
+    $arrowSize: 1.15em;
+
+    display: block;
+    background: rgba($black, 0.5);
+
+    width: 8em;
+    height: 5em;
+    
+    .play-button-arrow {
+        width: 0;
+        height: 0;
+        position: absolute;
+        z-index: $zModule+2;
+        top: 50%;
+        left: 50%;
+        margin-top: -0.95em;
+        margin-left: -0.35em;
+
+        border-top: $arrowSize solid transparent;
+        border-bottom: $arrowSize solid transparent;
+        border-left: $arrowSize solid $white;
+    }
+
+    .play-button-arrow-shadow {
+        @extend .play-button-arrow;
+        border-left-color: $black;
+        // top: 32%;
+        z-index: $zModule+1;
+    }
+}

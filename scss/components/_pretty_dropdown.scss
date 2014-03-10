@@ -1,0 +1,146 @@
+@import "sad";
+
+.dropdown {
+    @include inline-block;
+    @include user-select(none);
+
+    position: relative;//*crosses fingers*
+
+    cursor: pointer;
+
+    .dropdown-layer {
+        width: 100%;
+    }
+    .dropdown-label {
+    }
+    .dropdown-arrow {
+    }
+    select {
+        width: 100%;
+        position: absolute;
+        z-index: $zTemplate + 1;
+        top: 0;
+        right: 0;
+        left: 0;
+        @include opacity(0);
+        background: $white;// for some reason gives layout
+    }
+}
+
+.dropdown-pretty {
+    .dropdown-layer {
+        padding: 0;
+        position: relative;
+
+        @extend %font-opensans-bold;
+        color: lighten($dkGrey,10);
+
+        @include border-radius(0.1em);
+        border: 1px solid (darken($ltGrey, 10));
+        @include background-image(linear-gradient(top, $white, $ltGrey));
+    }
+    .dropdown-arrow-container {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-left: 1px solid (darken($ltGrey, 20));
+
+        text-align: center;
+
+        .dropdown-arrow {
+            @include hide-text;
+            @include ui-sprite(dropdown-arrow-down);
+            @include inline-block;
+            margin: auto;
+            vertical-align: middle;
+        }
+    }
+
+    select {
+        height: 100%;
+        line-height: 100%;
+        background-color: transparent;
+    }
+    
+    @include opacity(1);
+    @include transition-property(opacity);
+    @include transition-duration($transitionDurationBase / 4);
+    @include transition-timing-function(ease-out);
+
+    &.is-disabled {
+        @include opacity(0.2);
+    }
+}
+
+// .dropdown-sm {}
+
+// .dropdown-lg {}
+
+// .dropdown-button-sm {}
+
+.dropdown-button-md {
+    $dropdownHeight: 1.25em;
+    $iconAreaWidth: 1.25em;
+
+    .dropdown-layer {
+        > * {
+            line-height: $dropdownHeight;
+            height: $dropdownHeight;
+        }
+    }
+    .dropdown-arrow-container {
+        width: $iconAreaWidth;
+    }
+}
+
+.dropdown-button-lg {
+    $dropdownHeight: 1.25em;
+    $iconAreaWidth: 1.25em;
+
+    .dropdown-layer {
+        > * {
+            line-height: $dropdownHeight;
+            height: $dropdownHeight;
+        }
+    }
+    .dropdown-arrow-container {
+        width: $iconAreaWidth;
+    }
+}
+
+.dropdown-pretty-sm {
+    $dropdownHeight: 1.25em;
+    $iconAreaWidth: 1.25em;
+
+    .dropdown-layer {
+        > * {
+            line-height: $dropdownHeight;
+            height: $dropdownHeight;
+        }
+    }
+    .dropdown-label {
+        margin-left: 0.5em;
+    }
+    .dropdown-arrow-container {
+        width: $iconAreaWidth;
+    }
+}
+
+.dropdown-pretty-lg {
+    $dropdownHeight: 2.5em;
+    $iconAreaWidth: 2.5em;
+
+    .dropdown-layer {
+        > * {
+            line-height: $dropdownHeight;
+            height: $dropdownHeight;
+        }
+    }
+    .dropdown-label {
+        margin-left: 1em;
+    }
+    .dropdown-arrow-container {
+        width: $iconAreaWidth;
+    }
+}

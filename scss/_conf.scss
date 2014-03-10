@@ -1,0 +1,21 @@
+/* Compass Globals */
+$experimental-support-for-svg: true;
+
+// sticky footer
+// $footerMobileHeight: rhythm(3);
+// $footerTabletHeight: rhythm(4);
+
+/* layers */
+$zBase:         1000; // Any value
+$zHell:         $zBase - 100; // Below Template
+$zTemplate:     $zBase; // Template level
+$zModule:       $zBase + 100; // Module level
+$zTemplateTop:  $zBase + 200; // Above template
+$zDialog:       $zBase + 300; // Dialogs
+$zTooltip:      $zBase + 400; // Tooltips
+
+/* Transition Speeds */
+$transitionDurationBase: 1s;
+
+/* Carousel */
+$carouselMaxItems: 24; // arbitrary number to limit generated css for each position
