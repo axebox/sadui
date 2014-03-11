@@ -61,11 +61,7 @@
 
         cursor: pointer;
         height: 100%;
-        width: $phone-gutter-width;
-
-        @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
-            width: columns(1,12);                
-        }
+        width: $carouselNavigationItemWidth;
 
         &.is-disabled,
         &[disabled] {
@@ -85,35 +81,29 @@
     .carousel-navigation-item-back {
         @extend %carousel-navigation-item;
         left: 0;
-        // margin-left: $gutter-width;
         .label {
-            @include ui-sprite(carousel-arrow-back);
+            // ui-sprite(carousel-arrow-back);
         }
     }
     .carousel-navigation-item-forward {
         @extend %carousel-navigation-item;
         right: 0;
-        // margin-right: $gutter-width;
         .label {
-            @include ui-sprite(carousel-arrow-forward);
+            // ui-sprite(carousel-arrow-forward);
         }
     }
 
     .carousel-pagination {
         position: absolute;
-        // left: 0;
-        // right: 0;
     }
 }
 
 .carousel-background {
     z-index: $zModule;
-    // height: set in module
     left: 0;
     right: 0;
     height: 100%;
     .carousel-background-item {
-        // width: auto;
         height: 100%;
         background-repeat: no-repeat;
         background-position: center center;
@@ -122,7 +112,6 @@
 }
 
 .carousel-pagination {
-    // @extend %bullet-menu-horizontal;
 
     z-index: $zModule+20;
 
