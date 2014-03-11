@@ -1,6 +1,7 @@
 /*
- * Bootstrap
- * Requires: jquery, response
+ * Breakpoints
+ * Sets up default template breakpoints
+ * Requires Response.js library (Response obj)
  */
 
 // Add $.Callbacks() obj to each breakpoint
@@ -64,21 +65,5 @@ Response.action(function(){
         }
 
     });
-
-});
-
-
-// window.scroll $.Callbacks
-Globals.scroll = $.Callbacks('unique');
-
-// Bind window.scroll and fire all callbacks
-$(window).on('scroll', function(ev){
-
-    var fire_scroll_callbacks = function(ev){
-        Globals.scroll.fire(ev);
-        update_data();
-    };
-
-    fire_scroll_callbacks(ev);
 
 });
