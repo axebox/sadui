@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
 
 
   # spec.files         = `git ls-files -z`.split("\x0")
-  spec.files = Dir["{lib}/**/*"] + ["LICENSE", "README.md"]
+  spec.files = Dir["{lib,js}/**/*"] + ["LICENSE", "README.md"]
   # spec.files = Dir["{lib,vendor}/**/*"] + ["MIT-LICENSE", "README.md"]
   # spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   # spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
