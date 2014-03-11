@@ -3,7 +3,7 @@
  * 
  * Requires _tabs.scss
  */
-sadui.tabs = function(conf){
+sadui.tab = function(conf){
 
     var opts = {};
 

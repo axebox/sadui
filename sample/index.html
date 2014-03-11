@@ -2,7 +2,43 @@
 <html>
   <head>
     <title>SADUI Samples</title>
-    <link href="../dist/css/sadui.css" rel="stylesheet" />
+    <link href="../vendor/assets/stylesheets/sample/sample.css" rel="stylesheet" />
+    <script>
+
+      var Globals = {};
+
+      // flag for debugging
+      Globals.debug           = true;
+
+      Globals.layoutState     = 'clear';
+      Globals.baseSpeed       = 1000;
+      Globals.animSpeed       = Globals.baseSpeed;
+
+      /* layers */
+      Globals.zBase           = 1000;
+      Globals.zHell           = Globals.zBase - 100;
+      Globals.zTemplate       = Globals.zBase;
+      Globals.zModule         = Globals.zBase + 100;
+      Globals.zTemplateTop    = Globals.zBase + 200;
+      Globals.zDialog         = Globals.zBase + 300;
+      Globals.zTooltip        = Globals.zBase + 400;
+
+      Globals.breakpoints = {
+          'phone': {
+              name: 'phone',
+              breakpoint: 481
+          },
+          'tablet': {
+              name: 'tablet',
+              breakpoint: 768
+          },
+          'desktop': {
+              name: 'desktop'
+              // breakpoint: 
+          }
+      };
+
+    </script>
   </head>
 </html>
 <body>
@@ -11,15 +47,43 @@
       <h1>SADUI Samples</h1>
     </div>
     <div id="main">
+      <h2>Components</h2>
 
+      <h3>Carousel</h3>
+      <h3>Expand Text</h3>
+      <h3>Loader</h3>
+      <h3>Modal</h3>
+      <h3>Pretty Check-Radio</h3>
+      <h3>Pretty Dropdown</h3>
+      <h3>Responsive Radio Select</h3>
+      <h3>Short Text</h3>
+      <h3>Tab</h3>
+      <h3>Tooltip</h3>
+
+      <h2>Helpers</h2>
+
+      <h3>Breakpoints</h3>
+      <h3>Single Scroll</h3>
     </div>
   </div>
   
   <!-- Dependencies -->
-  <script src="../vendor/jquery/dist/jquery.min.js"></script>
-  <script src="../vendor/requirejs/require.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script src="../vendor/assets/javascripts/lib/response.min.js"></script>
   
   <!-- SADUI -->
-  <script src="../dist/js/sadui.js"></script>
+  <script src="../vendor/assets/javascripts/sadui/sadui.js"></script>
+  <script src="../vendor/assets/javascripts/sadui/util.js"></script>
+  <script src="../vendor/assets/javascripts/sadui/helpers/breakpoints.js"></script>
+  <script src="../vendor/assets/javascripts/sadui/helpers/single_scroll.js"></script>
+  <script src="../vendor/assets/javascripts/sadui/components/carousel.js"></script>
+  <script src="../vendor/assets/javascripts/sadui/components/expand_text.js"></script>
+  <!--script src="../vendor/assets/javascripts/sadui/components/loader.js"></script-->
+  <script src="../vendor/assets/javascripts/sadui/components/modal.js"></script>
+  <script src="../vendor/assets/javascripts/sadui/components/pretty_dropdown.js"></script>
+  <!--script src="../vendor/assets/javascripts/sadui/components/responsive_radio_select.js"></script-->
+  <script src="../vendor/assets/javascripts/sadui/components/short_text.js"></script>
+  <script src="../vendor/assets/javascripts/sadui/components/tab.js"></script>
+  <!--script src="../vendor/assets/javascripts/sadui/components/tooltip.js"></script-->
 
 </body>
