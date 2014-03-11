@@ -21,14 +21,14 @@
 
     &:hover {
         .bullet {
-            background-color: darken($ltGrey, 20);
+            background-color: darken($colorInactive, 20);
         }
     }
 
     &.is-selected,
     &.is-selected:hover {
         .bullet {
-            background-color: $ltBlue;
+            background-color: $colorActive;
         }
     }
 
@@ -49,5 +49,5 @@
     width: $bulletSize;
     height: $bulletSize;
     @include border-radius($bulletSize*2);
-    background-color: darken($ltGrey, 10);
+    background-color: darken($colorInactive, 10);
 }

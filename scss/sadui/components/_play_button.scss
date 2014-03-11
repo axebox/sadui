@@ -11,7 +11,7 @@
 
     &:hover {
         .play-button {
-            background: rgba($black, 0.9);
+            background: rgba($colorBlack, 0.9);
         }
     }
     &:active,
@@ -24,10 +24,8 @@
     }
 }
 .play-button {
-    $arrowSize: 1.15em;
-
     display: block;
-    background: rgba($black, 0.5);
+    background: rgba($colorBlack, 0.5);
 
     width: 8em;
     height: 5em;
@@ -42,14 +40,14 @@
         margin-top: -0.95em;
         margin-left: -0.35em;
 
-        border-top: $arrowSize solid transparent;
-        border-bottom: $arrowSize solid transparent;
-        border-left: $arrowSize solid $white;
+        border-top: $playButtonArrowSize solid transparent;
+        border-bottom: $playButtonArrowSize solid transparent;
+        border-left: $playButtonArrowSize solid $colorWhite;
     }
 
     .play-button-arrow-shadow {
         @extend .play-button-arrow;
-        border-left-color: $black;
+        border-left-color: $colorBlack;
         // top: 32%;
         z-index: $zModule+1;
     }

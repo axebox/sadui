@@ -1,10 +1,6 @@
 /* Compass Globals */
 $experimental-support-for-svg: true;
 
-// sticky footer
-// $footerMobileHeight: rhythm(3);
-// $footerTabletHeight: rhythm(4);
-
 /* layers */
 $zBase:         1000; // Any value
 $zHell:         $zBase - 100; // Below Template
@@ -20,4 +16,14 @@ $transitionDurationBase: 1s;
 /* Carousel */
 $carouselMaxItems: 24; // arbitrary number to limit generated css for each position
 
+/* Bullet */
 $bulletSize: 0.85rem;
+
+/* Play Button */
+$playButtonArrowSize: 1.15em;
+
+/* Default Colors */
+$colorActive:   blue;
+$colorInactive: grey;
+$colorWhite:    white;
+$colorBlack:    black;

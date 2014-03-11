@@ -9,7 +9,7 @@
 
     border: 0 none;// resets default <button|input>
 
-    color: $white;
+    color: $colorWhite;
     text-decoration: none;// resets default <a>
 
     > * {
@@ -40,7 +40,6 @@
 
 .button-lg {
     $base: 0.25em;
-    $baseDesktop: 0.5em;
 
     padding-top: $base;
     padding-bottom: $base;
@@ -73,7 +72,7 @@
     > * {
         margin-left: (1.25em / 2);
         padding-left: (1.25em / 2);
-        border-left: 1px solid $white;
+        border-left: 1px solid $colorWhite;
         &:first-child {
             margin-left: 0;
             padding-left: 0;
@@ -102,15 +101,15 @@
 
 .button-default {
 
-    background: $ltBlue;
+    background: $colorInactive;
     
-    @include box-shadow(rgba($white, 0.1) 0 2px 3px inset, 
-        rgba($white, 0.1) 1px 0 2px inset, 
-        rgba($white, 0.1) -1px 0 2px inset);
+    @include box-shadow(rgba($colorWhite, 0.1) 0 2px 3px inset, 
+        rgba($colorWhite, 0.1) 1px 0 2px inset, 
+        rgba($colorWhite, 0.1) -1px 0 2px inset);
 
     &[type="submit"],
     &.is-submit {
-        background: $orange;
+        background: $colorInactive;
     }
 
 }

@@ -23,7 +23,7 @@
         right: 0;
         left: 0;
         @include opacity(0);
-        background: $white;// for some reason gives layout
+        background: $colorInactive;// for some reason gives layout
     }
 }
 
@@ -33,15 +33,15 @@
         position: relative;
 
         @include border-radius(0.1em);
-        border: 1px solid (darken($ltGrey, 10));
-        @include background-image(linear-gradient(top, $white, $ltGrey));
+        border: 1px solid (darken($colorInactive, 10));
+        @include background-image(linear-gradient(top, $colorInactive, $colorActive));
     }
     .dropdown-arrow-container {
         display: block;
         position: absolute;
         right: 0;
         top: 0;
-        border-left: 1px solid (darken($ltGrey, 20));
+        border-left: 1px solid (darken($colorInactive, 20));
 
         text-align: center;
 
