@@ -1,5 +1,7 @@
 /* Carousel Base */
 
+@import "../sadui";
+
 .carousel {
     @include user-select(none);
     overflow: visible;
