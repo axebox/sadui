@@ -50,7 +50,7 @@
 
         .dropdown-arrow {
             @include hide-text;
-            @include ui-sprite(dropdown-arrow-down);
+            // @include ui-sprite(dropdown-arrow-down);
             @include inline-block;
             margin: auto;
             vertical-align: middle;
