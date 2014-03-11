@@ -32,9 +32,6 @@
         padding: 0;
         position: relative;
 
-        @extend %font-opensans-bold;
-        color: lighten($dkGrey,10);
-
         @include border-radius(0.1em);
         border: 1px solid (darken($ltGrey, 10));
         @include background-image(linear-gradient(top, $white, $ltGrey));
@@ -50,7 +47,6 @@
 
         .dropdown-arrow {
             @include hide-text;
-            // @include ui-sprite(dropdown-arrow-down);
             @include inline-block;
             margin: auto;
             vertical-align: middle;

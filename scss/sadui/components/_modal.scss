@@ -39,19 +39,8 @@
         margin: 0;
     }
     
-    .close-icon {
-        @extend %font-icons;
-        @include adjust-font-size-to(12px);
-        @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
-            @include adjust-font-size-to(22px);
-        }
-    }
+    .close-icon {}
 
-    .modal-content-wrapper {
-        // @include adjust-font-size-to(12px);
-        // @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
-        //     @include adjust-font-size-to(22px);
-        // }
-    }
+    .modal-content-wrapper {}
 
 }

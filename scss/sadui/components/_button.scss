@@ -35,9 +35,7 @@
 
     // .button-label {}
 
-    .button-icon {
-        @extend %font-icons;
-    }
+    // .button-icon {}
 }
 
 .button-lg {
@@ -49,34 +47,13 @@
     padding-left: $base*4;
     padding-right: $base*4;
 
-    @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
-        padding-top: $baseDesktop;
-        padding-bottom: $baseDesktop;
-        padding-left: $baseDesktop*4;
-        padding-right: $baseDesktop*4;
-    }
-
-    @extend %font-gotham-bold;
     text-transform: uppercase;
 
-    .button-label {
-        @include adjust-font-size-to(16px);
-        @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
-            @include adjust-font-size-to(22px);
-        }
-    }
-    .button-icon {
-        @include adjust-font-size-to(16px);
-        @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
-            @include adjust-font-size-to(30px);
-        }        
-    }
+    .button-label {}
+    .button-icon {}
 
     > * {
         margin-left: ($base);
-        // @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
-        //     margin-left: ($baseDesktop*4 / 2);
-        // }
         &:first-child {
             margin-left: 0;
         }
@@ -90,15 +67,8 @@
     padding-left: 1.25em;
     padding-right: 1.25em;
 
-    @extend %font-gotham-bold;
-    text-transform: uppercase;
-
-    .button-label {
-        @include adjust-font-size-to(16px);
-    }
-    .button-icon {
-        @include adjust-font-size-to(22px);
-    }
+    .button-label {}
+    .button-icon {}
 
     > * {
         margin-left: (1.25em / 2);
@@ -119,15 +89,8 @@
     padding-left: 1em;
     padding-right: 1em;
 
-    @extend %font-gotham-bold;
-    text-transform: uppercase;
-
-    .button-label {
-        @include adjust-font-size-to(12px);
-    }
-    .button-icon {
-        @include adjust-font-size-to(16px);
-    }
+    .button-label {}
+    .button-icon {}
 
     > * {
         margin-left: (1em / 2);

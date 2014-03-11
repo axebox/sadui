@@ -1,0 +1,24 @@
+%tab-container {
+
+}
+
+%tab-menu {
+    > * {
+        @include inline-block;
+    }
+
+}
+
+%tab-content {
+    position: relative;
+}
+
+%tab-item {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: none;
+    &.is-selected {
+        display: block;
+    }
+}

@@ -1,0 +1,53 @@
+.bullet-menu {
+    @include user-select(none);
+}
+
+.bullet-menu-horizontal {
+    .bullet-item {
+        @include inline-block;
+    }
+}
+
+.bullet-menu-vertical {
+    .bullet-item {
+        display: block;
+        clear: both;
+    }
+}
+
+.bullet-item {
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        .bullet {
+            background-color: darken($ltGrey, 20);
+        }
+    }
+
+    &.is-selected,
+    &.is-selected:hover {
+        .bullet {
+            background-color: $ltBlue;
+        }
+    }
+
+    input[type="radio"] {
+        visibility: hidden;
+        position: absolute;
+        width: $bulletSize;
+        height: $bulletSize;
+    }
+}
+
+.bullet-item-label {
+    @include inline-block;
+}
+
+.bullet {
+    @include inline-block;
+    width: $bulletSize;
+    height: $bulletSize;
+    @include border-radius($bulletSize*2);
+    background-color: darken($ltGrey, 10);
+}

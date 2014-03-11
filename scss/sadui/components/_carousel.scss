@@ -1,0 +1,139 @@
+/* Carousel Base */
+
+.carousel {
+    @include user-select(none);
+    overflow: visible;
+
+    &, *:focus {
+        outline-width: 0;
+    }
+
+    // this needs dimension
+    .carousel-content-wrapper {
+        // z-index: $zModule+11;
+        overflow: hidden;
+        position: relative;
+
+        // fixes z-index bug in Chrome
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+
+    .carousel-handle {
+        display: none;
+        // height: 100%;
+        // position: absolute;
+        // width: 100%;
+        // display: block;
+        // z-index: $zTemplateTop;
+    }
+
+    .carousel-content {
+        // z-index: $zModule+10;
+        // min-height: 100px;
+
+        list-style: none;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        white-space: nowrap;
+
+        &.is-animate {
+            @include transition-property(translate3d);
+            @include transition-duration($transitionDurationBase);
+            @include transition-timing-function(ease-in-out);            
+        }
+    }
+
+    .carousel-content-item {
+        @include inline-block;
+        vertical-align: top;
+        height: 100%;
+    }
+
+    %carousel-navigation-item {
+        position: absolute;
+        z-index: $zModule+8;
+        top: 0;
+
+        cursor: pointer;
+        height: 100%;
+        width: $phone-gutter-width;
+
+        @include at-breakpoint($tablet-breakpoint-min $tablet-total-columns) {
+            width: columns(1,12);                
+        }
+
+        &.is-disabled,
+        &[disabled] {
+            visibility: hidden;
+            cursor: default;
+        }
+        .label {
+            @include hide-text;
+            display: block;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 50%;
+            position: absolute;
+        }
+    }
+    .carousel-navigation-item-back {
+        @extend %carousel-navigation-item;
+        left: 0;
+        // margin-left: $gutter-width;
+        .label {
+            @include ui-sprite(carousel-arrow-back);
+        }
+    }
+    .carousel-navigation-item-forward {
+        @extend %carousel-navigation-item;
+        right: 0;
+        // margin-right: $gutter-width;
+        .label {
+            @include ui-sprite(carousel-arrow-forward);
+        }
+    }
+
+    .carousel-pagination {
+        position: absolute;
+        // left: 0;
+        // right: 0;
+    }
+}
+
+.carousel-background {
+    z-index: $zModule;
+    // height: set in module
+    left: 0;
+    right: 0;
+    height: 100%;
+    .carousel-background-item {
+        // width: auto;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+.carousel-pagination {
+    // @extend %bullet-menu-horizontal;
+
+    z-index: $zModule+20;
+
+   // .carousel-pagination-item {
+        // @extend %bullet-item;
+
+        // .carousel-pagination-bullet {
+            // @extend %bullet;
+        // }
+
+        // .carousel-pagination-label {
+            // @extend %bullet-item-label;
+        // }
+
+    // }
+}
