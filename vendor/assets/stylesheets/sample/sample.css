@@ -593,23 +593,26 @@
 /* line 39, ../../../../scss/sadui/components/_pretty_checkradio.scss */
 .pretty-checkradio input[type="radio"],
 .pretty-checkradio input[type="checkbox"] {
-  z-index: 1001;
+  z-index: 1002;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   background: #6e6e6e;
 }
 /* line 46, ../../../../scss/sadui/components/_pretty_checkradio.scss */
 .pretty-checkradio .pretty-checkradio-layer {
-  z-index: 1002;
+  z-index: 1001;
   background: #3333cc;
+  display: none;
 }
-/* line 51, ../../../../scss/sadui/components/_pretty_checkradio.scss */
+/* line 52, ../../../../scss/sadui/components/_pretty_checkradio.scss */
 .pretty-checkradio.is-selected .pretty-checkradio-layer {
   background: #3333cc;
+  display: block;
 }
-/* line 55, ../../../../scss/sadui/components/_pretty_checkradio.scss */
+/* line 57, ../../../../scss/sadui/components/_pretty_checkradio.scss */
 .pretty-checkradio.is-disabled .pretty-checkradio-layer {
   background: rgba(110, 110, 110, 0.5);
+  display: block;
 }
 
 /* SADUI Component Bootstrap */
@@ -830,6 +833,7 @@
   margin: 0;
 }
 
+/* Template */
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
 /* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
@@ -1098,49 +1102,50 @@ th {
   padding: 0;
 }
 
-/* line 6, ../../../../scss/sample/sample.scss */
+/* line 8, ../../../../scss/sample/sample.scss */
 html, html body, body {
   background-color: tan;
 }
 
-/* line 10, ../../../../scss/sample/sample.scss */
+/* line 12, ../../../../scss/sample/sample.scss */
 .wrapper {
   width: 760px;
   margin: auto;
 }
 
-/* line 15, ../../../../scss/sample/sample.scss */
+/* line 17, ../../../../scss/sample/sample.scss */
 #header {
   position: relative;
 }
-/* line 17, ../../../../scss/sample/sample.scss */
+/* line 19, ../../../../scss/sample/sample.scss */
 #header h1 {
   position: absolute;
   bottom: 20px;
   left: 20px;
 }
 
-/* line 24, ../../../../scss/sample/sample.scss */
+/* line 26, ../../../../scss/sample/sample.scss */
 .hero {
   width: 100%;
 }
-/* line 26, ../../../../scss/sample/sample.scss */
+/* line 28, ../../../../scss/sample/sample.scss */
 .hero img {
   width: 100%;
   height: auto;
 }
 
-/* line 32, ../../../../scss/sample/sample.scss */
+/* components */
+/* line 37, ../../../../scss/sample/sample.scss */
 .pretty-checkradio {
   width: 20px;
   height: 20px;
   background: #6e6e6e;
 }
-/* line 39, ../../../../scss/sample/sample.scss */
+/* line 44, ../../../../scss/sample/sample.scss */
 .pretty-checkradio.is-selected {
   background: #3333cc;
 }
-/* line 43, ../../../../scss/sample/sample.scss */
+/* line 48, ../../../../scss/sample/sample.scss */
 .pretty-checkradio.is-disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;

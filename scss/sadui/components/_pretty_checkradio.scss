@@ -37,23 +37,26 @@
     // assume input type = radio|checkbox
     input[type="radio"],
     input[type="checkbox"] {
-        z-index: $zTemplate + 1;
+        z-index: $zTemplate + 2;
         @include opacity(0);
         background: $colorInactive;// for some reason gives layout
     }
 
     // This will be visible when input is checked to allow for smooth transitions
     .pretty-checkradio-layer {
-        z-index: $zTemplate + 2;
+        z-index: $zTemplate + 1;
         background: $colorActive;
+        display: none;
     }
 
     &.is-selected .pretty-checkradio-layer {
         background: $colorActive;
+        display: block;
     }
     
     &.is-disabled .pretty-checkradio-layer {
         background: rgba($colorInactive, 0.5);
+        display: block;
     }
     
 }

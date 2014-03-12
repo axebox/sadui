@@ -54,6 +54,8 @@ sadui.pretty_checkradio = function(opts){
 
                 update_data();
 
+                return true;
+
             });
 
         });

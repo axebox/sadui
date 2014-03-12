@@ -1,6 +1,8 @@
 @import "sadui/sadui",
         "sadui/components";
 
+/* Template */
+
 @import "normalize";
 
 html, html body, body {
@@ -28,6 +30,9 @@ html, html body, body {
         height: auto;
     }
 }
+
+
+/* components */
 
 .pretty-checkradio {
 
