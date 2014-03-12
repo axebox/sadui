@@ -1,0 +1,27 @@
+@import "../sadui";
+
+.pretty-checkradio {
+    @include inline-block;
+    @include user-select(none);
+
+    position: relative;//*crosses fingers*
+
+    cursor: pointer;
+    
+    // assume input type = radio|checkbox
+    input {
+        width: 100%;
+        position: absolute;
+        z-index: $zTemplate + 1;
+        top: 0;
+        right: 0;
+        left: 0;
+        @include opacity(0);
+        background: $colorInactive;// for some reason gives layout
+    }
+
+}
+
+.pretty-checkradio-layer {
+    width: 100%;
+}
