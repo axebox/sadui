@@ -1,3 +1,17 @@
+/* 
+ * Pretty Check Radio
+ * 
+ * Requires pretty_checkradio.js
+ *
+ * Example DOM:
+ * div.pretty-checkradio
+ *   span.pretty-checkradio-layer
+ *   input.is-input
+ * 
+ * conf Object
+ * conf.$el $ DOM Object
+ */
+
 @import "../sadui";
 
 .pretty-checkradio {
@@ -7,21 +21,39 @@
     position: relative;//*crosses fingers*
 
     cursor: pointer;
-    
-    // assume input type = radio|checkbox
-    input {
-        width: 100%;
+
+    background: $colorInactive;
+
+    > * {
         position: absolute;
-        z-index: $zTemplate + 1;
         top: 0;
         right: 0;
         left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+    
+    // assume input type = radio|checkbox
+    input[type="radio"],
+    input[type="checkbox"] {
+        z-index: $zTemplate + 1;
         @include opacity(0);
         background: $colorInactive;// for some reason gives layout
     }
 
-}
+    // This will be visible when input is checked to allow for smooth transitions
+    .pretty-checkradio-layer {
+        z-index: $zTemplate + 2;
+        background: $colorActive;
+    }
 
-.pretty-checkradio-layer {
-    width: 100%;
+    &.is-selected .pretty-checkradio-layer {
+        background: $colorActive;
+    }
+    
+    &.is-disabled .pretty-checkradio-layer {
+        background: rgba($colorInactive, 0.5);
+    }
+    
 }

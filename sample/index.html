@@ -45,6 +45,10 @@
   <div class="wrapper">
     <div id="header">
       <h1>SADUI Samples</h1>
+      
+      <div class="hero">
+        <img src="images/sadie.jpg">
+      </div>
     </div>
     <div id="main">
       <h2>Components</h2>
@@ -55,20 +59,21 @@
       <h3>Modal</h3>
       
       <h3>Pretty Check-Radio</h3>
+
       <div class="pretty-checkradio">
-        <input type="checkbox">
+        <input type="checkbox" class="is-input">
       </div>
 
       <div class="pretty-checkradio">
-        <input type="radio" name="pretty_check_radio">
+        <input type="radio" name="pretty_check_radio" class="is-input">
       </div>
 
       <div class="pretty-checkradio">
-        <input type="radio" name="pretty_check_radio">
+        <input type="radio" name="pretty_check_radio" class="is-input" disabled="disabled">
       </div>
 
       <div class="pretty-checkradio">
-        <input type="radio" name="pretty_check_radio">
+        <input type="radio" name="pretty_check_radio" class="is-input">
       </div>
 
       <h3>Pretty Dropdown</h3>
@@ -97,10 +102,22 @@
   <script src="../vendor/assets/javascripts/sadui/components/expand_text.js"></script>
   <!--script src="../vendor/assets/javascripts/sadui/components/loader.js"></script-->
   <script src="../vendor/assets/javascripts/sadui/components/modal.js"></script>
+  <script src="../vendor/assets/javascripts/sadui/components/pretty_checkradio.js"></script>
   <script src="../vendor/assets/javascripts/sadui/components/pretty_dropdown.js"></script>
   <!--script src="../vendor/assets/javascripts/sadui/components/responsive_radio_select.js"></script-->
   <script src="../vendor/assets/javascripts/sadui/components/short_text.js"></script>
   <script src="../vendor/assets/javascripts/sadui/components/tab.js"></script>
   <!--script src="../vendor/assets/javascripts/sadui/components/tooltip.js"></script-->
+
+  <!-- Examples -->
+  <script>
+    $(function(){
+
+      var pretty_checkradio = new sadui.pretty_checkradio({
+        $el: $('.pretty-checkradio')
+      });
+
+    });
+  </script>
 
 </body>

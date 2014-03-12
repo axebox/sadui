@@ -1,43 +1,85 @@
 /* 
  * Pretty Check Radio
  * 
- *
  * Requires _pretty_checkradio.scss
+ *
+ * Example DOM:
+ * div.pretty-checkradio
+ *   span.pretty-checkradio-layer
+ *   input.is-input
+ * 
+ * API accessible through $el.data('prettyCheckRadio')
+ *
+ * opts Object
+ * opts.$el $ DOM Object
+ * opts.autoinit Boolean [true]
  */
-sadui.pretty_checkradio = function(conf){
 
-    // var $label = $('.dropdown-label', conf.$dropdown);
+sadui.pretty_checkradio = function(opts){
 
-    // var bind = function(){
-    //     $('.is-dropdown', conf.$dropdown).on('change', function(ev){
+    var defaults = {
+        autoinit: true
+    };
 
-    //         var $this = $(this);
-    //         var $item = $('option:selected', $this);
-            
-    //         var value = $item.text();
+    var conf = $.extend(defaults, opts);
 
-    //         // update label
-    //         $label.text( value );
+    var bind = function(){
 
-    //         if ($item.hasClass('is-href')) {
-    //             document.location = $item.val();
-    //         }
+        conf.$el.each(function(){
 
-    //         // manage disabled state
-    //         $this.parent()[ ($this.is('[disabled]')) ? 'addClass' : 'removeClass']('is-disabled');
+            var $this = $(this);
 
-    //     });
-    // };
+            $('.is-input', $this).on('change', function(ev){
 
-    // var init = function(){
-    //     bind();
+                var _$this = $(this);
 
-    //     var value = $('.is-dropdown option:selected', conf.$dropdown).text();
+                if (_$this.attr('disabled')) return false;
+
+                var $group = $('[name='+_$this.attr('name')+']', conf.$el);
+
+                if ($group.length > 1) {
+
+                    $group.parent().removeClass('is-selected');
+                    $this.addClass('is-selected');
+
+                } else {
+
+                    // checkbox|single
+                    $this[ (this.checked) ? 'addClass' : 'removeClass']('is-selected');
+
+                }
+                
+                // manage disabled state
+                _$this.parent()[ (_$this.is('[disabled]')) ? 'addClass' : 'removeClass']('is-disabled');
+
+                update_data();
+
+            });
+
+        });
+    };
+
+    var update_data = function(){
+        conf.$el.data('prettyCheckRadio', conf);
+    };
+
+    var init = function(){
+        bind();
         
-    //     // update label
-    //     $label.text( value );
-    // };
+        $('.is-input', conf.$el).each(function(ev){
+            var $this = $(this);
 
-    // init();
+            $this.parent()[ ($this.is(':disabled')) ? 'addClass' : 'removeClass']('is-disabled');
+        });
+
+    };
+
+    if (conf.autoinit) {
+        init();
+    }
+
+    update_data();
+
+    return conf;
 
 };

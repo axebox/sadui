@@ -6,3 +6,42 @@
 html, html body, body {
     background-color: tan;
 }
+
+.wrapper {
+    width: 760px;
+    margin: auto;
+}
+
+#header {
+    position: relative;
+    h1 {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+.hero {
+    width: 100%;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.pretty-checkradio {
+
+    width: 20px;
+    height: 20px;
+
+    background: $colorInactive;
+
+    &.is-selected {
+        background: $colorActive;
+    }
+
+    &.is-disabled {
+        @include opacity(0.5);
+    }
+
+}
