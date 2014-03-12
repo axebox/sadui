@@ -112,10 +112,9 @@
   cursor: pointer;
   position: relative;
   border: 0 none;
-  color: white;
   text-decoration: none;
 }
-/* line 15, ../../../../scss/sadui/components/_button.scss */
+/* line 14, ../../../../scss/sadui/components/_button.scss */
 .button > * {
   display: -moz-inline-stack;
   display: inline-block;
@@ -125,7 +124,8 @@
   *display: inline;
 }
 /* line 20, ../../../../scss/sadui/components/_button.scss */
-.button input {
+.button input[type="button"],
+.button input[type="submit"] {
   width: 100%;
   height: 100%;
   line-height: 100% !important;
@@ -142,69 +142,11 @@
   cursor: pointer;
 }
 
-/* line 41, ../../../../scss/sadui/components/_button.scss */
-.button-lg {
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  padding-left: 1em;
-  padding-right: 1em;
-  text-transform: uppercase;
-}
-/* line 54, ../../../../scss/sadui/components/_button.scss */
-.button-lg > * {
-  margin-left: 0.25em;
-}
-/* line 56, ../../../../scss/sadui/components/_button.scss */
-.button-lg > *:first-child {
-  margin-left: 0;
-}
-
-/* line 62, ../../../../scss/sadui/components/_button.scss */
-.button-md {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
-}
-/* line 72, ../../../../scss/sadui/components/_button.scss */
-.button-md > * {
-  margin-left: 0.625em;
-  padding-left: 0.625em;
-  border-left: 1px solid white;
-}
-/* line 76, ../../../../scss/sadui/components/_button.scss */
-.button-md > *:first-child {
-  margin-left: 0;
-  padding-left: 0;
-  border-left: 0 none;
-}
-
-/* line 84, ../../../../scss/sadui/components/_button.scss */
-.button-sm {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1em;
-  padding-right: 1em;
-}
-/* line 94, ../../../../scss/sadui/components/_button.scss */
-.button-sm > * {
-  margin-left: 0.5em;
-}
-/* line 96, ../../../../scss/sadui/components/_button.scss */
-.button-sm > *:first-child {
-  margin-left: 0;
-}
-
-/* line 102, ../../../../scss/sadui/components/_button.scss */
-.button-default {
-  background: #6e6e6e;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
-  -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
-  box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
-}
-/* line 111, ../../../../scss/sadui/components/_button.scss */
-.button-default[type="submit"], .button-default.is-submit {
-  background: #6e6e6e;
+/* line 40, ../../../../scss/sadui/components/_button.scss */
+button.button {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 /* Carousel Base */
@@ -377,52 +319,29 @@
 /* Default Colors */
 /* line 3, ../../../../scss/sadui/components/_modal.scss */
 .modal {
-  width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
   height: 0;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
+  z-index: 1301;
+  background: white;
 }
-/* line 9, ../../../../scss/sadui/components/_modal.scss */
+/* line 17, ../../../../scss/sadui/components/_modal.scss */
 .modal .modal-wrapper {
   display: none;
 }
-/* line 18, ../../../../scss/sadui/components/_modal.scss */
+/* line 21, ../../../../scss/sadui/components/_modal.scss */
 .modal.is-visible {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
   height: inherit;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
 }
-/* line 23, ../../../../scss/sadui/components/_modal.scss */
+/* line 24, ../../../../scss/sadui/components/_modal.scss */
 .modal.is-visible .modal-wrapper {
   display: block;
 }
 
-/* line 35, ../../../../scss/sadui/components/_modal.scss */
+/* line 32, ../../../../scss/sadui/components/_modal.scss */
 .modal-generic .modal-close-wrapper {
   position: absolute;
   top: 0;
@@ -453,38 +372,10 @@
   padding: 0;
   background: rgba(0, 0, 0, 0.65);
   height: 0;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
 }
-/* line 24, ../../../../scss/sadui/components/_overlay.scss */
+/* line 20, ../../../../scss/sadui/components/_overlay.scss */
 .overlay.is-visible {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
   height: 1000%;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
 }
 
 /* SADUI Component Bootstrap */
@@ -1102,51 +993,203 @@ th {
   padding: 0;
 }
 
-/* line 8, ../../../../scss/sample/sample.scss */
+/* line 11, ../../../../scss/sample/sample.scss */
 html, html body, body {
   background-color: tan;
 }
 
-/* line 12, ../../../../scss/sample/sample.scss */
+/* line 15, ../../../../scss/sample/sample.scss */
 .wrapper {
   width: 760px;
   margin: auto;
 }
 
-/* line 17, ../../../../scss/sample/sample.scss */
+/* line 20, ../../../../scss/sample/sample.scss */
 #header {
   position: relative;
 }
-/* line 19, ../../../../scss/sample/sample.scss */
+/* line 22, ../../../../scss/sample/sample.scss */
 #header h1 {
   position: absolute;
   bottom: 20px;
   left: 20px;
 }
 
-/* line 26, ../../../../scss/sample/sample.scss */
+/* line 29, ../../../../scss/sample/sample.scss */
 .hero {
   width: 100%;
 }
-/* line 28, ../../../../scss/sample/sample.scss */
+/* line 31, ../../../../scss/sample/sample.scss */
 .hero img {
   width: 100%;
   height: auto;
 }
 
+/* line 38, ../../../../scss/sample/sample.scss */
+#main section {
+  margin-top: 20px;
+  border-top: 1px solid #b28446;
+}
+/* line 41, ../../../../scss/sample/sample.scss */
+#main section:first-child {
+  margin-top: 0;
+  border-top: 0 none;
+}
+/* line 46, ../../../../scss/sample/sample.scss */
+#main a {
+  color: blue;
+  text-decoration: none;
+}
+
 /* components */
-/* line 37, ../../../../scss/sample/sample.scss */
+/* line 56, ../../../../scss/sample/sample.scss */
+.button-lg {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-transform: uppercase;
+}
+/* line 69, ../../../../scss/sample/sample.scss */
+.button-lg > * {
+  margin-left: 0.25em;
+}
+/* line 71, ../../../../scss/sample/sample.scss */
+.button-lg > *:first-child {
+  margin-left: 0;
+}
+
+/* line 77, ../../../../scss/sample/sample.scss */
+.button-md {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+/* line 87, ../../../../scss/sample/sample.scss */
+.button-md > * {
+  margin-left: 0.625em;
+  padding-left: 0.625em;
+  border-left: 1px solid white;
+}
+/* line 91, ../../../../scss/sample/sample.scss */
+.button-md > *:first-child {
+  margin-left: 0;
+  padding-left: 0;
+  border-left: 0 none;
+}
+
+/* line 99, ../../../../scss/sample/sample.scss */
+.button-sm {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+/* line 109, ../../../../scss/sample/sample.scss */
+.button-sm > * {
+  margin-left: 0.5em;
+}
+/* line 111, ../../../../scss/sample/sample.scss */
+.button-sm > *:first-child {
+  margin-left: 0;
+}
+
+/* line 117, ../../../../scss/sample/sample.scss */
+.button-default {
+  background: #6e6e6e;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
+  -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
+}
+/* line 126, ../../../../scss/sample/sample.scss */
+.button-default[type="submit"], .button-default.is-submit {
+  background: #6e6e6e;
+}
+
+/* line 132, ../../../../scss/sample/sample.scss */
 .pretty-checkradio {
   width: 20px;
   height: 20px;
   background: #6e6e6e;
 }
-/* line 44, ../../../../scss/sample/sample.scss */
+/* line 139, ../../../../scss/sample/sample.scss */
 .pretty-checkradio.is-selected {
   background: #3333cc;
 }
-/* line 48, ../../../../scss/sample/sample.scss */
+/* line 143, ../../../../scss/sample/sample.scss */
 .pretty-checkradio.is-disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
+}
+
+/* line 149, ../../../../scss/sample/sample.scss */
+.overlay {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+/* line 155, ../../../../scss/sample/sample.scss */
+.overlay.is-visible {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+/* line 163, ../../../../scss/sample/sample.scss */
+.modal {
+  margin: 20px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+/* line 172, ../../../../scss/sample/sample.scss */
+.modal.is-visible {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }

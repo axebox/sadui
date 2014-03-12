@@ -1,21 +1,36 @@
 /*
+ * Modal
+ * Will show/hide a modal and overlay, and nothing else. 
+ * 
+ * Requires _overlay.scss, _modal.scss
+ * 
+ * Example DOM:
+ * div.modal
+ * 
+ * div.overlay (recommended placement bottommost in DOM)
+ *
+ * API accessible through $container.data('modal')
+ *
+ * @Param Object opts
  * @Param String opts.init_state Set to 'visible' to show modal on load
  * @Param Boolean opts.active Flag to report whether modal is currently active
  */
-sadui.modal = function(conf){
 
-    var opts = {
+sadui.modal = function(opts){
+
+    var defaults = {
+        autoinit:   true,
         init_state: 'hidden',
-        active:      false
+        active:     false
     };
 
-    opts = $.extend(conf,opts);
+    var conf = $.extend(defaults, opts);
 
     var bind = function(){
 
         // trigger
-        if (opts.$container) {
-            opts.$container.on('click', opts.triggerClass, function(ev){
+        if (conf.$container) {
+            conf.$container.on('click', conf.triggerClass, function(ev){
                 ev.preventDefault();
 
                 show_hide_modal();
@@ -23,22 +38,22 @@ sadui.modal = function(conf){
         }
 
         // overlay close
-        if (opts.$overlay) {
-            opts.$overlay.on('click', function(ev){
+        if (conf.$overlay) {
+            conf.$overlay.on('click', function(ev){
                 ev.preventDefault();
-                opts.close_modal();
+                conf.close_modal();
             });
         }
 
         $('body').on('keyup', function(ev){
             ev.preventDefault();
 
-            if (opts.active) {
+            if (conf.active) {
 
                 switch (ev.keyCode) {
                     // esc
                     case 27:
-                        opts.close_modal();
+                        conf.close_modal();
                         break;
 
                     default:
@@ -48,18 +63,18 @@ sadui.modal = function(conf){
         });
 
         // modal UI
-        opts.$modal.on('click', '.is-close-trigger', function(ev){
+        conf.$modal.on('click', '.is-modal-close-trigger', function(ev){
             ev.preventDefault();
-            opts.close_modal();
+            conf.close_modal();
         });
 
-        opts.$modal.on('transitionend', function(ev){
+        conf.$modal.on('transitionend', function(ev){
 
             resize_img();
 
-            if ($.isFunction(opts.callback_aftershow_fn) && opts.callback_aftershow_fn.length > 0 ) {
+            if ($.isFunction(conf.callback_aftershow_fn) && conf.callback_aftershow_fn.length > 0 ) {
                 
-                opts.callback_aftershow_fn;
+                conf.callback_aftershow_fn;
 
             }
         });
@@ -72,28 +87,28 @@ sadui.modal = function(conf){
             directive = 'show';
         }
 
-        if ($.isFunction(opts.callback_beforeshow_fn) && opts.callback_beforeshow_fn.length > 0 ) {
-            opts.callback_beforeshow_fn;
+        if ($.isFunction(conf.callback_beforeshow_fn) && conf.callback_beforeshow_fn.length > 0 ) {
+            conf.callback_beforeshow_fn;
         }
 
         switch (directive) {
             case 'hide':
 
-                opts.active = false;
+                conf.active = false;
 
-                opts.$modal.removeClass('is-visible');
+                conf.$modal.removeClass('is-visible');
                     
-                opts.$overlay.removeClass('is-visible');
+                conf.$overlay.removeClass('is-visible');
 
                 break;
 
             case 'show':
 
-                opts.active = true;
+                conf.active = true;
 
-                opts.$modal.addClass('is-visible');
+                conf.$modal.addClass('is-visible');
 
-                opts.$overlay.addClass('is-visible');
+                conf.$overlay.addClass('is-visible');
 
                 break;
 
@@ -101,11 +116,11 @@ sadui.modal = function(conf){
 
     };
 
-    opts.show_modal = function(){
+    conf.show_modal = function(){
         show_hide_modal('show');
     };
 
-    opts.close_modal = function(){
+    conf.close_modal = function(){
        show_hide_modal('hide');
     };
 
@@ -113,7 +128,7 @@ sadui.modal = function(conf){
     // width is covered in css (width:100%, height:auto)
     var resize_img = function(){
 
-/*            $('.modal-content-img', opts.$modal).each(function(){
+/*            $('.modal-content-img', conf.$modal).each(function(){
 
             var $this       = $(this);
             
@@ -149,7 +164,7 @@ sadui.modal = function(conf){
 
     };
 
-    opts.resize_img = resize_img;
+    conf.resize_img = resize_img;
 
     var bind_resize_img = function(){
 
@@ -167,7 +182,7 @@ sadui.modal = function(conf){
     };
 
     var update_data = function(){
-        opts.$container.data('modal', opts);
+        conf.$container.data('modal', conf);
     };
 
     var init = function(){
@@ -175,11 +190,13 @@ sadui.modal = function(conf){
         bind();
         bind_resize_img();
 
-        if (opts.init_state === 'visible') show_hide_modal();
+        if (conf.init_state === 'visible') show_hide_modal();
 
         update_data();
     };
 
-    init();
+    if (conf.autoinit) {
+        init();
+    }
 
 };

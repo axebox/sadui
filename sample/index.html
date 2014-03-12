@@ -53,45 +53,166 @@
     <div id="main">
       <h2>Components</h2>
 
-      <h3>Carousel</h3>
-      <h3>Expand Text</h3>
-      <h3>Loader</h3>
-      <h3>Modal</h3>
+      <p>All components have the most basic CSS to render the component functionality. They come un<em>styled</em>.</p>
+
+      <section class="button-view" id="button_view">
+
+        <h3>Button</h3>
+
+        <p>Buttons render inline-block by default.</p>
+
+        <h4>Requires</h4>
+        <ul>
+          <li>components/_button.scss</li>
+        </ul>
+
+        <p>
+        <a href="#" class="button">
+          <span class="button-label">Anchor Button</span>
+        </a>
+        <a href="#" class="button button-default button-md">
+          <span class="button-label">Anchor Button (sample style)</span>
+        </a>
+
+        <p>
+        <button class="button">
+          <span class="button-label">Button Button</span>
+        </button>
+        <button class="button button-default button-md">
+          <span class="button-label">Button Button (sample style)</span>
+        </button>
+        
+        <p>
+        <div class="button">
+          <input type="button">
+          <span class="button-label">Input Mask Button</span>
+        </div>
+
+        <div class="button button-default button-md">
+          <input type="button">
+          <span class="button-label">Input Mask Button (sample style)</span>
+        </div>
+
+      </section>
       
-      <h3>Pretty Check-Radio</h3>
+      <section class="carousel-view" id="carousel_view">
+        <h3>Carousel</h3>
+      </section>
 
-      <div class="pretty-checkradio">
-        <input type="checkbox" class="is-input">
-        <span class="pretty-checkradio-layer"></span>
-      </div>
+      <section class="expand-text-view" id="expand_text_view">
+        <h3>Expand Text</h3>
+      </section>
 
-      <div class="pretty-checkradio">
-        <input type="radio" name="pretty_check_radio" class="is-input">
-        <span class="pretty-checkradio-layer"></span>
-      </div>
+      <section class="loader-view" id="loader_view">
+        <h3>Loader</h3>
+      </section>
 
-      <div class="pretty-checkradio">
-        <input type="radio" name="pretty_check_radio" class="is-input" disabled="disabled">
-        <span class="pretty-checkradio-layer"></span>
-      </div>
+      <section class="modal-view" id="modal_view">
+        
+        <h3>Modal</h3>
 
-      <div class="pretty-checkradio">
-        <input type="radio" name="pretty_check_radio" class="is-input">
-        <span class="pretty-checkradio-layer"></span>
-      </div>
+        <h4>Requires</h4>
+        <ul>
+          <li>components/_modal.scss</li>
+          <li>components/_overlay.scss</li>
+          <li>components/modal.js</li>
+        </ul>
 
-      <h3>Pretty Dropdown</h3>
-      <h3>Responsive Radio Select</h3>
-      <h3>Short Text</h3>
-      <h3>Tab</h3>
-      <h3>Tooltip</h3>
+        <p><a href="#" class="is-modal-trigger">Trigger modal</a></p>
+        
+        <div class="modal">
+          <div class="button is-modal-close-trigger">
+            <span class="button-label">Close</span>
+          </div>
+          <h4>Modal content</h4>
+          <p>YOU style this!</p>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        </div>
 
+      </section>
+
+      
+      <section class="pretty-checkradio-view" id="pretty_checkradio_view">
+
+        <h3>Pretty Check-Radio</h3>
+
+        <h4>Requires</h4>
+        <ul>
+          <li>components/_pretty_checkradio.scss</li>
+          <li>components/pretty_checkradio.js</li>
+        </ul>
+
+        <h4>Checkboxes</h4>
+
+        <div class="pretty-checkradio">
+          <input type="checkbox" class="is-input">
+          <span class="pretty-checkradio-layer"></span>
+        </div>
+
+        <div class="pretty-checkradio">
+          <input type="checkbox" class="is-input">
+          <span class="pretty-checkradio-layer"></span>
+        </div>
+
+        <div class="pretty-checkradio">
+          <input type="checkbox" class="is-input">
+          <span class="pretty-checkradio-layer"></span>
+        </div>
+
+        <h4>Radio Groups</h4>
+
+        <div class="pretty-checkradio">
+          <input type="radio" name="pretty_check_radio" class="is-input">
+          <span class="pretty-checkradio-layer"></span>
+        </div>
+
+        <div class="pretty-checkradio">
+          <input type="radio" name="pretty_check_radio" class="is-input" disabled="disabled">
+          <span class="pretty-checkradio-layer"></span>
+        </div>
+
+        <div class="pretty-checkradio">
+          <input type="radio" name="pretty_check_radio" class="is-input">
+          <span class="pretty-checkradio-layer"></span>
+        </div>
+
+      </section>
+
+      <section class="pretty-dropdown-view" id="pretty_dropdown_view">
+        <h3>Pretty Dropdown</h3>
+      </section>
+
+      <section class="responsive-radio-select-view" id="responsive_radio_select_view">
+        <h3>Responsive Radio Select</h3>
+      </section>
+
+      <section class="short-text-view" id="short_text_view">
+        <h3>Short Text</h3>
+      </section>
+
+      <section class="tab-view" id="tab_view">
+        <h3>Tab</h3>
+      </section>
+
+      <section class="tooltip-view" id="tooltip_view">
+        <h3>Tooltip</h3>
+      </section>
+
+      
       <h2>Helpers</h2>
 
-      <h3>Breakpoints</h3>
-      <h3>Single Scroll</h3>
+      <section class="breakpoints-view" id="breakpoints_view">
+        <h3>Breakpoints</h3>
+      </section>
+
+      <section class="single-scroll-view" id="single_scroll_view">
+        <h3>Single Scroll</h3>
+      </section>
+
     </div>
   </div>
+
+  <div class="overlay"></div>
   
   <!-- Dependencies -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
@@ -119,6 +240,14 @@
 
       var pretty_checkradio = new sadui.pretty_checkradio({
         $el: $('.pretty-checkradio')
+      });
+
+      var modal = new sadui.modal({
+        $container: $('#modal_view'),
+        $modal: $('.modal'),
+        $overlay: $('.overlay')
+        // callback_beforeshow_fn: function reference
+        // callback_aftershow_fn: function reference
       });
 
     });
