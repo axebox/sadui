@@ -19,9 +19,11 @@
 sadui.modal = function(opts){
 
     var defaults = {
-        autoinit:   true,
-        init_state: 'hidden',
-        active:     false
+        autoinit:       true,
+        init_state:     'hidden',
+        active:         false,
+        triggerClass:   '.is-modal-trigger',
+        $modals:        {}
     };
 
     var conf = $.extend(defaults, opts);
@@ -32,6 +34,9 @@ sadui.modal = function(opts){
         if (conf.$container) {
             conf.$container.on('click', conf.triggerClass, function(ev){
                 ev.preventDefault();
+
+                // set modal
+                conf.$modal = $($(this).attr('rel'));
 
                 show_hide_modal();
             });
@@ -63,21 +68,28 @@ sadui.modal = function(opts){
         });
 
         // modal UI
-        conf.$modal.on('click', '.is-modal-close-trigger', function(ev){
-            ev.preventDefault();
-            conf.close_modal();
+        $.each(conf.$modals, function(){
+
+            var $this = $(this);
+
+            $this.on('click', '.is-modal-close-trigger', function(ev){
+                ev.preventDefault();
+                conf.close_modal();
+            });
+
+            $this.on('transitionend', function(ev){
+
+                resize_img();
+
+                if ($.isFunction(conf.callback_aftershow_fn) && conf.callback_aftershow_fn.length > 0 ) {
+                    
+                    conf.callback_aftershow_fn;
+
+                }
+            });
+
         });
 
-        conf.$modal.on('transitionend', function(ev){
-
-            resize_img();
-
-            if ($.isFunction(conf.callback_aftershow_fn) && conf.callback_aftershow_fn.length > 0 ) {
-                
-                conf.callback_aftershow_fn;
-
-            }
-        });
 
     };
 
@@ -186,6 +198,13 @@ sadui.modal = function(opts){
     };
 
     var init = function(){
+
+        // Collect modals
+        $(conf.triggerClass, conf.$container).each(function(i){
+            var modal_id = $(this).attr('rel');
+
+            conf.$modals[i] = $(modal_id);
+        });
 
         bind();
         bind_resize_img();
