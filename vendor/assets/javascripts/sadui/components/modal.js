@@ -36,7 +36,8 @@ sadui.modal = function(opts){
                 ev.preventDefault();
 
                 // set modal
-                conf.$modal = $($(this).attr('rel'));
+                conf.$current_modal = $($(this).attr('rel'));
+                update_data();
 
                 show_hide_modal();
             });
@@ -95,6 +96,9 @@ sadui.modal = function(opts){
 
     var show_hide_modal = function(directive){
 
+        var data = conf.$container.data('modal');
+        console.log(data);
+
         if (typeof directive === 'undefined') {
             directive = 'show';
         }
@@ -108,7 +112,7 @@ sadui.modal = function(opts){
 
                 conf.active = false;
 
-                conf.$modal.removeClass('is-visible');
+                data.$current_modal.removeClass('is-visible');
                     
                 conf.$overlay.removeClass('is-visible');
 
@@ -118,7 +122,7 @@ sadui.modal = function(opts){
 
                 conf.active = true;
 
-                conf.$modal.addClass('is-visible');
+                data.$current_modal.addClass('is-visible');
 
                 conf.$overlay.addClass('is-visible');
 
