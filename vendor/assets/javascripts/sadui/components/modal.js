@@ -97,7 +97,6 @@ sadui.modal = function(opts){
     var show_hide_modal = function(directive){
 
         var data = conf.$container.data('modal');
-        console.log(data);
 
         if (typeof directive === 'undefined') {
             directive = 'show';
