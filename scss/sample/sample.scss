@@ -5,6 +5,7 @@
 
 @import "normalize";
 
+$container: 760px;
 $margin: 20px;
 $linkColor: blue;
 
@@ -13,7 +14,7 @@ html, html body, body {
 }
 
 .wrapper {
-    width: 760px;
+    width: $container;
     margin: auto;
 }
 
@@ -162,7 +163,8 @@ html, html body, body {
 
 .modal {
 
-    margin: $margin;
+    margin-top: $margin;
+    margin-bottom: $margin;
 
     @include opacity(0);
     @include transition-property(opacity);
@@ -175,4 +177,8 @@ html, html body, body {
         @include transition-duration($transitionDurationBase / 2);
         @include transition-timing-function(ease-out);
     }
+}
+
+.modal-sm {
+    width: $container;
 }

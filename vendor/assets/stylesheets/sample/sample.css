@@ -323,7 +323,7 @@ button.button {
   top: 0;
   left: 0;
   right: 0;
-  margin: 0;
+  margin: 0 auto;
   height: 0;
   z-index: 1301;
   background: white;
@@ -993,56 +993,56 @@ th {
   padding: 0;
 }
 
-/* line 11, ../../../../scss/sample/sample.scss */
+/* line 12, ../../../../scss/sample/sample.scss */
 html, html body, body {
   background-color: tan;
 }
 
-/* line 15, ../../../../scss/sample/sample.scss */
+/* line 16, ../../../../scss/sample/sample.scss */
 .wrapper {
   width: 760px;
   margin: auto;
 }
 
-/* line 20, ../../../../scss/sample/sample.scss */
+/* line 21, ../../../../scss/sample/sample.scss */
 #header {
   position: relative;
 }
-/* line 22, ../../../../scss/sample/sample.scss */
+/* line 23, ../../../../scss/sample/sample.scss */
 #header h1 {
   position: absolute;
   bottom: 20px;
   left: 20px;
 }
 
-/* line 29, ../../../../scss/sample/sample.scss */
+/* line 30, ../../../../scss/sample/sample.scss */
 .hero {
   width: 100%;
 }
-/* line 31, ../../../../scss/sample/sample.scss */
+/* line 32, ../../../../scss/sample/sample.scss */
 .hero img {
   width: 100%;
   height: auto;
 }
 
-/* line 38, ../../../../scss/sample/sample.scss */
+/* line 39, ../../../../scss/sample/sample.scss */
 #main section {
   margin-top: 20px;
   border-top: 1px solid #b28446;
 }
-/* line 41, ../../../../scss/sample/sample.scss */
+/* line 42, ../../../../scss/sample/sample.scss */
 #main section:first-child {
   margin-top: 0;
   border-top: 0 none;
 }
-/* line 46, ../../../../scss/sample/sample.scss */
+/* line 47, ../../../../scss/sample/sample.scss */
 #main a {
   color: blue;
   text-decoration: none;
 }
 
 /* components */
-/* line 56, ../../../../scss/sample/sample.scss */
+/* line 57, ../../../../scss/sample/sample.scss */
 .button-lg {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
@@ -1050,80 +1050,80 @@ html, html body, body {
   padding-right: 1em;
   text-transform: uppercase;
 }
-/* line 69, ../../../../scss/sample/sample.scss */
+/* line 70, ../../../../scss/sample/sample.scss */
 .button-lg > * {
   margin-left: 0.25em;
 }
-/* line 71, ../../../../scss/sample/sample.scss */
+/* line 72, ../../../../scss/sample/sample.scss */
 .button-lg > *:first-child {
   margin-left: 0;
 }
 
-/* line 77, ../../../../scss/sample/sample.scss */
+/* line 78, ../../../../scss/sample/sample.scss */
 .button-md {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1.25em;
   padding-right: 1.25em;
 }
-/* line 87, ../../../../scss/sample/sample.scss */
+/* line 88, ../../../../scss/sample/sample.scss */
 .button-md > * {
   margin-left: 0.625em;
   padding-left: 0.625em;
   border-left: 1px solid white;
 }
-/* line 91, ../../../../scss/sample/sample.scss */
+/* line 92, ../../../../scss/sample/sample.scss */
 .button-md > *:first-child {
   margin-left: 0;
   padding-left: 0;
   border-left: 0 none;
 }
 
-/* line 99, ../../../../scss/sample/sample.scss */
+/* line 100, ../../../../scss/sample/sample.scss */
 .button-sm {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 109, ../../../../scss/sample/sample.scss */
+/* line 110, ../../../../scss/sample/sample.scss */
 .button-sm > * {
   margin-left: 0.5em;
 }
-/* line 111, ../../../../scss/sample/sample.scss */
+/* line 112, ../../../../scss/sample/sample.scss */
 .button-sm > *:first-child {
   margin-left: 0;
 }
 
-/* line 117, ../../../../scss/sample/sample.scss */
+/* line 118, ../../../../scss/sample/sample.scss */
 .button-default {
   background: #6e6e6e;
   -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
   -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
   box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
 }
-/* line 126, ../../../../scss/sample/sample.scss */
+/* line 127, ../../../../scss/sample/sample.scss */
 .button-default[type="submit"], .button-default.is-submit {
   background: #6e6e6e;
 }
 
-/* line 132, ../../../../scss/sample/sample.scss */
+/* line 133, ../../../../scss/sample/sample.scss */
 .pretty-checkradio {
   width: 20px;
   height: 20px;
   background: #6e6e6e;
 }
-/* line 139, ../../../../scss/sample/sample.scss */
+/* line 140, ../../../../scss/sample/sample.scss */
 .pretty-checkradio.is-selected {
   background: #3333cc;
 }
-/* line 143, ../../../../scss/sample/sample.scss */
+/* line 144, ../../../../scss/sample/sample.scss */
 .pretty-checkradio.is-disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
 
-/* line 149, ../../../../scss/sample/sample.scss */
+/* line 150, ../../../../scss/sample/sample.scss */
 .overlay {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -1140,7 +1140,7 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 155, ../../../../scss/sample/sample.scss */
+/* line 156, ../../../../scss/sample/sample.scss */
 .overlay.is-visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1158,9 +1158,10 @@ html, html body, body {
   transition-timing-function: ease-out;
 }
 
-/* line 163, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .modal {
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transition-property: opacity;
@@ -1176,7 +1177,7 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 172, ../../../../scss/sample/sample.scss */
+/* line 174, ../../../../scss/sample/sample.scss */
 .modal.is-visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1192,4 +1193,9 @@ html, html body, body {
   -moz-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
+}
+
+/* line 182, ../../../../scss/sample/sample.scss */
+.modal-sm {
+  width: 760px;
 }

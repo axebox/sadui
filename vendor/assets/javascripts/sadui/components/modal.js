@@ -21,6 +21,7 @@ sadui.modal = function(opts){
     var defaults = {
         autoinit:       true,
         init_state:     'hidden',
+        position:       'center',
         active:         false,
         triggerClass:   '.is-modal-trigger',
         $modals:        {}
@@ -123,11 +124,30 @@ sadui.modal = function(opts){
 
                 data.$current_modal.addClass('is-visible');
 
+                conf.position_modal();
+
                 conf.$overlay.addClass('is-visible');
 
                 break;
 
         }
+
+    };
+
+    // vertically center position modal
+    // can expand this feature to support custom positioning at a later date
+    conf.position_modal = function(){
+
+        var data = conf.$container.data('modal');
+
+        if (conf.position !== 'center') return false;
+
+        var modal_height = data.$current_modal.outerHeight(true);
+        var viewport_height = $(window).height();
+
+        data.$current_modal.css({
+            top: Math.floor((viewport_height / 2) - (modal_height / 2))
+        });
 
     };
 
