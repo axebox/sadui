@@ -188,6 +188,21 @@
 
       <section class="pretty-dropdown-view" id="pretty_dropdown_view">
         <h3>Pretty Dropdown</h3>
+
+        <div class="pretty-dropdown pretty-dropdown-sm">
+          <select class="is-dropdown">
+            <option selected value="item_1">Item 1</option>
+            <option selected value="item_2">Item 2</option>
+            <option selected value="item_3">Item 3</option>
+          </select>
+          <div class="pretty-dropdown-layer">
+            <div class="pretty-dropdown-label is-label">All</div>
+            <span class="pretty-dropdown-icon-container">
+              <span class="pretty-dropdown-icon">&gt;</span>
+            </span>
+          </div>
+        </div>
+
       </section>
 
       <section class="responsive-radio-select-view" id="responsive_radio_select_view">
@@ -248,6 +263,10 @@
 
       var pretty_checkradio = new sadui.pretty_checkradio({
         $el: $('.pretty-checkradio')
+      });
+
+      var pretty_dropdown = new sadui.pretty_dropdown({
+        $el: $('.pretty-dropdown', '#pretty_dropdown_view')
       });
 
       var modal = new sadui.modal({

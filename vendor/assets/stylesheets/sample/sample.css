@@ -516,7 +516,7 @@ button.button {
 /* Carousel */
 /* Default Colors */
 /* line 3, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown {
+.pretty-dropdown {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -528,26 +528,6 @@ button.button {
   user-select: none;
   position: relative;
   cursor: pointer;
-}
-/* line 11, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown .dropdown-layer {
-  width: 100%;
-}
-/* line 18, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown select {
-  width: 100%;
-  position: absolute;
-  z-index: 1001;
-  top: 0;
-  right: 0;
-  left: 0;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  background: #6e6e6e;
-}
-
-/* line 30, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   -webkit-transition-property: opacity;
@@ -563,8 +543,9 @@ button.button {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 31, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty .dropdown-layer {
+/* line 11, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-layer {
+  width: 100%;
   padding: 0;
   position: relative;
   -webkit-border-radius: 0.1em;
@@ -581,8 +562,23 @@ button.button {
   background-image: -o-linear-gradient(top, #6e6e6e, #3333cc);
   background-image: linear-gradient(top, #6e6e6e, #3333cc);
 }
-/* line 39, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty .dropdown-arrow-container {
+/* line 23, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown select {
+  width: 100%;
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  right: 0;
+  left: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  background: #6e6e6e;
+  height: 100%;
+  line-height: 100%;
+  background-color: transparent;
+}
+/* line 38, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-icon-container {
   display: block;
   position: absolute;
   right: 0;
@@ -590,8 +586,8 @@ button.button {
   border-left: 1px solid #3b3b3b;
   text-align: center;
 }
-/* line 48, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty .dropdown-arrow-container .dropdown-arrow {
+/* line 47, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-icon-container .pretty-dropdown-icon {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
@@ -604,63 +600,37 @@ button.button {
   margin: auto;
   vertical-align: middle;
 }
-/* line 56, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty select {
-  height: 100%;
-  line-height: 100%;
-  background-color: transparent;
-}
-/* line 67, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty.is-disabled {
+/* line 60, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown.is-disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
 }
 
-/* line 83, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-button-md .dropdown-layer > * {
+/* line 70, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown-sm .pretty-dropdown-layer > * {
   line-height: 1.25em;
   height: 1.25em;
 }
-/* line 88, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-button-md .dropdown-arrow-container {
-  width: 1.25em;
-}
-
-/* line 98, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-button-lg .dropdown-layer > * {
-  line-height: 1.25em;
-  height: 1.25em;
-}
-/* line 103, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-button-lg .dropdown-arrow-container {
-  width: 1.25em;
-}
-
-/* line 113, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty-sm .dropdown-layer > * {
-  line-height: 1.25em;
-  height: 1.25em;
-}
-/* line 118, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty-sm .dropdown-label {
+/* line 75, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown-sm .pretty-dropdown-label {
   margin-left: 0.5em;
 }
-/* line 121, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty-sm .dropdown-arrow-container {
+/* line 78, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown-sm .pretty-dropdown-icon-container {
   width: 1.25em;
 }
 
-/* line 131, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty-lg .dropdown-layer > * {
+/* line 88, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown-lg .pretty-dropdown-layer > * {
   line-height: 2.5em;
   height: 2.5em;
 }
-/* line 136, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty-lg .dropdown-label {
+/* line 93, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown-lg .pretty-dropdown-label {
   margin-left: 1em;
 }
-/* line 139, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.dropdown-pretty-lg .dropdown-arrow-container {
+/* line 96, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown-lg .pretty-dropdown-icon-container {
   width: 2.5em;
 }
 
@@ -1042,6 +1012,7 @@ html, html body, body {
 }
 
 /* components */
+/* These will eventually be themes */
 /* line 57, ../../../../scss/sample/sample.scss */
 .button-lg {
   padding-top: 0.25em;

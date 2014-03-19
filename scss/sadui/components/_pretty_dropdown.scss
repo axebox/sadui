@@ -1,6 +1,6 @@
 @import "../sadui";
 
-.dropdown {
+.pretty-dropdown {
     @include inline-block;
     @include user-select(none);
 
@@ -8,13 +8,18 @@
 
     cursor: pointer;
 
-    .dropdown-layer {
+    .pretty-dropdown-layer {
         width: 100%;
+        padding: 0;
+        position: relative;
+
+        @include border-radius(0.1em);
+        border: 1px solid (darken($colorInactive, 10));
+        @include background-image(linear-gradient(top, $colorInactive, $colorActive));
     }
-    .dropdown-label {
-    }
-    .dropdown-arrow {
-    }
+    .pretty-dropdown-label {}
+    .pretty-dropdown-icon {}
+
     select {
         width: 100%;
         position: absolute;
@@ -24,19 +29,13 @@
         left: 0;
         @include opacity(0);
         background: $colorInactive;// for some reason gives layout
-    }
-}
 
-.dropdown-pretty {
-    .dropdown-layer {
-        padding: 0;
-        position: relative;
-
-        @include border-radius(0.1em);
-        border: 1px solid (darken($colorInactive, 10));
-        @include background-image(linear-gradient(top, $colorInactive, $colorActive));
+        height: 100%;
+        line-height: 100%;
+        background-color: transparent;
     }
-    .dropdown-arrow-container {
+
+    .pretty-dropdown-icon-container {
         display: block;
         position: absolute;
         right: 0;
@@ -45,7 +44,7 @@
 
         text-align: center;
 
-        .dropdown-arrow {
+        .pretty-dropdown-icon {
             @include hide-text;
             @include inline-block;
             margin: auto;
@@ -53,12 +52,6 @@
         }
     }
 
-    select {
-        height: 100%;
-        line-height: 100%;
-        background-color: transparent;
-    }
-    
     @include opacity(1);
     @include transition-property(opacity);
     @include transition-duration($transitionDurationBase / 4);
@@ -69,74 +62,38 @@
     }
 }
 
-// .dropdown-sm {}
-
-// .dropdown-lg {}
-
-// .dropdown-button-sm {}
-
-.dropdown-button-md {
+.pretty-dropdown-sm {
     $dropdownHeight: 1.25em;
     $iconAreaWidth: 1.25em;
 
-    .dropdown-layer {
+    .pretty-dropdown-layer {
         > * {
             line-height: $dropdownHeight;
             height: $dropdownHeight;
         }
     }
-    .dropdown-arrow-container {
-        width: $iconAreaWidth;
-    }
-}
-
-.dropdown-button-lg {
-    $dropdownHeight: 1.25em;
-    $iconAreaWidth: 1.25em;
-
-    .dropdown-layer {
-        > * {
-            line-height: $dropdownHeight;
-            height: $dropdownHeight;
-        }
-    }
-    .dropdown-arrow-container {
-        width: $iconAreaWidth;
-    }
-}
-
-.dropdown-pretty-sm {
-    $dropdownHeight: 1.25em;
-    $iconAreaWidth: 1.25em;
-
-    .dropdown-layer {
-        > * {
-            line-height: $dropdownHeight;
-            height: $dropdownHeight;
-        }
-    }
-    .dropdown-label {
+    .pretty-dropdown-label {
         margin-left: 0.5em;
     }
-    .dropdown-arrow-container {
+    .pretty-dropdown-icon-container {
         width: $iconAreaWidth;
     }
 }
 
-.dropdown-pretty-lg {
+.pretty-dropdown-lg {
     $dropdownHeight: 2.5em;
     $iconAreaWidth: 2.5em;
 
-    .dropdown-layer {
+    .pretty-dropdown-layer {
         > * {
             line-height: $dropdownHeight;
             height: $dropdownHeight;
         }
     }
-    .dropdown-label {
+    .pretty-dropdown-label {
         margin-left: 1em;
     }
-    .dropdown-arrow-container {
+    .pretty-dropdown-icon-container {
         width: $iconAreaWidth;
     }
 }
