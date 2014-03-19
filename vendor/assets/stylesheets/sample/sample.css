@@ -606,34 +606,6 @@ button.button {
   opacity: 0.2;
 }
 
-/* line 70, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.pretty-dropdown-sm .pretty-dropdown-layer > * {
-  line-height: 1.25em;
-  height: 1.25em;
-}
-/* line 75, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.pretty-dropdown-sm .pretty-dropdown-label {
-  margin-left: 0.5em;
-}
-/* line 78, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.pretty-dropdown-sm .pretty-dropdown-icon-container {
-  width: 1.25em;
-}
-
-/* line 88, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.pretty-dropdown-lg .pretty-dropdown-layer > * {
-  line-height: 2.5em;
-  height: 2.5em;
-}
-/* line 93, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.pretty-dropdown-lg .pretty-dropdown-label {
-  margin-left: 1em;
-}
-/* line 96, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.pretty-dropdown-lg .pretty-dropdown-icon-container {
-  width: 2.5em;
-}
-
 /* SADUI Component Bootstrap */
 /* Compass Globals */
 /* layers */
@@ -1094,7 +1066,31 @@ html, html body, body {
   opacity: 0.5;
 }
 
-/* line 150, ../../../../scss/sample/sample.scss */
+/* line 152, ../../../../scss/sample/sample.scss */
+.pretty-dropdown .pretty-dropdown-label {
+  color: white;
+}
+
+/* line 161, ../../../../scss/sample/sample.scss */
+.pretty-dropdown .pretty-dropdown-layer {
+  margin-right: 1.25em;
+}
+/* line 163, ../../../../scss/sample/sample.scss */
+.pretty-dropdown .pretty-dropdown-layer > * {
+  line-height: 1.25em;
+  height: 1.25em;
+}
+/* line 168, ../../../../scss/sample/sample.scss */
+.pretty-dropdown .pretty-dropdown-label {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+/* line 172, ../../../../scss/sample/sample.scss */
+.pretty-dropdown .pretty-dropdown-icon-container {
+  width: 1.25em;
+}
+
+/* line 197, ../../../../scss/sample/sample.scss */
 .overlay {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -1111,7 +1107,7 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 156, ../../../../scss/sample/sample.scss */
+/* line 203, ../../../../scss/sample/sample.scss */
 .overlay.is-visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1129,7 +1125,7 @@ html, html body, body {
   transition-timing-function: ease-out;
 }
 
-/* line 164, ../../../../scss/sample/sample.scss */
+/* line 211, ../../../../scss/sample/sample.scss */
 .modal {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1148,7 +1144,7 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 174, ../../../../scss/sample/sample.scss */
+/* line 221, ../../../../scss/sample/sample.scss */
 .modal.is-visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1166,7 +1162,7 @@ html, html body, body {
   transition-timing-function: ease-out;
 }
 
-/* line 182, ../../../../scss/sample/sample.scss */
+/* line 229, ../../../../scss/sample/sample.scss */
 .modal-sm {
   width: 760px;
 }

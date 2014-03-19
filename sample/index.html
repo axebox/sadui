@@ -189,11 +189,25 @@
       <section class="pretty-dropdown-view" id="pretty_dropdown_view">
         <h3>Pretty Dropdown</h3>
 
-        <div class="pretty-dropdown pretty-dropdown-sm">
+        <div class="pretty-dropdown pretty-dropdown-example-1">
           <select class="is-dropdown">
             <option selected value="item_1">Item 1</option>
+            <option value="item_2">Item 2</option>
+            <option value="item_3">Item 3</option>
+          </select>
+          <div class="pretty-dropdown-layer">
+            <div class="pretty-dropdown-label is-label">All</div>
+            <span class="pretty-dropdown-icon-container">
+              <span class="pretty-dropdown-icon">&gt;</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="pretty-dropdown pretty-dropdown-example-2">
+          <select class="is-dropdown">
+            <option value="item_1">Item 1</option>
             <option selected value="item_2">Item 2</option>
-            <option selected value="item_3">Item 3</option>
+            <option value="item_3">Item 3</option>
           </select>
           <div class="pretty-dropdown-layer">
             <div class="pretty-dropdown-label is-label">All</div>
@@ -265,8 +279,12 @@
         $el: $('.pretty-checkradio')
       });
 
-      var pretty_dropdown = new sadui.pretty_dropdown({
-        $el: $('.pretty-dropdown', '#pretty_dropdown_view')
+      var pretty_dropdown_example_1 = new sadui.pretty_dropdown({
+        $el: $('.pretty-dropdown-example-1', '#pretty_dropdown_view')
+      });
+
+      var pretty_dropdown_example_2 = new sadui.pretty_dropdown({
+        $el: $('.pretty-dropdown-example-2', '#pretty_dropdown_view')
       });
 
       var modal = new sadui.modal({

@@ -61,39 +61,3 @@
         @include opacity(0.2);
     }
 }
-
-.pretty-dropdown-sm {
-    $dropdownHeight: 1.25em;
-    $iconAreaWidth: 1.25em;
-
-    .pretty-dropdown-layer {
-        > * {
-            line-height: $dropdownHeight;
-            height: $dropdownHeight;
-        }
-    }
-    .pretty-dropdown-label {
-        margin-left: 0.5em;
-    }
-    .pretty-dropdown-icon-container {
-        width: $iconAreaWidth;
-    }
-}
-
-.pretty-dropdown-lg {
-    $dropdownHeight: 2.5em;
-    $iconAreaWidth: 2.5em;
-
-    .pretty-dropdown-layer {
-        > * {
-            line-height: $dropdownHeight;
-            height: $dropdownHeight;
-        }
-    }
-    .pretty-dropdown-label {
-        margin-left: 1em;
-    }
-    .pretty-dropdown-icon-container {
-        width: $iconAreaWidth;
-    }
-}

@@ -147,6 +147,53 @@ html, html body, body {
 
 }
 
+.pretty-dropdown {
+    @extend %pretty-dropdown-sm;
+    .pretty-dropdown-label {
+        color: $colorWhite;
+    }
+}
+
+%pretty-dropdown-sm {
+    $dropdownHeight: 1.25em;
+    $iconAreaWidth: 1.25em;
+
+    .pretty-dropdown-layer {
+        margin-right: $iconAreaWidth;
+        > * {
+            line-height: $dropdownHeight;
+            height: $dropdownHeight;
+        }
+    }
+    .pretty-dropdown-label {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+    .pretty-dropdown-icon-container {
+        width: $iconAreaWidth;
+    }
+}
+
+%pretty-dropdown-lg {
+    $dropdownHeight: 2.5em;
+    $iconAreaWidth: 2.5em;
+
+    .pretty-dropdown-layer {
+        margin-right: $iconAreaWidth;
+        > * {
+            line-height: $dropdownHeight;
+            height: $dropdownHeight;
+        }
+    }
+    .pretty-dropdown-label {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    .pretty-dropdown-icon-container {
+        width: $iconAreaWidth;
+    }
+}
+
 .overlay {
     @include opacity(0);
     @include transition-property(opacity);
