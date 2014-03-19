@@ -515,7 +515,7 @@ button.button {
 /* Play Button */
 /* Carousel */
 /* Default Colors */
-/* line 3, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 6, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown {
   display: -moz-inline-stack;
   display: inline-block;
@@ -543,7 +543,7 @@ button.button {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 11, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 14, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-layer {
   width: 100%;
   padding: 0;
@@ -562,7 +562,35 @@ button.button {
   background-image: -o-linear-gradient(top, #6e6e6e, #3333cc);
   background-image: linear-gradient(top, #6e6e6e, #3333cc);
 }
-/* line 23, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 24, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-menu {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background-color: #6e6e6e;
+  -webkit-border-radius: 0.1em;
+  -moz-border-radius: 0.1em;
+  -ms-border-radius: 0.1em;
+  -o-border-radius: 0.1em;
+  border-radius: 0.1em;
+  display: none;
+}
+/* line 27, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-menu, .pretty-dropdown .pretty-dropdown-menu li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 41, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-menu.is-visible {
+  display: block;
+}
+/* line 46, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-menu > li.is-selected {
+  background-color: #3333cc;
+}
+/* line 55, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown select {
   width: 100%;
   position: absolute;
@@ -577,7 +605,11 @@ button.button {
   line-height: 100%;
   background-color: transparent;
 }
-/* line 38, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 71, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown.has-menu select {
+  visibility: hidden;
+}
+/* line 76, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-icon-container {
   display: block;
   position: absolute;
@@ -586,7 +618,7 @@ button.button {
   border-left: 1px solid #3b3b3b;
   text-align: center;
 }
-/* line 47, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 85, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-icon-container .pretty-dropdown-icon {
   text-indent: -119988px;
   overflow: hidden;
@@ -600,7 +632,7 @@ button.button {
   margin: auto;
   vertical-align: middle;
 }
-/* line 60, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 98, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown.is-disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
@@ -1099,8 +1131,12 @@ html, html body, body {
 .pretty-dropdown .pretty-dropdown-icon-container {
   width: 1.25em;
 }
+/* line 185, ../../../../scss/sample/sample.scss */
+.pretty-dropdown .pretty-dropdown-menu > li {
+  padding-left: 0.5em;
+}
 
-/* line 207, ../../../../scss/sample/sample.scss */
+/* line 214, ../../../../scss/sample/sample.scss */
 .overlay {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -1117,7 +1153,7 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .overlay.is-visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1135,7 +1171,7 @@ html, html body, body {
   transition-timing-function: ease-out;
 }
 
-/* line 221, ../../../../scss/sample/sample.scss */
+/* line 228, ../../../../scss/sample/sample.scss */
 .modal {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1154,7 +1190,7 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 231, ../../../../scss/sample/sample.scss */
+/* line 238, ../../../../scss/sample/sample.scss */
 .modal.is-visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1172,7 +1208,7 @@ html, html body, body {
   transition-timing-function: ease-out;
 }
 
-/* line 239, ../../../../scss/sample/sample.scss */
+/* line 246, ../../../../scss/sample/sample.scss */
 .modal-sm {
   width: 760px;
 }

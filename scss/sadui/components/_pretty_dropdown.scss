@@ -1,10 +1,13 @@
 @import "../sadui";
 
+// For responsive apps, .pretty-dropdown-menu will be disabled, allowing for 
+// native option select UI. You'll have to do this part manually. 
+
 .pretty-dropdown {
     @include inline-block;
     @include user-select(none);
 
-    position: relative;//*crosses fingers*
+    position: relative;
 
     cursor: pointer;
 
@@ -17,6 +20,35 @@
         border: 1px solid (darken($colorInactive, 10));
         @include background-image(linear-gradient(top, $colorInactive, $colorActive));
     }
+
+    .pretty-dropdown-menu {
+
+        // reset
+        &, li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        background-color: $colorInactive;
+        @include border-radius(0.1em);
+
+        display: none;
+        &.is-visible {
+            display: block;
+        }
+    
+        > li {
+            &.is-selected {
+                background-color: $colorActive;
+            }
+        }
+    }
+
     .pretty-dropdown-label {}
     .pretty-dropdown-icon {}
 
@@ -33,6 +65,12 @@
         height: 100%;
         line-height: 100%;
         background-color: transparent;
+    }
+
+    &.has-menu {
+        select {
+            visibility: hidden;
+        }
     }
 
     .pretty-dropdown-icon-container {
