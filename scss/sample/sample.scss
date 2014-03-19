@@ -50,8 +50,18 @@ html, html body, body {
     }
 }
 
+/* Views */
 
-/* components */
+.pretty-dropdown-view {
+    .pretty-dropdown {
+        margin-left: $margin;
+        &:first-of-type {
+            margin-left: 0;
+        }
+    }
+}
+
+/* Components */
 /* These will eventually be themes */
 
 .button-lg {

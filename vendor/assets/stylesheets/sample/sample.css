@@ -983,9 +983,19 @@ html, html body, body {
   text-decoration: none;
 }
 
-/* components */
+/* Views */
+/* line 56, ../../../../scss/sample/sample.scss */
+.pretty-dropdown-view .pretty-dropdown {
+  margin-left: 20px;
+}
+/* line 58, ../../../../scss/sample/sample.scss */
+.pretty-dropdown-view .pretty-dropdown:first-of-type {
+  margin-left: 0;
+}
+
+/* Components */
 /* These will eventually be themes */
-/* line 57, ../../../../scss/sample/sample.scss */
+/* line 67, ../../../../scss/sample/sample.scss */
 .button-lg {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
@@ -993,104 +1003,104 @@ html, html body, body {
   padding-right: 1em;
   text-transform: uppercase;
 }
-/* line 70, ../../../../scss/sample/sample.scss */
+/* line 80, ../../../../scss/sample/sample.scss */
 .button-lg > * {
   margin-left: 0.25em;
 }
-/* line 72, ../../../../scss/sample/sample.scss */
+/* line 82, ../../../../scss/sample/sample.scss */
 .button-lg > *:first-child {
   margin-left: 0;
 }
 
-/* line 78, ../../../../scss/sample/sample.scss */
+/* line 88, ../../../../scss/sample/sample.scss */
 .button-md {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1.25em;
   padding-right: 1.25em;
 }
-/* line 88, ../../../../scss/sample/sample.scss */
+/* line 98, ../../../../scss/sample/sample.scss */
 .button-md > * {
   margin-left: 0.625em;
   padding-left: 0.625em;
   border-left: 1px solid white;
 }
-/* line 92, ../../../../scss/sample/sample.scss */
+/* line 102, ../../../../scss/sample/sample.scss */
 .button-md > *:first-child {
   margin-left: 0;
   padding-left: 0;
   border-left: 0 none;
 }
 
-/* line 100, ../../../../scss/sample/sample.scss */
+/* line 110, ../../../../scss/sample/sample.scss */
 .button-sm {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 110, ../../../../scss/sample/sample.scss */
+/* line 120, ../../../../scss/sample/sample.scss */
 .button-sm > * {
   margin-left: 0.5em;
 }
-/* line 112, ../../../../scss/sample/sample.scss */
+/* line 122, ../../../../scss/sample/sample.scss */
 .button-sm > *:first-child {
   margin-left: 0;
 }
 
-/* line 118, ../../../../scss/sample/sample.scss */
+/* line 128, ../../../../scss/sample/sample.scss */
 .button-default {
   background: #6e6e6e;
   -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
   -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
   box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
 }
-/* line 127, ../../../../scss/sample/sample.scss */
+/* line 137, ../../../../scss/sample/sample.scss */
 .button-default[type="submit"], .button-default.is-submit {
   background: #6e6e6e;
 }
 
-/* line 133, ../../../../scss/sample/sample.scss */
+/* line 143, ../../../../scss/sample/sample.scss */
 .pretty-checkradio {
   width: 20px;
   height: 20px;
   background: #6e6e6e;
 }
-/* line 140, ../../../../scss/sample/sample.scss */
+/* line 150, ../../../../scss/sample/sample.scss */
 .pretty-checkradio.is-selected {
   background: #3333cc;
 }
-/* line 144, ../../../../scss/sample/sample.scss */
+/* line 154, ../../../../scss/sample/sample.scss */
 .pretty-checkradio.is-disabled {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
 
-/* line 152, ../../../../scss/sample/sample.scss */
+/* line 162, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-label {
   color: white;
 }
 
-/* line 161, ../../../../scss/sample/sample.scss */
+/* line 171, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-layer {
   margin-right: 1.25em;
 }
-/* line 163, ../../../../scss/sample/sample.scss */
+/* line 173, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-layer > * {
   line-height: 1.25em;
   height: 1.25em;
 }
-/* line 168, ../../../../scss/sample/sample.scss */
+/* line 178, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-label {
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
-/* line 172, ../../../../scss/sample/sample.scss */
+/* line 182, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-icon-container {
   width: 1.25em;
 }
 
-/* line 197, ../../../../scss/sample/sample.scss */
+/* line 207, ../../../../scss/sample/sample.scss */
 .overlay {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -1107,7 +1117,7 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 203, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .overlay.is-visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1125,7 +1135,7 @@ html, html body, body {
   transition-timing-function: ease-out;
 }
 
-/* line 211, ../../../../scss/sample/sample.scss */
+/* line 221, ../../../../scss/sample/sample.scss */
 .modal {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1144,7 +1154,7 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 221, ../../../../scss/sample/sample.scss */
+/* line 231, ../../../../scss/sample/sample.scss */
 .modal.is-visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1162,7 +1172,7 @@ html, html body, body {
   transition-timing-function: ease-out;
 }
 
-/* line 229, ../../../../scss/sample/sample.scss */
+/* line 239, ../../../../scss/sample/sample.scss */
 .modal-sm {
   width: 760px;
 }
