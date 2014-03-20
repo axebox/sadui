@@ -563,11 +563,11 @@ button.button {
   margin: 0;
   padding: 0;
 }
-/* line 35, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.pretty-dropdown .pretty-dropdown-menu.is-visible {
+/* line 41, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+.pretty-dropdown.has-menu-visible .pretty-dropdown-menu {
   display: block;
 }
-/* line 47, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 48, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown select {
   width: 100%;
   position: absolute;
@@ -582,11 +582,11 @@ button.button {
   line-height: 100%;
   background-color: transparent;
 }
-/* line 63, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 64, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown.has-menu select {
   visibility: hidden;
 }
-/* line 68, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 69, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-icon-container {
   display: block;
   position: absolute;
@@ -594,7 +594,7 @@ button.button {
   top: 0;
   text-align: center;
 }
-/* line 76, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 77, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-icon-container .pretty-dropdown-icon {
   text-indent: -119988px;
   overflow: hidden;

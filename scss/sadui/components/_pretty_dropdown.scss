@@ -32,13 +32,14 @@
         right: 0;
 
         display: none;
-        &.is-visible {
-            display: block;
-        }
     
         > li {
             &.is-selected {}
         }
+    }
+
+    &.has-menu-visible .pretty-dropdown-menu {
+        display: block;
     }
 
     .pretty-dropdown-label {}

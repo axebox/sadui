@@ -71,11 +71,11 @@ sadui.pretty_dropdown = function(opts){
 
                 if ($(ev.target).hasClass('is-label')) {
 
-                    if (!conf.$menu.hasClass('is-visible')) {
-                        conf.$menu.addClass('is-visible');
+                    if (!conf.$el.hasClass('has-menu-visible')) {
+                        conf.$el.addClass('has-menu-visible');
 
                     } else {
-                        conf.$menu.removeClass('is-visible');
+                        conf.$el.removeClass('has-menu-visible');
                     }
 
                 } else if ($(ev.target).hasClass('is-menu-item')) {
