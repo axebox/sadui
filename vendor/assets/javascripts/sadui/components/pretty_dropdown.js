@@ -8,7 +8,7 @@
  *   select.is-dropdown
  *     option
  *     option.is-href
- *   div.pretty-dropdown-layer
+ *   div.pretty-dropdown-layer.is-menu-trigger
  *     div.pretty-dropdown-label.is-label
  *     span.pretty-dropdown-icon-container
  *       span.pretty-dropdown-icon &gt;
@@ -35,6 +35,7 @@ sadui.pretty_dropdown = function(opts){
 
     conf.$menu = $('.is-menu', conf.$el);
     conf.hasMenu = (conf.$menu && typeof conf.$menu === 'object' && conf.$menu.length > 0) ? true : false;
+    conf.menu_state = 'closed';
 
     var bind = function(){
 
@@ -66,16 +67,19 @@ sadui.pretty_dropdown = function(opts){
 
         // Bind menu
         if (conf.hasMenu) {
-            conf.$el.on('click.sadui.prettyDropdown', '.is-label, .is-menu-item', function(ev){
+
+            conf.$el.on('click.sadui.prettyDropdown', '.is-menu-trigger, .is-menu-item', function(ev){
                 ev.preventDefault();
 
-                if ($(ev.target).hasClass('is-label')) {
+                if ($(ev.target).hasClass('is-menu-trigger')) {
 
                     if (!conf.$el.hasClass('has-menu-visible')) {
-                        conf.$el.addClass('has-menu-visible');
+
+                        open_menu();
+                        ev.stopPropagation();
 
                     } else {
-                        conf.$el.removeClass('has-menu-visible');
+                        close_menu();
                     }
 
                 } else if ($(ev.target).hasClass('is-menu-item')) {
@@ -89,9 +93,23 @@ sadui.pretty_dropdown = function(opts){
                 }
 
             });
-
-
         }
+    };
+
+    var open_menu = function(){
+        conf.$el.addClass('has-menu-visible');
+        conf.menu_state = 'open';
+
+        $(document).on('click.sadui.prettyDropdown', function(){
+            if (conf.menu_state === 'open') close_menu();
+        });
+    };
+
+    var close_menu = function(){
+        conf.$el.removeClass('has-menu-visible');
+        conf.menu_state = 'closed';
+
+        $(document).off('click.sadui.prettyDropdown');
     };
 
     // @Param ev Object the event object of selected menu item
