@@ -548,49 +548,26 @@ button.button {
   width: 100%;
   padding: 0;
   position: relative;
-  -webkit-border-radius: 0.1em;
-  -moz-border-radius: 0.1em;
-  -ms-border-radius: 0.1em;
-  -o-border-radius: 0.1em;
-  border-radius: 0.1em;
-  border: 1px solid #555555;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZlNmU2ZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzMzNjYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6e6e6e), color-stop(100%, #3333cc));
-  background-image: -webkit-linear-gradient(top, #6e6e6e, #3333cc);
-  background-image: -moz-linear-gradient(top, #6e6e6e, #3333cc);
-  background-image: -o-linear-gradient(top, #6e6e6e, #3333cc);
-  background-image: linear-gradient(top, #6e6e6e, #3333cc);
 }
-/* line 24, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 20, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-menu {
   position: absolute;
   width: 100%;
   left: 0;
   right: 0;
-  background-color: #6e6e6e;
-  -webkit-border-radius: 0.1em;
-  -moz-border-radius: 0.1em;
-  -ms-border-radius: 0.1em;
-  -o-border-radius: 0.1em;
-  border-radius: 0.1em;
   display: none;
 }
-/* line 27, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 23, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-menu, .pretty-dropdown .pretty-dropdown-menu li {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 41, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 35, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-menu.is-visible {
   display: block;
 }
-/* line 46, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.pretty-dropdown .pretty-dropdown-menu > li.is-selected {
-  background-color: #3333cc;
-}
-/* line 55, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 47, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown select {
   width: 100%;
   position: absolute;
@@ -605,20 +582,19 @@ button.button {
   line-height: 100%;
   background-color: transparent;
 }
-/* line 71, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 63, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown.has-menu select {
   visibility: hidden;
 }
-/* line 76, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 68, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-icon-container {
   display: block;
   position: absolute;
   right: 0;
   top: 0;
-  border-left: 1px solid #3b3b3b;
   text-align: center;
 }
-/* line 85, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 76, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-icon-container .pretty-dropdown-icon {
   text-indent: -119988px;
   overflow: hidden;
@@ -631,11 +607,6 @@ button.button {
   *display: inline;
   margin: auto;
   vertical-align: middle;
-}
-/* line 98, ../../../../scss/sadui/components/_pretty_dropdown.scss */
-.pretty-dropdown.is-disabled {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-  opacity: 0.2;
 }
 
 /* SADUI Component Bootstrap */
@@ -1108,35 +1079,74 @@ html, html body, body {
   opacity: 0.5;
 }
 
-/* line 162, ../../../../scss/sample/sample.scss */
+/* line 163, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-label {
   color: white;
 }
 
-/* line 171, ../../../../scss/sample/sample.scss */
+/* line 169, ../../../../scss/sample/sample.scss */
+.pretty-dropdown .pretty-dropdown-layer {
+  -webkit-border-radius: 0.1em;
+  -moz-border-radius: 0.1em;
+  -ms-border-radius: 0.1em;
+  -o-border-radius: 0.1em;
+  border-radius: 0.1em;
+  border: 1px solid #555555;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZlNmU2ZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzMzNjYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6e6e6e), color-stop(100%, #3333cc));
+  background-image: -webkit-linear-gradient(top, #6e6e6e, #3333cc);
+  background-image: -moz-linear-gradient(top, #6e6e6e, #3333cc);
+  background-image: -o-linear-gradient(top, #6e6e6e, #3333cc);
+  background-image: linear-gradient(top, #6e6e6e, #3333cc);
+}
+/* line 175, ../../../../scss/sample/sample.scss */
+.pretty-dropdown .pretty-dropdown-menu {
+  background-color: #6e6e6e;
+  -webkit-border-radius: 0.1em;
+  -moz-border-radius: 0.1em;
+  -ms-border-radius: 0.1em;
+  -o-border-radius: 0.1em;
+  border-radius: 0.1em;
+}
+/* line 180, ../../../../scss/sample/sample.scss */
+.pretty-dropdown .pretty-dropdown-menu > li.is-selected {
+  background-color: #3333cc;
+}
+/* line 186, ../../../../scss/sample/sample.scss */
+.pretty-dropdown .pretty-dropdown-icon-container {
+  border-left: 1px solid #3b3b3b;
+}
+/* line 190, ../../../../scss/sample/sample.scss */
+.is-disabled.pretty-dropdown {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 199, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-layer {
   margin-right: 1.25em;
 }
-/* line 173, ../../../../scss/sample/sample.scss */
+/* line 201, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-layer > * {
   line-height: 1.25em;
   height: 1.25em;
 }
-/* line 178, ../../../../scss/sample/sample.scss */
+/* line 206, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-label {
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
-/* line 182, ../../../../scss/sample/sample.scss */
+/* line 210, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-icon-container {
   width: 1.25em;
 }
-/* line 185, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .pretty-dropdown .pretty-dropdown-menu > li {
   padding-left: 0.5em;
 }
 
-/* line 214, ../../../../scss/sample/sample.scss */
+/* line 242, ../../../../scss/sample/sample.scss */
 .overlay {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -1153,7 +1163,7 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 220, ../../../../scss/sample/sample.scss */
+/* line 248, ../../../../scss/sample/sample.scss */
 .overlay.is-visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1171,7 +1181,7 @@ html, html body, body {
   transition-timing-function: ease-out;
 }
 
-/* line 228, ../../../../scss/sample/sample.scss */
+/* line 256, ../../../../scss/sample/sample.scss */
 .modal {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1190,7 +1200,7 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 238, ../../../../scss/sample/sample.scss */
+/* line 266, ../../../../scss/sample/sample.scss */
 .modal.is-visible {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1208,7 +1218,7 @@ html, html body, body {
   transition-timing-function: ease-out;
 }
 
-/* line 246, ../../../../scss/sample/sample.scss */
+/* line 274, ../../../../scss/sample/sample.scss */
 .modal-sm {
   width: 760px;
 }

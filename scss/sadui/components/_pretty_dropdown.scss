@@ -15,10 +15,6 @@
         width: 100%;
         padding: 0;
         position: relative;
-
-        @include border-radius(0.1em);
-        border: 1px solid (darken($colorInactive, 10));
-        @include background-image(linear-gradient(top, $colorInactive, $colorActive));
     }
 
     .pretty-dropdown-menu {
@@ -34,8 +30,6 @@
         width: 100%;
         left: 0;
         right: 0;
-        background-color: $colorInactive;
-        @include border-radius(0.1em);
 
         display: none;
         &.is-visible {
@@ -43,9 +37,7 @@
         }
     
         > li {
-            &.is-selected {
-                background-color: $colorActive;
-            }
+            &.is-selected {}
         }
     }
 
@@ -78,7 +70,6 @@
         position: absolute;
         right: 0;
         top: 0;
-        border-left: 1px solid (darken($colorInactive, 20));
 
         text-align: center;
 
@@ -95,7 +86,5 @@
     @include transition-duration($transitionDurationBase / 4);
     @include transition-timing-function(ease-out);
 
-    &.is-disabled {
-        @include opacity(0.2);
-    }
+    &.is-disabled {}
 }

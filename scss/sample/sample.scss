@@ -159,8 +159,36 @@ html, html body, body {
 
 .pretty-dropdown {
     @extend %pretty-dropdown-sm;
+    @extend %pretty-dropdown-style-default;
     .pretty-dropdown-label {
         color: $colorWhite;
+    }
+}
+
+%pretty-dropdown-style-default {
+    .pretty-dropdown-layer {
+        @include border-radius(0.1em);
+        border: 1px solid (darken($colorInactive, 10));
+        @include background-image(linear-gradient(top, $colorInactive, $colorActive));
+    }
+
+    .pretty-dropdown-menu {
+        background-color: $colorInactive;
+        @include border-radius(0.1em);
+
+        > li {
+            &.is-selected {
+                background-color: $colorActive;
+            }
+        }
+    }
+
+    .pretty-dropdown-icon-container {
+        border-left: 1px solid (darken($colorInactive, 20));
+    }
+
+    &.is-disabled {
+        @include opacity(0.2);
     }
 }
 
