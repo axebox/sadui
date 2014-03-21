@@ -204,7 +204,7 @@
         </div>
 
         <div class="pretty-dropdown pretty-dropdown-example-2">
-          <select class="is-dropdown">
+          <select class="is-dropdown" id="test_trigger">
             <option value="item_1">Item 1</option>
             <option selected value="item_2">With styled menu</option>
             <option value="item_3">Item 3</option>
@@ -273,27 +273,6 @@
   <!--script src="../vendor/assets/javascripts/sadui/components/tooltip.js"></script-->
 
   <!-- Examples -->
-  <script>
-    $(function(){
-
-      var pretty_checkradio = new sadui.pretty_checkradio({
-        $el: $('.pretty-checkradio')
-      });
-
-      var pretty_dropdown_example_1 = new sadui.pretty_dropdown({
-        $el: $('.pretty-dropdown-example-1', '#pretty_dropdown_view')
-      });
-
-      var pretty_dropdown_example_2 = new sadui.pretty_dropdown({
-        $el: $('.pretty-dropdown-example-2', '#pretty_dropdown_view')
-      });
-
-      var modal = new sadui.modal({
-        $container: $('#modal_view'),
-        $overlay: $('.overlay')
-      });
-
-    });
-  </script>
+  <script src="../vendor/assets/javascripts/sample/sample.js"></script>
 
 </body>

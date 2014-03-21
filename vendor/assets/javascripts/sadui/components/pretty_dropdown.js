@@ -40,7 +40,7 @@ sadui.pretty_dropdown = function(opts){
     var bind = function(){
 
         // Bind <select> dropdown 
-        conf.$dropdown.on('change.sadui.prettyDropdown', function(ev){
+        conf.$dropdown.on('change', function(ev){
 
             if (conf.hasMenu) {
                 ev.preventDefault();
@@ -62,6 +62,8 @@ sadui.pretty_dropdown = function(opts){
 
             // manage disabled state
             $this.parent()[ ($this.is('[disabled]')) ? 'addClass' : 'removeClass']('is-disabled');
+
+            return;
 
         });
 
@@ -119,7 +121,7 @@ sadui.pretty_dropdown = function(opts){
         // Select form element
         conf.$dropdown.val( el.data('value') );
 
-        conf.$dropdown.trigger('change.sadui.prettyDropdown');
+        conf.$dropdown.trigger('change');
     };
 
     var update_label = function(){
