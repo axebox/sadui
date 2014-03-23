@@ -4,30 +4,57 @@
  *
  * Requires _carousel.scss
  * 
- * @param Object conf generic hash that contains these options:
- * $.Object conf.$container $('.carousel');
- * $.Object conf.$pagination $('.carousel-pagination')
- * $.Object conf.$navigation $('[class^="carousel-navigation"]')
- * $.Object conf.$handle $('.carousel-handle')
- * $.Object conf.$content $('.carousel-content')
- * $.Object conf.$background $('.carousel-background')
- * String conf.orientation orientation of the carousel '[horizontal]|vertical'
- * Integer conf.visibleItems number of visible items per slide
- * Boolean conf.playback [false]
- * Boolean conf.drag [false]
+ * Example DOM:
+    .carousel
+        .carousel-navigation-item-back.is-carousel-back
+            span.label title="Back" &lt;
+        .carousel-navigation-item-forward.is-carousel-forward
+            span.label title="Forward" &gt;
+        ul.carousel-pagination
+            li.carousel-pagination-item data-carousel-item="1"
+            li.carousel-pagination-item data-carousel-item="2"
+        .carousel-content-wrapper
+            ul.carousel-content
+                li.carousel-content-item Item 1
+                li.carousel-content-item Item 2
+            ul.carousel-background
+                li.carousel-background-item
+                li.carousel-background-item
+ *
+ * API accessible through $el.data('carousel')
+ * 
+ * @param Object opts generic hash that contains these options:
+ * $.Object opts.$container $('.carousel');
+ * $.Object opts.$pagination $('.carousel-pagination')
+ * $.Object opts.$navigation $('[class^="carousel-navigation"]')
+ * $.Object opts.$handle $('.carousel-handle')
+ * $.Object opts.$content $('.carousel-content')
+ * $.Object opts.$background $('.carousel-background')
+ * String opts.orientation orientation of the carousel '[horizontal]|vertical'
+ * Integer opts.visibleItems number of visible items per slide
+ * Boolean opts.playback [false]
+ * Boolean opts.drag [false]
+ * Boolean opts.autoinit [true]
  * @return Object opts internal configuration object
 */
 
-sadui.carousel = function(conf){
+sadui.carousel = function(opts){
 
-    var opts = {};
+    var defaults = {
+        index: 0,
+        totalItems: 0,
+        totalScreens: 0,
+        autoinit: true
+    };
+
+    var conf = $.extend(defaults, opts);
 
     var bind = function(){
 
         // Bind pagination
-        if (opts.hasPagination) {
+        if (conf.hasPagination) {
 
-            $('.carousel-pagination-item', opts.$pagination).off('click').on('click', function(ev){
+            $('.carousel-pagination-item', conf.$pagination).off('click').on('click', function(ev){
                 var ix = $(ev.currentTarget).index();
                 set_index( ix );
                 jump_to_item(ev);
@@ -36,9 +63,9 @@ sadui.carousel = function(conf){
         }
 
         // Bind navigation
-        if (opts.hasNavigation) {
+        if (conf.hasNavigation) {
 
-            opts.$navigation.off('click').on('click', function(ev){
+            conf.$navigation.off('click').on('click', function(ev){
                 ev.preventDefault();
 
                 var $this = $(this);
@@ -59,39 +86,39 @@ sadui.carousel = function(conf){
                 jump_to_item(ev);
 
                 // Reset playback
-                if (opts.hasPlayback) {
-                    opts.play();
+                if (conf.hasPlayback) {
+                    conf.play();
                 }
 
             });
         }
 
         // Bind playback
-        if (opts.hasPlayback) {
-            opts.play();
+        if (conf.hasPlayback) {
+            conf.play();
         }
 
-        // if (opts.hasDrag) {
-        //     opts.$content.drags({
-        //         direction: opts.orientation,
-        //         handle: opts.$handle,
+        // if (conf.hasDrag) {
+        //     conf.$content.drags({
+        //         direction: conf.orientation,
+        //         handle: conf.$handle,
         //         mouseup_callback: drags_mouseup_callback
         //     });
         // }
 
     };
 
-    var drags_mouseup_callback = function(){
-        detect_selected_item();
-    };
+    // var drags_mouseup_callback = function(){
+    //     detect_selected_item();
+    // };
 
     // finds visible items and returns leftmost item in carousel viewport
-    var detect_selected_item = function(){
-        var $visible = $('.carousel-content-item:visible', opts.$content);
-        var $element;
+    // var detect_selected_item = function(){
+    //     var $visible = $('.carousel-content-item:visible', conf.$content);
+    //     var $element;
 
-        return $element;
-    };
+    //     return $element;
+    // };
 
     /* 
      * Set the internal index of the left-most carousel item in the viewport
@@ -101,26 +128,26 @@ sadui.carousel = function(conf){
     var set_index = function(directive){
 
         if (typeof directive === 'number') {
-            opts.index = directive;
+            conf.index = directive;
         } else {
 
             switch(directive){
                 case 'back':
 
-                    if (opts.visibleItems) {
-                        opts.index = opts.index - opts.visibleItems;
+                    if (conf.visibleItems) {
+                        conf.index = conf.index - conf.visibleItems;
                     } else {
-                        opts.index--;
+                        conf.index--;
                     }
 
                     break;
                 
                 case 'forward':
 
-                    if (opts.visibleItems) {
-                        opts.index = opts.index + opts.visibleItems;
+                    if (conf.visibleItems) {
+                        conf.index = conf.index + conf.visibleItems;
                     } else {
-                        opts.index++;    
+                        conf.index++;    
                     }
 
                     break;
@@ -128,21 +155,21 @@ sadui.carousel = function(conf){
                 // the carouselID
                 default:
 
-                    opts.index = $('.carousel-content-item[data-carousel-item="'+ directive +'"]', opts.$content).index();
+                    conf.index = $('.carousel-content-item[data-carousel-item="'+ directive +'"]', conf.$content).index();
 
                     break;
             }
 
         }
 
-        if (opts.hasCircular && opts.index > opts.totalItems ) {
-            opts.index = 0;
+        if (conf.hasCircular && conf.index > conf.totalItems ) {
+            conf.index = 0;
         }
 
         function get_last_screen(){
 
             var last_screen;
-            var m = (opts.totalItems / opts.visibleItems);
+            var m = (conf.totalItems / conf.visibleItems);
             var screens = Math.ceil(m);
             var differential = screens - m;
 
@@ -153,20 +180,20 @@ sadui.carousel = function(conf){
         // index boundaries
         // - set to 0 if its somehow lower than 0
         // - set index to the last slide, which is totalItems - visibleItems
-        if (opts.visibleItems > 1) {
+        if (conf.visibleItems > 1) {
             // When there are multiple visible items
 
-            if (opts.index <= 0) {
-                opts.index = 0;
+            if (conf.index <= 0) {
+                conf.index = 0;
 
             // } else {
 
-                // if ( opts.index >=  ){
-                //     opts.index = get_last_screen();
+                // if ( conf.index >=  ){
+                //     conf.index = get_last_screen();
                 // }
 
-                // if ( (opts.index >= opts.totalItems) + opts.visibleItems ) {
-                // opts.index = opts.totalItems - opts.visibleItems;
+                // if ( (conf.index >= conf.totalItems) + conf.visibleItems ) {
+                // conf.index = conf.totalItems - conf.visibleItems;
 
             }
 
@@ -174,18 +201,18 @@ sadui.carousel = function(conf){
         } else {
             // When visibleItem is 1
 
-            if (opts.index <= 0) {
-                opts.index = 0;
+            if (conf.index <= 0) {
+                conf.index = 0;
 
-            } else if ( opts.index >= opts.totalItems ) {
-                opts.index = opts.totalItems;
+            } else if ( conf.index >= conf.totalItems ) {
+                conf.index = conf.totalItems;
 
             }
 
         }
 
-        // should really just use opts.index instead of returning this function
-        return opts.index;
+        // should really just use conf.index instead of returning this function
+        return conf.index;
     };
 
     // accepts event object of navigation/pagination item that inititated the event
@@ -217,11 +244,11 @@ sadui.carousel = function(conf){
         //         index = 0;
         //     }
 
-        //     selectedItem = $('.carousel-content-item', opts.$content).eq( index ).data('carouselItem');
+        //     selectedItem = $('.carousel-content-item', conf.$content).eq( index ).data('carouselItem');
         // }
 
         // Enable animation capability
-        opts.$content.addClass('is-animate');
+        conf.$content.addClass('is-animate');
 
         refresh_pagination();
 
@@ -234,17 +261,17 @@ sadui.carousel = function(conf){
         update_data();
 
         // Kill animation capability
-        opts.$content.off('transitionend').on('transitionend', function(){
-            opts.$content.removeClass('is-animate');
+        conf.$content.off('transitionend').on('transitionend', function(){
+            conf.$content.removeClass('is-animate');
 
-            if (opts.slide_end && typeof opts.slide_end === 'function') {
-                opts.slide_end();
+            if (conf.slide_end && typeof conf.slide_end === 'function') {
+                conf.slide_end();
             }
 
             // resume playback
-            if (opts.hasPlayback) {
-                opts.pause();
-                opts.play();
+            if (conf.hasPlayback) {
+                conf.pause();
+                conf.play();
             }
 
         });
@@ -252,30 +279,30 @@ sadui.carousel = function(conf){
     };
 
     var refresh_content = function(){
-        opts.$content.removeClass (function (index, cssclass) {
+        conf.$content.removeClass (function (index, cssclass) {
             return (cssclass.match (/\bis-selected-item\S+/g) || []).join(' ');
         });
-        opts.$content.addClass('is-selected-item-' + opts.index);
-        $('.carousel-content-item', opts.$content).removeClass('is-selected');
-        $('.carousel-content-item', opts.$content).eq( opts.index ).addClass('is-selected');
+        conf.$content.addClass('is-selected-item-' + conf.index);
+        $('.carousel-content-item', conf.$content).removeClass('is-selected');
+        $('.carousel-content-item', conf.$content).eq( conf.index ).addClass('is-selected');
     };
 
     var refresh_navigation = function(){
-        if (!opts.hasNavigation) return false;
+        if (!conf.hasNavigation) return false;
             
-        opts.$navigation.each(function(i,el){
+        conf.$navigation.each(function(i,el){
 
             if ($(this).hasClass('is-carousel-back')) {
 
-                $(this)[(opts.index <= 0) ? 'addClass':'removeClass']('is-disabled');
+                $(this)[(conf.index <= 0) ? 'addClass':'removeClass']('is-disabled');
 
             } else {
 
-                if (opts.visibleItems > 1) {
-                    $(this)[( opts.index + opts.visibleItems >= opts.totalItems ) ? 'addClass':'removeClass']('is-disabled');
+                if (conf.visibleItems > 1) {
+                    $(this)[( conf.index + conf.visibleItems >= conf.totalItems ) ? 'addClass':'removeClass']('is-disabled');
 
                 } else {                            
-                    $(this)[(opts.index >= opts.totalItems) ? 'addClass':'removeClass']('is-disabled');
+                    $(this)[(conf.index >= conf.totalItems) ? 'addClass':'removeClass']('is-disabled');
 
                 }
 
@@ -285,17 +312,17 @@ sadui.carousel = function(conf){
     };
 
     var refresh_pagination = function(){
-        if (!opts.hasPagination) return false;
+        if (!conf.hasPagination) return false;
 
-        $('.carousel-pagination-item', opts.$pagination).removeClass('is-selected');
-        $('.carousel-pagination-item', opts.$pagination).eq( opts.index ).addClass('is-selected');
+        $('.carousel-pagination-item', conf.$pagination).removeClass('is-selected');
+        $('.carousel-pagination-item', conf.$pagination).eq( conf.index ).addClass('is-selected');
     };
 
     var refresh_background = function(){
-        if (!opts.hasBackground) return false;
+        if (!conf.hasBackground) return false;
 
         $('.carousel-background-item', conf.$background).removeClass('is-selected');
-        $('.carousel-background-item.is-index-'+ opts.index, conf.$background).addClass('is-selected');
+        $('.carousel-background-item.is-index-'+ conf.index, conf.$background).addClass('is-selected');
 
         $('.carousel-background-item', conf.$background).one('transitionend', function(){
             setTimeout(function(){
@@ -304,33 +331,33 @@ sadui.carousel = function(conf){
         });
     };
 
-    opts.play = function(){
-        opts.playback_timer = setTimeout(function(){
+    conf.play = function(){
+        conf.playback_timer = setTimeout(function(){
             set_index('forward');
             jump_to_item();
         }, Globals.baseSpeed*5);
         return 'play';
     };
 
-    opts.pause = function(){
-        clearInterval(opts.playback_timer);
+    conf.pause = function(){
+        clearInterval(conf.playback_timer);
         return 'paused';
     };
 
-    opts.forward = function(){
+    conf.forward = function(){
         set_index('forward');
         jump_to_item();
         return 'forward';
     };
 
-    opts.back = function(){
+    conf.back = function(){
         set_index('back');
         jump_to_item();
         return 'back';
     };
 
     // expose jump_to_item
-    opts.jump_to_item = jump_to_item;
+    conf.jump_to_item = jump_to_item;
 
     // snaps the item to the right position 
     var snap_item = function(){
@@ -339,60 +366,53 @@ sadui.carousel = function(conf){
     };
 
     var update_data = function(){
-        opts.$container.data('carousel', opts);
+        conf.$container.data('carousel', conf);
     };
 
-    // Doesn't work very well
-    opts.resetCarousel = function(){
+    conf.resetCarousel = function(){
 
         jump_to_item(null);
 
-        $('.carousel-content-item', opts.$content).removeClass('is-selected')
+        $('.carousel-content-item', conf.$content).removeClass('is-selected')
 
-        opts.$content.removeClass('is-animate');
+        conf.$content.removeClass('is-animate');
 
-        opts.$content.removeClass (function (index, cssclass) {
+        conf.$content.removeClass (function (index, cssclass) {
             return (cssclass.match (/\bis-selected-item\S+/g) || []).join(' ');
         });
 
-        opts.$container.removeData('carousel');
+        conf.$container.removeData('carousel');
 
         init();
     };
 
     var init = function(){
 
-        opts.index = 0;
-        opts.totalItems = 0;
-        opts.totalScreens = 0;
-        
-        opts = $.extend(conf,opts);
+        conf.hasPagination  = (typeof conf.$pagination !== 'undefined' && conf.$pagination.length > 0) ? true:false;
+        conf.hasNavigation  = (typeof conf.$navigation !== 'undefined' && conf.$navigation.length > 1) ? true:false;
+        conf.hasBackground  = (typeof conf.$background !== 'undefined' && conf.$background.length > 0) ? true:false;
+        conf.hasPlayback    = (typeof conf.playback !== 'undefined' && conf.playback === true) ? true:false;
+        conf.hasCircular    = (typeof conf.circular !== 'undefined' && conf.circular === true) ? true:false;
+        conf.hasDrag        = (typeof conf.drag !== 'undefined' && conf.drag === true) ? true:false;
 
-        opts.hasPagination  = (typeof opts.$pagination !== 'undefined' && opts.$pagination.length > 0) ? true:false;
-        opts.hasNavigation  = (typeof opts.$navigation !== 'undefined' && opts.$navigation.length > 1) ? true:false;
-        opts.hasBackground  = (typeof opts.$background !== 'undefined' && opts.$background.length > 0) ? true:false;
-        opts.hasPlayback    = (typeof opts.playback !== 'undefined' && opts.playback === true) ? true:false;
-        opts.hasCircular    = (typeof opts.circular !== 'undefined' && opts.circular === true) ? true:false;
-        opts.hasDrag        = (typeof opts.drag !== 'undefined' && opts.drag === true) ? true:false;
-
-        if (typeof $('.carousel-content-item', opts.$content) !== 'undefined' && $('.carousel-content-item', opts.$content).length > 0) {
-            opts.totalItems = $('.carousel-content-item', opts.$content).length - 1;
+        if (typeof $('.carousel-content-item', conf.$content) !== 'undefined' && $('.carousel-content-item', conf.$content).length > 0) {
+            conf.totalItems = $('.carousel-content-item', conf.$content).length - 1;
         } else {
-            opts.totalItems = 0;
+            conf.totalItems = 0;
         }
 
-        if (opts.visibleItems > 1) {
-            opts.totalScreens = Math.ceil( (opts.totalItems / opts.visibleItems) );
+        if (conf.visibleItems > 1) {
+            conf.totalScreens = Math.ceil( (conf.totalItems / conf.visibleItems) );
         } else {
-            opts.totalScreens = opts.totalItems;
+            conf.totalScreens = conf.totalItems;
         }
 
         // tab index allows $container to achieve focus event
-        opts.$container.attr('tabIndex', '-1');
+        conf.$container.attr('tabIndex', '-1');
 
         // set up background
         // store original index because we'll be moving these elements around and they'll lose their index
-        if (opts.hasBackground) {
+        if (conf.hasBackground) {
             $('.carousel-background-item', conf.$background).each(function(i){
                 $(this).addClass('is-index-' + i);
             });
@@ -405,8 +425,10 @@ sadui.carousel = function(conf){
         update_data();
     };
 
-    init();
+    if (conf.autoinit) {
+        init();
+    }
 
-    return opts;
+    return conf;
 
 };

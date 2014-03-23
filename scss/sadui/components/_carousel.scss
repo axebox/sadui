@@ -3,101 +3,110 @@
 @import "../sadui";
 
 .carousel {
+    
+    // Reset
+    * {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
     @include user-select(none);
     overflow: visible;
 
     &, *:focus {
         outline-width: 0;
     }
+}
 
-    // this needs dimension
-    .carousel-content-wrapper {
-        // z-index: $zModule+11;
-        overflow: hidden;
-        position: relative;
+// this needs dimension
+.carousel-content-wrapper {
+    // z-index: $zModule+11;
+    overflow: hidden;
+    position: relative;
 
-        // fixes z-index bug in Chrome
-        -webkit-transform: translate3d(0px, 0px, 0px);
-    }
+    // fixes z-index bug in Chrome
+    -webkit-transform: translate3d(0px, 0px, 0px);
+}
 
-    .carousel-handle {
-        display: none;
-        // height: 100%;
-        // position: absolute;
-        // width: 100%;
-        // display: block;
-        // z-index: $zTemplateTop;
-    }
+.carousel-handle {
+    display: none;
+    // height: 100%;
+    // position: absolute;
+    // width: 100%;
+    // display: block;
+    // z-index: $zTemplateTop;
+}
 
-    .carousel-content {
-        // z-index: $zModule+10;
-        // min-height: 100px;
+.carousel-content {
+    // z-index: $zModule+10;
+    // min-height: 100px;
 
-        list-style: none;
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        white-space: nowrap;
+    list-style: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    white-space: nowrap;
 
-        &.is-animate {
-            @include transition-property(translate3d);
-            @include transition-duration($transitionDurationBase);
-            @include transition-timing-function(ease-in-out);            
-        }
-    }
-
-    .carousel-content-item {
-        @include inline-block;
-        vertical-align: top;
-        height: 100%;
-    }
-
-    %carousel-navigation-item {
-        position: absolute;
-        z-index: $zModule+8;
-        top: 0;
-
-        cursor: pointer;
-        height: 100%;
-        width: $carouselNavigationItemWidth;
-
-        &.is-disabled,
-        &[disabled] {
-            visibility: hidden;
-            cursor: default;
-        }
-        .label {
-            @include hide-text;
-            display: block;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            top: 50%;
-            position: absolute;
-        }
-    }
-    .carousel-navigation-item-back {
-        @extend %carousel-navigation-item;
-        left: 0;
-        .label {
-            // ui-sprite(carousel-arrow-back);
-        }
-    }
-    .carousel-navigation-item-forward {
-        @extend %carousel-navigation-item;
-        right: 0;
-        .label {
-            // ui-sprite(carousel-arrow-forward);
-        }
-    }
-
-    .carousel-pagination {
-        position: absolute;
+    &.is-animate {
+        @include transition-property(translate3d);
+        @include transition-duration($transitionDurationBase);
+        @include transition-timing-function(ease-in-out);            
     }
 }
 
+.carousel-content-item {
+    @include inline-block;
+    vertical-align: top;
+    height: 100%;
+}
+
+%carousel-navigation-item {
+    // position: absolute;
+    // z-index: $zModule+8;
+    // top: 0;
+
+    cursor: pointer;
+    // height: 100%;
+    width: $carouselNavigationItemWidth;
+    height: $carouselNavigationItemWidth;
+
+    &.is-disabled,
+    &[disabled] {
+        visibility: hidden;
+        cursor: default;
+    }
+    .label {
+        @include hide-text;
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 50%;
+        position: absolute;
+    }
+}
+.carousel-navigation-item-back {
+    @extend %carousel-navigation-item;
+    left: 0;
+    .label {
+        // ui-sprite(carousel-arrow-back);
+    }
+}
+.carousel-navigation-item-forward {
+    @extend %carousel-navigation-item;
+    right: 0;
+    .label {
+        // ui-sprite(carousel-arrow-forward);
+    }
+}
+
+.carousel-pagination {
+    position: absolute;
+}
 .carousel-background {
     z-index: $zModule;
     left: 0;

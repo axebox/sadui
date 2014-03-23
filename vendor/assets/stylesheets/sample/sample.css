@@ -160,28 +160,37 @@ button.button {
 /* Carousel */
 /* Default Colors */
 /* line 5, ../../../../scss/sadui/components/_carousel.scss */
-.carousel {
+.carousel, .carousel--example-base, .carousel--example-fluid {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
   overflow: visible;
 }
-/* line 9, ../../../../scss/sadui/components/_carousel.scss */
-.carousel, .carousel *:focus {
+/* line 8, ../../../../scss/sadui/components/_carousel.scss */
+.carousel *, .carousel--example-base *, .carousel--example-fluid * {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 18, ../../../../scss/sadui/components/_carousel.scss */
+.carousel, .carousel--example-base, .carousel--example-fluid, .carousel *:focus, .carousel--example-base *:focus, .carousel--example-fluid *:focus {
   outline-width: 0;
 }
-/* line 14, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .carousel-content-wrapper {
+
+/* line 24, ../../../../scss/sadui/components/_carousel.scss */
+.carousel-content-wrapper {
   overflow: hidden;
   position: relative;
   -webkit-transform: translate3d(0px, 0px, 0px);
 }
-/* line 23, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .carousel-handle {
+
+/* line 33, ../../../../scss/sadui/components/_carousel.scss */
+.carousel-handle {
   display: none;
 }
-/* line 32, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .carousel-content {
+
+/* line 42, ../../../../scss/sadui/components/_carousel.scss */
+.carousel-content {
   list-style: none;
   position: relative;
   top: 0;
@@ -190,8 +199,8 @@ button.button {
   height: auto;
   white-space: nowrap;
 }
-/* line 44, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .carousel-content.is-animate {
+/* line 54, ../../../../scss/sadui/components/_carousel.scss */
+.carousel-content.is-animate {
   -webkit-transition-property: translate3d;
   -moz-transition-property: translate3d;
   -o-transition-property: translate3d;
@@ -205,8 +214,9 @@ button.button {
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-/* line 51, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .carousel-content-item {
+
+/* line 61, ../../../../scss/sadui/components/_carousel.scss */
+.carousel-content-item {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -216,22 +226,20 @@ button.button {
   vertical-align: top;
   height: 100%;
 }
-/* line 57, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .carousel-navigation-item-back, .carousel .carousel-navigation-item-forward {
-  position: absolute;
-  z-index: 1108;
-  top: 0;
-  cursor: pointer;
-  height: 100%;
-  width: 20px;
-}
+
 /* line 67, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .is-disabled.carousel-navigation-item-back, .carousel .is-disabled.carousel-navigation-item-forward, .carousel [disabled].carousel-navigation-item-back, .carousel [disabled].carousel-navigation-item-forward {
+.carousel-navigation-item-back, .carousel-navigation-item-forward {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+/* line 78, ../../../../scss/sadui/components/_carousel.scss */
+.is-disabled.carousel-navigation-item-back, .is-disabled.carousel-navigation-item-forward, [disabled].carousel-navigation-item-back, [disabled].carousel-navigation-item-forward {
   visibility: hidden;
   cursor: default;
 }
-/* line 71, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .carousel-navigation-item-back .label, .carousel .carousel-navigation-item-forward .label {
+/* line 82, ../../../../scss/sadui/components/_carousel.scss */
+.carousel-navigation-item-back .label, .carousel-navigation-item-forward .label {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
@@ -242,27 +250,30 @@ button.button {
   top: 50%;
   position: absolute;
 }
-/* line 81, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .carousel-navigation-item-back {
+
+/* line 92, ../../../../scss/sadui/components/_carousel.scss */
+.carousel-navigation-item-back {
   left: 0;
 }
-/* line 88, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .carousel-navigation-item-forward {
+
+/* line 99, ../../../../scss/sadui/components/_carousel.scss */
+.carousel-navigation-item-forward {
   right: 0;
 }
-/* line 96, ../../../../scss/sadui/components/_carousel.scss */
-.carousel .carousel-pagination {
+
+/* line 107, ../../../../scss/sadui/components/_carousel.scss */
+.carousel-pagination {
   position: absolute;
 }
 
-/* line 101, ../../../../scss/sadui/components/_carousel.scss */
+/* line 110, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-background {
   z-index: 1100;
   left: 0;
   right: 0;
   height: 100%;
 }
-/* line 106, ../../../../scss/sadui/components/_carousel.scss */
+/* line 115, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-background .carousel-background-item {
   height: 100%;
   background-repeat: no-repeat;
@@ -270,7 +281,7 @@ button.button {
   background-size: cover;
 }
 
-/* line 114, ../../../../scss/sadui/components/_carousel.scss */
+/* line 123, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-pagination {
   z-index: 1120;
 }
@@ -318,7 +329,7 @@ button.button {
 /* Carousel */
 /* Default Colors */
 /* line 3, ../../../../scss/sadui/components/_modal.scss */
-.modal {
+.modal, .modal--sm {
   position: fixed;
   top: 0;
   left: 0;
@@ -329,15 +340,15 @@ button.button {
   background: white;
 }
 /* line 17, ../../../../scss/sadui/components/_modal.scss */
-.modal .modal-wrapper {
+.modal .modal-wrapper, .modal--sm .modal-wrapper {
   display: none;
 }
 /* line 21, ../../../../scss/sadui/components/_modal.scss */
-.modal.is-visible {
+.modal.is-visible, .is-visible.modal--sm {
   height: inherit;
 }
 /* line 24, ../../../../scss/sadui/components/_modal.scss */
-.modal.is-visible .modal-wrapper {
+.modal.is-visible .modal-wrapper, .is-visible.modal--sm .modal-wrapper {
   display: block;
 }
 
@@ -669,10 +680,9 @@ button.button {
   margin: 0;
 }
 
-/* Template */
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
-/* line 20, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+/* line 20, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
 article,
 aside,
 details,
@@ -688,7 +698,7 @@ summary {
   display: block;
 }
 
-/* line 32, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+/* line 32, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
 audio,
 canvas,
 progress,
@@ -697,78 +707,78 @@ video {
   vertical-align: baseline;
 }
 
-/* line 40, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+/* line 40, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/* line 48, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+/* line 48, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
 [hidden],
 template {
   display: none;
 }
 
 /*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
-/* line 11, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
+/* line 11, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-/* line 19, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
+/* line 19, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
 body {
   margin: 0;
 }
 
 /*! normalize.css v3.0.0 | Links | MIT License | git.io/normalize */
-/* line 9, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
+/* line 9, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
 a {
   background: transparent;
 }
 
-/* line 16, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
+/* line 16, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
 a:active,
 a:hover {
   outline: 0;
 }
 
 /*! normalize.css v3.0.0 | Typography | MIT License | git.io/normalize */
-/* line 9, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
+/* line 9, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 16, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
+/* line 16, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 22, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
+/* line 22, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
 dfn {
   font-style: italic;
 }
 
-/* line 29, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
+/* line 29, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* line 36, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
+/* line 36, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
 mark {
   background: #ff0;
   color: #000;
 }
 
-/* line 43, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
+/* line 43, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
 small {
   font-size: 80%;
 }
 
-/* line 50, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
+/* line 50, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -777,46 +787,46 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 57, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
+/* line 57, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 61, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
+/* line 61, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
 sub {
   bottom: -0.25em;
 }
 
 /*! normalize.css v3.0.0 | Embedded Content | MIT License | git.io/normalize */
-/* line 9, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_embeds.scss */
+/* line 9, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_embeds.scss */
 img {
   border: 0;
 }
 
-/* line 15, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_embeds.scss */
+/* line 15, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_embeds.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
 /*! normalize.css v3.0.0 | Figures | MIT License | git.io/normalize */
-/* line 9, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
+/* line 9, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
 figure {
   margin: 1em 40px;
 }
 
-/* line 15, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
+/* line 15, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
 
-/* line 23, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
+/* line 23, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
 pre {
   overflow: auto;
 }
 
-/* line 32, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
+/* line 32, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
 code,
 kbd,
 pre,
@@ -826,7 +836,7 @@ samp {
 }
 
 /*! normalize.css v3.0.0 | Forms | MIT License | git.io/normalize */
-/* line 19, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 19, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 button,
 input,
 optgroup,
@@ -837,18 +847,18 @@ textarea {
   margin: 0;
 }
 
-/* line 27, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 27, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 button {
   overflow: visible;
 }
 
-/* line 37, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 37, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 button,
 select {
   text-transform: none;
 }
 
-/* line 50, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 50, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -857,38 +867,38 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-/* line 58, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 58, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
 
-/* line 65, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 65, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 73, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 73, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 input {
   line-height: normal;
 }
 
-/* line 84, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 84, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-/* line 94, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 94, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/* line 102, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 102, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -896,109 +906,68 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-/* line 114, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 114, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 120, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 120, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
-/* line 129, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 129, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 legend {
   border: 0;
   padding: 0;
 }
 
-/* line 136, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 136, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 textarea {
   overflow: auto;
 }
 
-/* line 143, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
+/* line 143, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
 optgroup {
   font-weight: bold;
 }
 
 /*! normalize.css v3.0.0 | Tables | MIT License | git.io/normalize */
-/* line 9, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_tables.scss */
+/* line 9, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_tables.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 15, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_tables.scss */
+/* line 15, ../../../bundle/ruby/2.0.0/gems/compass-normalize-1.5/stylesheets/normalize/_tables.scss */
 td,
 th {
   padding: 0;
 }
 
-/* line 12, ../../../../scss/sample/sample.scss */
-html, html body, body {
-  background-color: tan;
-}
-
-/* line 16, ../../../../scss/sample/sample.scss */
-.wrapper {
-  width: 760px;
-  margin: auto;
-}
-
-/* line 21, ../../../../scss/sample/sample.scss */
-#header {
-  position: relative;
-}
-/* line 23, ../../../../scss/sample/sample.scss */
-#header h1 {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
-
-/* line 30, ../../../../scss/sample/sample.scss */
-.hero {
-  width: 100%;
-}
-/* line 32, ../../../../scss/sample/sample.scss */
-.hero img {
-  width: 100%;
-  height: auto;
-}
-
-/* line 39, ../../../../scss/sample/sample.scss */
-#main section {
-  margin-top: 20px;
-  border-top: 1px solid #b28446;
-}
-/* line 42, ../../../../scss/sample/sample.scss */
-#main section:first-child {
-  margin-top: 0;
-  border-top: 0 none;
-}
-/* line 47, ../../../../scss/sample/sample.scss */
-#main a {
-  color: blue;
-  text-decoration: none;
-}
-
-/* Views */
-/* line 56, ../../../../scss/sample/sample.scss */
-.pretty-dropdown-view .pretty-dropdown {
-  margin-left: 20px;
-}
-/* line 58, ../../../../scss/sample/sample.scss */
-.pretty-dropdown-view .pretty-dropdown:first-of-type {
-  margin-left: 0;
-}
-
-/* Components */
-/* These will eventually be themes */
-/* line 67, ../../../../scss/sample/sample.scss */
+/* Grid */
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* line 3, ../../../../scss/sadui/themes/_button.scss */
 .button-lg {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
@@ -1006,183 +975,100 @@ html, html body, body {
   padding-right: 1em;
   text-transform: uppercase;
 }
-/* line 80, ../../../../scss/sample/sample.scss */
+/* line 16, ../../../../scss/sadui/themes/_button.scss */
 .button-lg > * {
   margin-left: 0.25em;
 }
-/* line 82, ../../../../scss/sample/sample.scss */
+/* line 18, ../../../../scss/sadui/themes/_button.scss */
 .button-lg > *:first-child {
   margin-left: 0;
 }
 
-/* line 88, ../../../../scss/sample/sample.scss */
+/* line 24, ../../../../scss/sadui/themes/_button.scss */
 .button-md {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1.25em;
   padding-right: 1.25em;
 }
-/* line 98, ../../../../scss/sample/sample.scss */
+/* line 34, ../../../../scss/sadui/themes/_button.scss */
 .button-md > * {
   margin-left: 0.625em;
   padding-left: 0.625em;
   border-left: 1px solid white;
 }
-/* line 102, ../../../../scss/sample/sample.scss */
+/* line 38, ../../../../scss/sadui/themes/_button.scss */
 .button-md > *:first-child {
   margin-left: 0;
   padding-left: 0;
   border-left: 0 none;
 }
 
-/* line 110, ../../../../scss/sample/sample.scss */
+/* line 46, ../../../../scss/sadui/themes/_button.scss */
 .button-sm {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 120, ../../../../scss/sample/sample.scss */
+/* line 56, ../../../../scss/sadui/themes/_button.scss */
 .button-sm > * {
   margin-left: 0.5em;
 }
-/* line 122, ../../../../scss/sample/sample.scss */
+/* line 58, ../../../../scss/sadui/themes/_button.scss */
 .button-sm > *:first-child {
   margin-left: 0;
 }
 
-/* line 128, ../../../../scss/sample/sample.scss */
+/* line 64, ../../../../scss/sadui/themes/_button.scss */
 .button-default {
   background: #6e6e6e;
   -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
   -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
   box-shadow: rgba(255, 255, 255, 0.1) 0 2px 3px inset, rgba(255, 255, 255, 0.1) 1px 0 2px inset, rgba(255, 255, 255, 0.1) -1px 0 2px inset;
 }
-/* line 137, ../../../../scss/sample/sample.scss */
+/* line 73, ../../../../scss/sadui/themes/_button.scss */
 .button-default[type="submit"], .button-default.is-submit {
   background: #6e6e6e;
 }
 
-/* line 143, ../../../../scss/sample/sample.scss */
-.pretty-checkradio {
-  width: 20px;
-  height: 20px;
-  background: #6e6e6e;
-}
-/* line 150, ../../../../scss/sample/sample.scss */
-.pretty-checkradio.is-selected {
-  background: #3333cc;
-}
-/* line 154, ../../../../scss/sample/sample.scss */
-.pretty-checkradio.is-disabled {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5;
-}
-
-/* line 163, ../../../../scss/sample/sample.scss */
-.pretty-dropdown .pretty-dropdown-label {
-  color: white;
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* line 5, ../../../../scss/sadui/themes/_carousel.scss */
+.carousel .carousel-navigation-item-back, .carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back,
+.carousel .carousel-navigation-item-forward,
+.carousel--example-base .carousel-navigation-item-forward,
+.carousel--example-fluid .carousel-navigation-item-forward {
+  background-color: blue;
 }
 
-/* line 169, ../../../../scss/sample/sample.scss */
-.pretty-dropdown .pretty-dropdown-layer {
-  -webkit-border-radius: 0.1em;
-  -moz-border-radius: 0.1em;
-  -ms-border-radius: 0.1em;
-  -o-border-radius: 0.1em;
-  border-radius: 0.1em;
-  border: 1px solid #555555;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZlNmU2ZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzMzNjYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6e6e6e), color-stop(100%, #3333cc));
-  background-image: -webkit-linear-gradient(top, #6e6e6e, #3333cc);
-  background-image: -moz-linear-gradient(top, #6e6e6e, #3333cc);
-  background-image: -o-linear-gradient(top, #6e6e6e, #3333cc);
-  background-image: linear-gradient(top, #6e6e6e, #3333cc);
-}
-/* line 175, ../../../../scss/sample/sample.scss */
-.pretty-dropdown .pretty-dropdown-menu {
-  background-color: #6e6e6e;
-  -webkit-border-radius: 0.1em;
-  -moz-border-radius: 0.1em;
-  -ms-border-radius: 0.1em;
-  -o-border-radius: 0.1em;
-  border-radius: 0.1em;
-}
-/* line 180, ../../../../scss/sample/sample.scss */
-.pretty-dropdown .pretty-dropdown-menu > li.is-selected {
-  background-color: #3333cc;
-}
-/* line 186, ../../../../scss/sample/sample.scss */
-.pretty-dropdown .pretty-dropdown-icon-container {
-  border-left: 1px solid #3b3b3b;
-}
-/* line 190, ../../../../scss/sample/sample.scss */
-.is-disabled.pretty-dropdown {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-  opacity: 0.2;
-}
-
-/* line 199, ../../../../scss/sample/sample.scss */
-.pretty-dropdown .pretty-dropdown-layer {
-  margin-right: 1.25em;
-}
-/* line 201, ../../../../scss/sample/sample.scss */
-.pretty-dropdown .pretty-dropdown-layer > * {
-  line-height: 1.25em;
-  height: 1.25em;
-}
-/* line 206, ../../../../scss/sample/sample.scss */
-.pretty-dropdown .pretty-dropdown-label {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-}
-/* line 210, ../../../../scss/sample/sample.scss */
-.pretty-dropdown .pretty-dropdown-icon-container {
-  width: 1.25em;
-}
-/* line 213, ../../../../scss/sample/sample.scss */
-.pretty-dropdown .pretty-dropdown-menu > li {
-  padding-left: 0.5em;
-}
-
-/* line 242, ../../../../scss/sample/sample.scss */
-.overlay {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-/* line 248, ../../../../scss/sample/sample.scss */
-.overlay.is-visible {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-/* line 256, ../../../../scss/sample/sample.scss */
-.modal {
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* line 3, ../../../../scss/sadui/themes/_modal.scss */
+.modal, .modal--sm {
   margin-top: 20px;
   margin-bottom: 20px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -1200,8 +1086,8 @@ html, html body, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 266, ../../../../scss/sample/sample.scss */
-.modal.is-visible {
+/* line 13, ../../../../scss/sadui/themes/_modal.scss */
+.modal.is-visible, .is-visible.modal--sm {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   -webkit-transition-property: opacity;
@@ -1218,7 +1104,465 @@ html, html body, body {
   transition-timing-function: ease-out;
 }
 
-/* line 274, ../../../../scss/sample/sample.scss */
-.modal-sm {
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* line 3, ../../../../scss/sadui/themes/_overlay.scss */
+.overlay {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+/* line 9, ../../../../scss/sadui/themes/_overlay.scss */
+.overlay.is-visible {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* line 3, ../../../../scss/sadui/themes/_pretty_checkradio.scss */
+.pretty-checkradio {
+  width: 20px;
+  height: 20px;
+  background: #6e6e6e;
+}
+/* line 10, ../../../../scss/sadui/themes/_pretty_checkradio.scss */
+.pretty-checkradio.is-selected {
+  background: #3333cc;
+}
+/* line 14, ../../../../scss/sadui/themes/_pretty_checkradio.scss */
+.pretty-checkradio.is-disabled {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* line 6, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-label {
+  color: white;
+}
+
+/* line 12, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-layer {
+  -webkit-border-radius: 0.1em;
+  -moz-border-radius: 0.1em;
+  -ms-border-radius: 0.1em;
+  -o-border-radius: 0.1em;
+  border-radius: 0.1em;
+  border: 1px solid #555555;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZlNmU2ZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzMzNjYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6e6e6e), color-stop(100%, #3333cc));
+  background-image: -webkit-linear-gradient(top, #6e6e6e, #3333cc);
+  background-image: -moz-linear-gradient(top, #6e6e6e, #3333cc);
+  background-image: -o-linear-gradient(top, #6e6e6e, #3333cc);
+  background-image: linear-gradient(top, #6e6e6e, #3333cc);
+}
+/* line 18, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-menu {
+  background-color: #6e6e6e;
+  -webkit-border-radius: 0.1em;
+  -moz-border-radius: 0.1em;
+  -ms-border-radius: 0.1em;
+  -o-border-radius: 0.1em;
+  border-radius: 0.1em;
+}
+/* line 23, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-menu > li.is-selected {
+  background-color: #3333cc;
+}
+/* line 29, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-icon-container {
+  border-left: 1px solid #3b3b3b;
+}
+/* line 33, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.is-disabled.pretty-dropdown {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 42, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-layer {
+  margin-right: 1.25em;
+}
+/* line 44, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-layer > * {
+  line-height: 1.25em;
+  height: 1.25em;
+}
+/* line 49, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-label {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+/* line 53, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-icon-container {
+  width: 1.25em;
+}
+/* line 56, ../../../../scss/sadui/themes/_pretty_dropdown.scss */
+.pretty-dropdown .pretty-dropdown-menu > li {
+  padding-left: 0.5em;
+}
+
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* SADUI Component Bootstrap */
+/* Compass Globals */
+/* layers */
+/* Transition Speeds */
+/* Carousel */
+/* Bullet */
+/* Play Button */
+/* Carousel */
+/* Default Colors */
+/* line 34, ../../../../scss/sample/sample.scss */
+html, html body, body {
+  background-color: tan;
+}
+
+/* line 38, ../../../../scss/sample/sample.scss */
+.wrapper {
   width: 760px;
+  margin: 300px auto 20px;
+  padding: 20px;
+  z-index: 1000;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* line 47, ../../../../scss/sample/sample.scss */
+.hero {
+  width: 100%;
+  position: absolute;
+  z-index: 900;
+  top: 0;
+}
+/* line 52, ../../../../scss/sample/sample.scss */
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 58, ../../../../scss/sample/sample.scss */
+#header {
+  color: white;
+}
+
+/* line 63, ../../../../scss/sample/sample.scss */
+#main {
+  color: white;
+}
+/* line 66, ../../../../scss/sample/sample.scss */
+#main section {
+  margin-top: 20px;
+  border-top: 1px solid #b28446;
+}
+/* line 69, ../../../../scss/sample/sample.scss */
+#main section:first-child {
+  margin-top: 0;
+  border-top: 0 none;
+}
+/* line 74, ../../../../scss/sample/sample.scss */
+#main a {
+  color: blue;
+  text-decoration: none;
+}
+
+/* Views */
+/* line 83, ../../../../scss/sample/sample.scss */
+.pretty-dropdown-view .pretty-dropdown {
+  margin-left: 20px;
+}
+/* line 85, ../../../../scss/sample/sample.scss */
+.pretty-dropdown-view .pretty-dropdown:first-of-type {
+  margin-left: 0;
+}
+
+/* line 100, ../../../../scss/sample/sample.scss */
+.carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back {
+  float: left;
+}
+/* line 104, ../../../../scss/sample/sample.scss */
+.carousel--example-base .carousel-navigation-item-forward, .carousel--example-fluid .carousel-navigation-item-forward {
+  float: right;
+}
+
+/* line 115, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid {
+  *zoom: 1;
+  max-width: 59em;
+  _width: 59em;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 38, ../../../bundle/ruby/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.carousel--example-fluid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 128, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content-item {
+  width: 23.72881%;
+  margin-right: 1.69492%;
+}
+/* line 132, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content-item img {
+  width: 100%;
+  height: auto;
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-1 {
+  -webkit-transform: translate3d(-25.42373%, 0, 1em);
+  -moz-transform: translate3d(-25.42373%, 0, 1em);
+  -ms-transform: translate3d(-25.42373%, 0, 1em);
+  -o-transform: translate3d(-25.42373%, 0, 1em);
+  transform: translate3d(-25.42373%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-2 {
+  -webkit-transform: translate3d(-50.84746%, 0, 1em);
+  -moz-transform: translate3d(-50.84746%, 0, 1em);
+  -ms-transform: translate3d(-50.84746%, 0, 1em);
+  -o-transform: translate3d(-50.84746%, 0, 1em);
+  transform: translate3d(-50.84746%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-3 {
+  -webkit-transform: translate3d(-76.27119%, 0, 1em);
+  -moz-transform: translate3d(-76.27119%, 0, 1em);
+  -ms-transform: translate3d(-76.27119%, 0, 1em);
+  -o-transform: translate3d(-76.27119%, 0, 1em);
+  transform: translate3d(-76.27119%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-4 {
+  -webkit-transform: translate3d(-101.69492%, 0, 1em);
+  -moz-transform: translate3d(-101.69492%, 0, 1em);
+  -ms-transform: translate3d(-101.69492%, 0, 1em);
+  -o-transform: translate3d(-101.69492%, 0, 1em);
+  transform: translate3d(-101.69492%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-5 {
+  -webkit-transform: translate3d(-127.11864%, 0, 1em);
+  -moz-transform: translate3d(-127.11864%, 0, 1em);
+  -ms-transform: translate3d(-127.11864%, 0, 1em);
+  -o-transform: translate3d(-127.11864%, 0, 1em);
+  transform: translate3d(-127.11864%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-6 {
+  -webkit-transform: translate3d(-152.54237%, 0, 1em);
+  -moz-transform: translate3d(-152.54237%, 0, 1em);
+  -ms-transform: translate3d(-152.54237%, 0, 1em);
+  -o-transform: translate3d(-152.54237%, 0, 1em);
+  transform: translate3d(-152.54237%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-7 {
+  -webkit-transform: translate3d(-177.9661%, 0, 1em);
+  -moz-transform: translate3d(-177.9661%, 0, 1em);
+  -ms-transform: translate3d(-177.9661%, 0, 1em);
+  -o-transform: translate3d(-177.9661%, 0, 1em);
+  transform: translate3d(-177.9661%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-8 {
+  -webkit-transform: translate3d(-203.38983%, 0, 1em);
+  -moz-transform: translate3d(-203.38983%, 0, 1em);
+  -ms-transform: translate3d(-203.38983%, 0, 1em);
+  -o-transform: translate3d(-203.38983%, 0, 1em);
+  transform: translate3d(-203.38983%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-9 {
+  -webkit-transform: translate3d(-228.81356%, 0, 1em);
+  -moz-transform: translate3d(-228.81356%, 0, 1em);
+  -ms-transform: translate3d(-228.81356%, 0, 1em);
+  -o-transform: translate3d(-228.81356%, 0, 1em);
+  transform: translate3d(-228.81356%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-10 {
+  -webkit-transform: translate3d(-254.23729%, 0, 1em);
+  -moz-transform: translate3d(-254.23729%, 0, 1em);
+  -ms-transform: translate3d(-254.23729%, 0, 1em);
+  -o-transform: translate3d(-254.23729%, 0, 1em);
+  transform: translate3d(-254.23729%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-11 {
+  -webkit-transform: translate3d(-279.66102%, 0, 1em);
+  -moz-transform: translate3d(-279.66102%, 0, 1em);
+  -ms-transform: translate3d(-279.66102%, 0, 1em);
+  -o-transform: translate3d(-279.66102%, 0, 1em);
+  transform: translate3d(-279.66102%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-12 {
+  -webkit-transform: translate3d(-305.08475%, 0, 1em);
+  -moz-transform: translate3d(-305.08475%, 0, 1em);
+  -ms-transform: translate3d(-305.08475%, 0, 1em);
+  -o-transform: translate3d(-305.08475%, 0, 1em);
+  transform: translate3d(-305.08475%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-13 {
+  -webkit-transform: translate3d(-330.50847%, 0, 1em);
+  -moz-transform: translate3d(-330.50847%, 0, 1em);
+  -ms-transform: translate3d(-330.50847%, 0, 1em);
+  -o-transform: translate3d(-330.50847%, 0, 1em);
+  transform: translate3d(-330.50847%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-14 {
+  -webkit-transform: translate3d(-355.9322%, 0, 1em);
+  -moz-transform: translate3d(-355.9322%, 0, 1em);
+  -ms-transform: translate3d(-355.9322%, 0, 1em);
+  -o-transform: translate3d(-355.9322%, 0, 1em);
+  transform: translate3d(-355.9322%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-15 {
+  -webkit-transform: translate3d(-381.35593%, 0, 1em);
+  -moz-transform: translate3d(-381.35593%, 0, 1em);
+  -ms-transform: translate3d(-381.35593%, 0, 1em);
+  -o-transform: translate3d(-381.35593%, 0, 1em);
+  transform: translate3d(-381.35593%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-16 {
+  -webkit-transform: translate3d(-406.77966%, 0, 1em);
+  -moz-transform: translate3d(-406.77966%, 0, 1em);
+  -ms-transform: translate3d(-406.77966%, 0, 1em);
+  -o-transform: translate3d(-406.77966%, 0, 1em);
+  transform: translate3d(-406.77966%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-17 {
+  -webkit-transform: translate3d(-432.20339%, 0, 1em);
+  -moz-transform: translate3d(-432.20339%, 0, 1em);
+  -ms-transform: translate3d(-432.20339%, 0, 1em);
+  -o-transform: translate3d(-432.20339%, 0, 1em);
+  transform: translate3d(-432.20339%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-18 {
+  -webkit-transform: translate3d(-457.62712%, 0, 1em);
+  -moz-transform: translate3d(-457.62712%, 0, 1em);
+  -ms-transform: translate3d(-457.62712%, 0, 1em);
+  -o-transform: translate3d(-457.62712%, 0, 1em);
+  transform: translate3d(-457.62712%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-19 {
+  -webkit-transform: translate3d(-483.05085%, 0, 1em);
+  -moz-transform: translate3d(-483.05085%, 0, 1em);
+  -ms-transform: translate3d(-483.05085%, 0, 1em);
+  -o-transform: translate3d(-483.05085%, 0, 1em);
+  transform: translate3d(-483.05085%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-20 {
+  -webkit-transform: translate3d(-508.47458%, 0, 1em);
+  -moz-transform: translate3d(-508.47458%, 0, 1em);
+  -ms-transform: translate3d(-508.47458%, 0, 1em);
+  -o-transform: translate3d(-508.47458%, 0, 1em);
+  transform: translate3d(-508.47458%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-21 {
+  -webkit-transform: translate3d(-533.89831%, 0, 1em);
+  -moz-transform: translate3d(-533.89831%, 0, 1em);
+  -ms-transform: translate3d(-533.89831%, 0, 1em);
+  -o-transform: translate3d(-533.89831%, 0, 1em);
+  transform: translate3d(-533.89831%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-22 {
+  -webkit-transform: translate3d(-559.32203%, 0, 1em);
+  -moz-transform: translate3d(-559.32203%, 0, 1em);
+  -ms-transform: translate3d(-559.32203%, 0, 1em);
+  -o-transform: translate3d(-559.32203%, 0, 1em);
+  transform: translate3d(-559.32203%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-23 {
+  -webkit-transform: translate3d(-584.74576%, 0, 1em);
+  -moz-transform: translate3d(-584.74576%, 0, 1em);
+  -ms-transform: translate3d(-584.74576%, 0, 1em);
+  -o-transform: translate3d(-584.74576%, 0, 1em);
+  transform: translate3d(-584.74576%, 0, 1em);
+}
+/* line 141, ../../../../scss/sample/sample.scss */
+.carousel--example-fluid .carousel-content.is-selected-item-24 {
+  -webkit-transform: translate3d(-610.16949%, 0, 1em);
+  -moz-transform: translate3d(-610.16949%, 0, 1em);
+  -ms-transform: translate3d(-610.16949%, 0, 1em);
+  -o-transform: translate3d(-610.16949%, 0, 1em);
+  transform: translate3d(-610.16949%, 0, 1em);
 }

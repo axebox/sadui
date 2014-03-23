@@ -1,0 +1,19 @@
+@import "../sadui";
+
+.carousel {
+    .carousel-navigation-item-back,
+    .carousel-navigation-item-forward {
+        background-color: blue;
+    }
+}
+
+// Fluid Example
+// .carousel-content {
+//     @for $i from 0 through $carouselMaxItems {
+//         @if $i != 0 {
+//             &.is-selected-item-#{$i} {
+//                 @include translate3d(-(space(3,12)*$i), 0);
+//             }
+//         }
+//     }
+// }

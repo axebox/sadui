@@ -42,211 +42,377 @@
   </head>
 </html>
 <body>
-  <div class="wrapper">
-    <div id="header">
-      <h1>SADUI Samples</h1>
-      
-      <div class="hero">
-        <img src="images/sadie.jpg">
-      </div>
+    <div class="hero">
+      <img src="images/sadie.jpg">
     </div>
-    <div id="main">
-      <h2>Components</h2>
 
-      <p>All components have the most basic CSS to render the component functionality. They come un<em>styled</em>.</p>
+    <div class="wrapper">
 
-      <section class="button-view" id="button_view">
+      <div id="header">
+          <h1>SADUI Samples</h1>
+      </div>
+      <div id="main">
 
-        <h3>Button</h3>
+        <h2>Components</h2>
 
-        <p>Buttons render inline-block by default.</p>
+        <p>All components have the most basic CSS to render the component functionality. They come un<em>styled</em>.</p>
 
-        <h4>Requires</h4>
-        <ul>
-          <li>components/_button.scss</li>
-        </ul>
+        <section class="button-view" id="button_view">
 
-        <p>
-        <a href="#" class="button">
-          <span class="button-label">Anchor Button</span>
-        </a>
-        <a href="#" class="button button-default button-md">
-          <span class="button-label">Anchor Button (sample style)</span>
-        </a>
+          <h3>Button</h3>
 
-        <p>
-        <button class="button">
-          <span class="button-label">Button Button</span>
-        </button>
-        <button class="button button-default button-md">
-          <span class="button-label">Button Button (sample style)</span>
-        </button>
+          <p>Buttons render inline-block by default.</p>
+
+          <h4>Requires</h4>
+          <ul>
+            <li>components/_button.scss</li>
+          </ul>
+
+          <p>
+          <a href="#" class="button">
+            <span class="button-label">Anchor Button</span>
+          </a>
+          <a href="#" class="button button-default button-md">
+            <span class="button-label">Anchor Button (sample style)</span>
+          </a>
+
+          <p>
+          <button class="button">
+            <span class="button-label">Button Button</span>
+          </button>
+          <button class="button button-default button-md">
+            <span class="button-label">Button Button (sample style)</span>
+          </button>
+          
+          <p>
+          <div class="button">
+            <input type="button">
+            <span class="button-label">Input Mask Button</span>
+          </div>
+
+          <div class="button button-default button-md">
+            <input type="button">
+            <span class="button-label">Input Mask Button (sample style)</span>
+          </div>
+
+        </section>
         
-        <p>
-        <div class="button">
-          <input type="button">
-          <span class="button-label">Input Mask Button</span>
-        </div>
+        <section class="carousel-view" id="carousel_view">
+          <h3>Carousel</h3>
 
-        <div class="button button-default button-md">
-          <input type="button">
-          <span class="button-label">Input Mask Button (sample style)</span>
-        </div>
+          <h4>Requires</h4>
+          <ul>
+            <li>components/_carousel.scss</li>
+            <li>components/carousel.js</li>
+          </ul>
 
-      </section>
-      
-      <section class="carousel-view" id="carousel_view">
-        <h3>Carousel</h3>
-      </section>
+          <h4>Base</h4>
+          <div id="carousel_example_base" class="carousel--example-base">
+            <div class="carousel-navigation-item-back is-carousel-back">
+              <span class="label" title="Back">&lt;</span>
+            </div>
+            <div class="carousel-navigation-item-forward is-carousel-forward">
+              <span class="label" title="Forward">&gt;</span>
+            </div>
+            <ul class="carousel-pagination">
+              <li class="carousel-pagination-item" data-carousel-item="1"></li>
+              <li class="carousel-pagination-item" data-carousel-item="2"></li>
+              <li class="carousel-pagination-item" data-carousel-item="3"></li>
+              <li class="carousel-pagination-item" data-carousel-item="4"></li>
+              <li class="carousel-pagination-item" data-carousel-item="5"></li>
+              <li class="carousel-pagination-item" data-carousel-item="6"></li>
+            </ul>
+            <div class="carousel-content-wrapper">
+              <ul class="carousel-content">
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-3-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-4-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-3-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-4-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+              </ul>
+            </div>
+          </div>
 
-      <section class="expand-text-view" id="expand_text_view">
-        <h3>Expand Text</h3>
-      </section>
+          <h4>Fluid</h4>
+          <p>A carousel with fluid items that conform to grid.</p>
+          <h5>Requires Additional:</h5>
+          <ul>
+            <li>susy-compass gem</li>
+          </ul>
 
-      <section class="loader-view" id="loader_view">
-        <h3>Loader</h3>
-      </section>
+          <div id="carousel_example_fluid" class="carousel--example-fluid">
+            <div class="carousel-navigation-item-back is-carousel-back">
+              <span class="label" title="Back">&lt;</span>
+            </div>
+            <div class="carousel-navigation-item-forward is-carousel-forward">
+              <span class="label" title="Forward">&gt;</span>
+            </div>
+            <ul class="carousel-pagination">
+              <li class="carousel-pagination-item" data-carousel-item="1"></li>
+              <li class="carousel-pagination-item" data-carousel-item="2"></li>
+              <li class="carousel-pagination-item" data-carousel-item="3"></li>
+              <li class="carousel-pagination-item" data-carousel-item="4"></li>
+              <li class="carousel-pagination-item" data-carousel-item="5"></li>
+              <li class="carousel-pagination-item" data-carousel-item="6"></li>
+            </ul>
+            <div class="carousel-content-wrapper">
+              <ul class="carousel-content">
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-3-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-4-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-3-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-4-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+              </ul>
+            </div>
+          </div>
+          
+          <h4>With separate background element</h4>
+          <div id="carousel_example_background" class="carousel">
+            <div class="carousel-navigation-item-back is-carousel-back">
+              <span class="label" title="Back">&lt;</span>
+            </div>
+            <div class="carousel-navigation-item-forward is-carousel-forward">
+              <span class="label" title="Forward">&gt;</span>
+            </div>
+            <ul class="carousel-pagination">
+              <li class="carousel-pagination-item" data-carousel-item="1"></li>
+              <li class="carousel-pagination-item" data-carousel-item="2"></li>
+              <li class="carousel-pagination-item" data-carousel-item="3"></li>
+              <li class="carousel-pagination-item" data-carousel-item="4"></li>
+              <li class="carousel-pagination-item" data-carousel-item="5"></li>
+              <li class="carousel-pagination-item" data-carousel-item="6"></li>
+            </ul>
+            <div class="carousel-content-wrapper">
+              <ul class="carousel-content">
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-3-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-4-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+              </ul>
+            </div>
+            <ul class="carousel-background">
+              <li class="carousel-background-item"></li>
+            </ul>
+          </div>
+          
+          <h4>Vertical Orientation</h4>
+          <div id="carousel_example_vertical" class="carousel">
+            <div class="carousel-navigation-item-back is-carousel-back">
+              <span class="label" title="Back">&lt;</span>
+            </div>
+            <div class="carousel-navigation-item-forward is-carousel-forward">
+              <span class="label" title="Forward">&gt;</span>
+            </div>
+            <ul class="carousel-pagination">
+              <li class="carousel-pagination-item" data-carousel-item="1"></li>
+              <li class="carousel-pagination-item" data-carousel-item="2"></li>
+              <li class="carousel-pagination-item" data-carousel-item="3"></li>
+              <li class="carousel-pagination-item" data-carousel-item="4"></li>
+              <li class="carousel-pagination-item" data-carousel-item="5"></li>
+              <li class="carousel-pagination-item" data-carousel-item="6"></li>
+            </ul>
+            <div class="carousel-content-wrapper">
+              <ul class="carousel-content">
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-3-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-4-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+              </ul>
+            </div>
+            <ul class="carousel-background">
+              <li class="carousel-background-item"></li>
+            </ul>
+          </div>
 
-      <section class="modal-view" id="modal_view">
+        </section>
+
+  <!--       <section class="expand-text-view" id="expand_text_view">
+          <h3>Expand Text</h3>
+        </section>
+   -->
+        <section class="loader-view" id="loader_view">
+          <h3>Loader</h3>
+        </section>
+
+        <section class="modal-view" id="modal_view">
+          
+          <h3>Modal</h3>
+
+          <h4>Requires</h4>
+          <ul>
+            <li>components/_modal.scss</li>
+            <li>components/_overlay.scss</li>
+            <li>components/modal.js</li>
+          </ul>
+
+          <p><a href="#" class="is-modal-trigger" rel="#modal_example_1">Trigger Base Example Modal</a></p>
+          <p><a href="#" class="is-modal-trigger" rel="#modal_example_2">Trigger Center Positioned Example Modal</a></p>
+          
+          <div id="modal_example_1" class="modal">
+            <div class="button is-modal-close-trigger">
+              <span class="button-label">Close</span>
+            </div>
+            <h4>Modal Example 1</h4>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </div>
+
+          <div id="modal_example_2" class="modal--sm">
+            <div class="button is-modal-close-trigger">
+              <span class="button-label">Close</span>
+            </div>
+            <h4>Modal Example 2</h4>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </div>
+
+        </section>
+
         
-        <h3>Modal</h3>
+        <section class="pretty-checkradio-view" id="pretty_checkradio_view">
 
-        <h4>Requires</h4>
-        <ul>
-          <li>components/_modal.scss</li>
-          <li>components/_overlay.scss</li>
-          <li>components/modal.js</li>
-        </ul>
+          <h3>Pretty Check-Radio</h3>
 
-        <p><a href="#" class="is-modal-trigger" rel="#modal_example_1">Trigger Base Example Modal</a></p>
-        <p><a href="#" class="is-modal-trigger" rel="#modal_example_2">Trigger Center Positioned Example Modal</a></p>
+          <h4>Requires</h4>
+          <ul>
+            <li>components/_pretty_checkradio.scss</li>
+            <li>components/pretty_checkradio.js</li>
+          </ul>
+
+          <h4>Checkboxes</h4>
+
+          <div class="pretty-checkradio">
+            <input type="checkbox" class="is-input">
+            <span class="pretty-checkradio-layer"></span>
+          </div>
+
+          <div class="pretty-checkradio">
+            <input type="checkbox" class="is-input">
+            <span class="pretty-checkradio-layer"></span>
+          </div>
+
+          <div class="pretty-checkradio">
+            <input type="checkbox" class="is-input">
+            <span class="pretty-checkradio-layer"></span>
+          </div>
+
+          <div class="pretty-checkradio">
+            <input type="checkbox" class="is-input">
+            <span class="pretty-checkradio-layer"></span>
+          </div>
+
+          <div class="pretty-checkradio">
+            <input type="checkbox" class="is-input">
+            <span class="pretty-checkradio-layer"></span>
+          </div>
+
+          <h4>Radio Groups</h4>
+
+          <div class="pretty-checkradio">
+            <input type="radio" name="pretty_check_radio" class="is-input">
+            <span class="pretty-checkradio-layer"></span>
+          </div>
+
+          <div class="pretty-checkradio">
+            <input type="radio" name="pretty_check_radio" class="is-input">
+            <span class="pretty-checkradio-layer"></span>
+          </div>
+
+          <div class="pretty-checkradio">
+            <input type="radio" name="pretty_check_radio" class="is-input">
+            <span class="pretty-checkradio-layer"></span>
+          </div>
+
+          <div class="pretty-checkradio">
+            <input type="radio" name="pretty_check_radio" class="is-input" disabled="disabled">
+            <span class="pretty-checkradio-layer"></span>
+          </div>
+
+          <div class="pretty-checkradio">
+            <input type="radio" name="pretty_check_radio" class="is-input">
+            <span class="pretty-checkradio-layer"></span>
+          </div>
+
+        </section>
+
+        <section class="pretty-dropdown-view" id="pretty_dropdown_view">
+          <h3>Pretty Dropdown</h3>
+
+          <div class="pretty-dropdown pretty-dropdown-example-1">
+            <select class="is-dropdown">
+              <option selected value="item_1">Default</option>
+              <option value="item_2">Item 2</option>
+              <option value="item_3">Item 3</option>
+            </select>
+            <div class="pretty-dropdown-layer">
+              <div class="pretty-dropdown-label is-label">All</div>
+              <span class="pretty-dropdown-icon-container">
+                <span class="pretty-dropdown-icon">&gt;</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="pretty-dropdown pretty-dropdown-example-2">
+            <select class="is-dropdown" id="test_trigger">
+              <option value="item_1">Item 1</option>
+              <option selected value="item_2">With styled menu</option>
+              <option value="item_3">Item 3</option>
+            </select>
+            <div class="pretty-dropdown-layer">
+              <div class="pretty-dropdown-label is-label is-menu-trigger">All</div>
+              <span class="pretty-dropdown-icon-container is-menu-trigger">
+                <span class="pretty-dropdown-icon">&gt;</span>
+              </span>
+            </div>
+            <ul class="pretty-dropdown-menu is-menu"></ul>
+          </div>
+
+        </section>
+  <!-- 
+        <section class="responsive-radio-select-view" id="responsive_radio_select_view">
+          <h3>Responsive Radio Select</h3>
+        </section>
+
+        <section class="short-text-view" id="short_text_view">
+          <h3>Short Text</h3>
+        </section>
+
+        <section class="tab-view" id="tab_view">
+          <h3>Tab</h3>
+        </section>
+
+        <section class="tooltip-view" id="tooltip_view">
+          <h3>Tooltip</h3>
+        </section>
+   -->
         
-        <div id="modal_example_1" class="modal">
-          <div class="button is-modal-close-trigger">
-            <span class="button-label">Close</span>
-          </div>
-          <h4>Modal Example 1</h4>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-        </div>
+  <!--       <h2>Helpers</h2>
 
-        <div id="modal_example_2" class="modal modal-sm">
-          <div class="button is-modal-close-trigger">
-            <span class="button-label">Close</span>
-          </div>
-          <h4>Modal Example 2</h4>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-        </div>
+        <section class="breakpoints-view" id="breakpoints_view">
+          <h3>Breakpoints</h3>
+        </section>
+   -->
+        <!-- <section class="single-scroll-view" id="single_scroll_view">
+          <h3>Single Scroll</h3>
+        </section> -->
 
-      </section>
-
-      
-      <section class="pretty-checkradio-view" id="pretty_checkradio_view">
-
-        <h3>Pretty Check-Radio</h3>
-
-        <h4>Requires</h4>
-        <ul>
-          <li>components/_pretty_checkradio.scss</li>
-          <li>components/pretty_checkradio.js</li>
-        </ul>
-
-        <h4>Checkboxes</h4>
-
-        <div class="pretty-checkradio">
-          <input type="checkbox" class="is-input">
-          <span class="pretty-checkradio-layer"></span>
-        </div>
-
-        <div class="pretty-checkradio">
-          <input type="checkbox" class="is-input">
-          <span class="pretty-checkradio-layer"></span>
-        </div>
-
-        <div class="pretty-checkradio">
-          <input type="checkbox" class="is-input">
-          <span class="pretty-checkradio-layer"></span>
-        </div>
-
-        <h4>Radio Groups</h4>
-
-        <div class="pretty-checkradio">
-          <input type="radio" name="pretty_check_radio" class="is-input">
-          <span class="pretty-checkradio-layer"></span>
-        </div>
-
-        <div class="pretty-checkradio">
-          <input type="radio" name="pretty_check_radio" class="is-input" disabled="disabled">
-          <span class="pretty-checkradio-layer"></span>
-        </div>
-
-        <div class="pretty-checkradio">
-          <input type="radio" name="pretty_check_radio" class="is-input">
-          <span class="pretty-checkradio-layer"></span>
-        </div>
-
-      </section>
-
-      <section class="pretty-dropdown-view" id="pretty_dropdown_view">
-        <h3>Pretty Dropdown</h3>
-
-        <div class="pretty-dropdown pretty-dropdown-example-1">
-          <select class="is-dropdown">
-            <option selected value="item_1">Default</option>
-            <option value="item_2">Item 2</option>
-            <option value="item_3">Item 3</option>
-          </select>
-          <div class="pretty-dropdown-layer">
-            <div class="pretty-dropdown-label is-label">All</div>
-            <span class="pretty-dropdown-icon-container">
-              <span class="pretty-dropdown-icon">&gt;</span>
-            </span>
-          </div>
-        </div>
-
-        <div class="pretty-dropdown pretty-dropdown-example-2">
-          <select class="is-dropdown" id="test_trigger">
-            <option value="item_1">Item 1</option>
-            <option selected value="item_2">With styled menu</option>
-            <option value="item_3">Item 3</option>
-          </select>
-          <div class="pretty-dropdown-layer">
-            <div class="pretty-dropdown-label is-label is-menu-trigger">All</div>
-            <span class="pretty-dropdown-icon-container is-menu-trigger">
-              <span class="pretty-dropdown-icon">&gt;</span>
-            </span>
-          </div>
-          <ul class="pretty-dropdown-menu is-menu"></ul>
-        </div>
-
-      </section>
-
-      <section class="responsive-radio-select-view" id="responsive_radio_select_view">
-        <h3>Responsive Radio Select</h3>
-      </section>
-
-      <section class="short-text-view" id="short_text_view">
-        <h3>Short Text</h3>
-      </section>
-
-      <section class="tab-view" id="tab_view">
-        <h3>Tab</h3>
-      </section>
-
-      <section class="tooltip-view" id="tooltip_view">
-        <h3>Tooltip</h3>
-      </section>
-
-      
-      <h2>Helpers</h2>
-
-      <section class="breakpoints-view" id="breakpoints_view">
-        <h3>Breakpoints</h3>
-      </section>
-
-      <section class="single-scroll-view" id="single_scroll_view">
-        <h3>Single Scroll</h3>
-      </section>
-
+      </div>
     </div>
   </div>
 

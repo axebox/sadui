@@ -1,0 +1,15 @@
+@import "../sadui";
+
+.overlay {
+    @include opacity(0);
+    @include transition-property(opacity);
+    @include transition-duration($transitionDurationBase / 2);
+    @include transition-timing-function(ease-out);
+
+    &.is-visible {
+        @include opacity(1);
+        @include transition-property(opacity);
+        @include transition-duration($transitionDurationBase / 2);
+        @include transition-timing-function(ease-out);
+    }
+}

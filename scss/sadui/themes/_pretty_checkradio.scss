@@ -1,0 +1,18 @@
+@import "../sadui";
+
+.pretty-checkradio {
+
+    width: $margin;
+    height: $margin;
+
+    background: $colorInactive;
+
+    &.is-selected {
+        background: $colorActive;
+    }
+
+    &.is-disabled {
+        @include opacity(0.5);
+    }
+
+}
