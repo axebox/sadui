@@ -160,20 +160,20 @@ button.button {
 /* Carousel */
 /* Default Colors */
 /* line 5, ../../../../scss/sadui/components/_carousel.scss */
-.carousel, .carousel--example-base, .carousel--example-fluid {
+.carousel, .carousel--example-base, .carousel--example-fluid, .carousel--example-background, .carousel--example-vertical {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
   overflow: visible;
 }
 /* line 8, ../../../../scss/sadui/components/_carousel.scss */
-.carousel *, .carousel--example-base *, .carousel--example-fluid * {
+.carousel *, .carousel--example-base *, .carousel--example-fluid *, .carousel--example-background *, .carousel--example-vertical * {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 /* line 18, ../../../../scss/sadui/components/_carousel.scss */
-.carousel, .carousel--example-base, .carousel--example-fluid, .carousel *:focus, .carousel--example-base *:focus, .carousel--example-fluid *:focus {
+.carousel, .carousel--example-base, .carousel--example-fluid, .carousel--example-background, .carousel--example-vertical, .carousel *:focus, .carousel--example-base *:focus, .carousel--example-fluid *:focus, .carousel--example-background *:focus, .carousel--example-vertical *:focus {
   outline-width: 0;
 }
 
@@ -181,15 +181,16 @@ button.button {
 .carousel-content-wrapper {
   overflow: hidden;
   position: relative;
+  width: 100%;
   -webkit-transform: translate3d(0px, 0px, 0px);
 }
 
-/* line 33, ../../../../scss/sadui/components/_carousel.scss */
+/* line 34, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-handle {
   display: none;
 }
 
-/* line 42, ../../../../scss/sadui/components/_carousel.scss */
+/* line 43, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-content {
   list-style: none;
   position: relative;
@@ -199,7 +200,7 @@ button.button {
   height: auto;
   white-space: nowrap;
 }
-/* line 54, ../../../../scss/sadui/components/_carousel.scss */
+/* line 55, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-content.is-animate {
   -webkit-transition-property: translate3d;
   -moz-transition-property: translate3d;
@@ -215,7 +216,7 @@ button.button {
   transition-timing-function: ease-in-out;
 }
 
-/* line 61, ../../../../scss/sadui/components/_carousel.scss */
+/* line 62, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-content-item {
   display: -moz-inline-stack;
   display: inline-block;
@@ -227,18 +228,18 @@ button.button {
   height: 100%;
 }
 
-/* line 67, ../../../../scss/sadui/components/_carousel.scss */
+/* line 68, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-navigation-item-back, .carousel-navigation-item-forward {
   cursor: pointer;
   width: 20px;
   height: 20px;
 }
-/* line 78, ../../../../scss/sadui/components/_carousel.scss */
+/* line 79, ../../../../scss/sadui/components/_carousel.scss */
 .is-disabled.carousel-navigation-item-back, .is-disabled.carousel-navigation-item-forward, [disabled].carousel-navigation-item-back, [disabled].carousel-navigation-item-forward {
   visibility: hidden;
   cursor: default;
 }
-/* line 82, ../../../../scss/sadui/components/_carousel.scss */
+/* line 83, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-navigation-item-back .label, .carousel-navigation-item-forward .label {
   text-indent: -119988px;
   overflow: hidden;
@@ -251,29 +252,29 @@ button.button {
   position: absolute;
 }
 
-/* line 92, ../../../../scss/sadui/components/_carousel.scss */
+/* line 93, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-navigation-item-back {
   left: 0;
 }
 
-/* line 99, ../../../../scss/sadui/components/_carousel.scss */
+/* line 100, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-navigation-item-forward {
   right: 0;
 }
 
-/* line 107, ../../../../scss/sadui/components/_carousel.scss */
+/* line 108, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-pagination {
   position: absolute;
 }
 
-/* line 110, ../../../../scss/sadui/components/_carousel.scss */
+/* line 111, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-background {
   z-index: 1100;
   left: 0;
   right: 0;
   height: 100%;
 }
-/* line 115, ../../../../scss/sadui/components/_carousel.scss */
+/* line 116, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-background .carousel-background-item {
   height: 100%;
   background-repeat: no-repeat;
@@ -281,7 +282,7 @@ button.button {
   background-size: cover;
 }
 
-/* line 123, ../../../../scss/sadui/components/_carousel.scss */
+/* line 124, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-pagination {
   z-index: 1120;
 }
@@ -1042,10 +1043,12 @@ th {
 /* Carousel */
 /* Default Colors */
 /* line 5, ../../../../scss/sadui/themes/_carousel.scss */
-.carousel .carousel-navigation-item-back, .carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back,
+.carousel .carousel-navigation-item-back, .carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back, .carousel--example-background .carousel-navigation-item-back, .carousel--example-vertical .carousel-navigation-item-back,
 .carousel .carousel-navigation-item-forward,
 .carousel--example-base .carousel-navigation-item-forward,
-.carousel--example-fluid .carousel-navigation-item-forward {
+.carousel--example-fluid .carousel-navigation-item-forward,
+.carousel--example-background .carousel-navigation-item-forward,
+.carousel--example-vertical .carousel-navigation-item-forward {
   background-color: blue;
 }
 
@@ -1278,7 +1281,7 @@ th {
 /* Default Colors */
 /* line 34, ../../../../scss/sample/sample.scss */
 html, html body, body {
-  background-color: tan;
+  background-color: black;
 }
 
 /* line 38, ../../../../scss/sample/sample.scss */
@@ -1340,30 +1343,14 @@ html, html body, body {
 }
 
 /* line 100, ../../../../scss/sample/sample.scss */
-.carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back {
+.carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back, .carousel--example-background .carousel-navigation-item-back, .carousel--example-vertical .carousel-navigation-item-back {
   float: left;
 }
 /* line 104, ../../../../scss/sample/sample.scss */
-.carousel--example-base .carousel-navigation-item-forward, .carousel--example-fluid .carousel-navigation-item-forward {
+.carousel--example-base .carousel-navigation-item-forward, .carousel--example-fluid .carousel-navigation-item-forward, .carousel--example-background .carousel-navigation-item-forward, .carousel--example-vertical .carousel-navigation-item-forward {
   float: right;
 }
 
-/* line 115, ../../../../scss/sample/sample.scss */
-.carousel--example-fluid {
-  *zoom: 1;
-  max-width: 59em;
-  _width: 59em;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 38, ../../../bundle/ruby/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-.carousel--example-fluid:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 /* line 128, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content-item {
   width: 23.72881%;

@@ -58,7 +58,7 @@ $(function(){
       playback: false
     });
 
-    var carousel_example_base = new sadui.carousel({
+    var carousel_example_fluid = new sadui.carousel({
       $container: $('#carousel_example_fluid'),
       $pagination: $('.carousel-pagination', '#carousel_example_fluid'),
       $navigation: $('[class^="carousel-navigation"]', '#carousel_example_fluid'),
@@ -66,6 +66,7 @@ $(function(){
       $background: $('.carousel-background', '#carousel_example_fluid'),
       orientation: 'horizontal',
       visibleItems: 4,
+      fluid: true,
       playback: false
     });
 

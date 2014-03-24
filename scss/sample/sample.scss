@@ -32,7 +32,7 @@ $sadui_margin: $margin;
 @import "sadui/themes";
 
 html, html body, body {
-    background-color: tan;
+    background-color: $colorBlack;
 }
 
 .wrapper {
@@ -114,7 +114,7 @@ html, html body, body {
 // This example uses susy percentage based grids
 .carousel--example-fluid {
 
-    @include container;
+    // @include container;
     
     // The percentage width of the carousel item. For fluid carousels, this is usually handled by the grid.
     $carouselItemWidth: space(3,12);
@@ -145,3 +145,14 @@ html, html body, body {
         }
     }
 }
+
+.carousel--example-background {
+    @extend .carousel;
+    @extend %carousel-example;
+}
+
+.carousel--example-vertical {
+    @extend .carousel;
+    @extend %carousel-example;
+}
+

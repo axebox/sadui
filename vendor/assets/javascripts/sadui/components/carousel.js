@@ -44,6 +44,7 @@ sadui.carousel = function(opts){
         index: 0,
         totalItems: 0,
         totalScreens: 0,
+        fluid: false,
         autoinit: true
     };
 
@@ -279,10 +280,22 @@ sadui.carousel = function(opts){
     };
 
     var refresh_content = function(){
-        conf.$content.removeClass (function (index, cssclass) {
-            return (cssclass.match (/\bis-selected-item\S+/g) || []).join(' ');
-        });
-        conf.$content.addClass('is-selected-item-' + conf.index);
+
+        // Set selected fluid cssclass. CSS will handle animation
+        if (conf.hasFluid){
+            conf.$content.removeClass (function (index, cssclass) {
+                return (cssclass.match (/\bis-selected-item\S+/g) || []).join(' ');
+            });
+
+            conf.$content.addClass('is-selected-item-' + conf.index);
+        }
+
+        // Adjust content position
+        if (!conf.hasFluid){
+            // 
+        }
+        
+        // Set left most item in carousel content
         $('.carousel-content-item', conf.$content).removeClass('is-selected');
         $('.carousel-content-item', conf.$content).eq( conf.index ).addClass('is-selected');
     };
@@ -393,7 +406,8 @@ sadui.carousel = function(opts){
         conf.hasBackground  = (typeof conf.$background !== 'undefined' && conf.$background.length > 0) ? true:false;
         conf.hasPlayback    = (typeof conf.playback !== 'undefined' && conf.playback === true) ? true:false;
         conf.hasCircular    = (typeof conf.circular !== 'undefined' && conf.circular === true) ? true:false;
-        conf.hasDrag        = (typeof conf.drag !== 'undefined' && conf.drag === true) ? true:false;
+        conf.hasFluid       = (typeof conf.fluid !== 'undefined' && conf.fluid === true) ? true:false;
+        // conf.hasDrag        = (typeof conf.drag !== 'undefined' && conf.drag === true) ? true:false;
 
         if (typeof $('.carousel-content-item', conf.$content) !== 'undefined' && $('.carousel-content-item', conf.$content).length > 0) {
             conf.totalItems = $('.carousel-content-item', conf.$content).length - 1;

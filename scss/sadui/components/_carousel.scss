@@ -25,6 +25,7 @@
     // z-index: $zModule+11;
     overflow: hidden;
     position: relative;
+    width: 100%;
 
     // fixes z-index bug in Chrome
     -webkit-transform: translate3d(0px, 0px, 0px);
