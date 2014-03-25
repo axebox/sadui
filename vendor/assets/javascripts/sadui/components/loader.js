@@ -1,69 +1,75 @@
 /**
- * Loader
- * Preloads DOM object assets with the attribute [data-preload] as the src
- * @Param conf Object hash of options
- * @Param conf.mode String 'visible|default'
- * @Param conf.$container $.Object
+ * Preloads DOM assets
+ * 
+ * These attributes 
+ * [data-preload] Required. The asset (image) src
+ * [data-preload-rule] A rule to follow
+ *
+ * Available rules:
+ * "image" Default. Replaces attribute src
+ * "backgroundImage" Adds a css background-image style
+ *
+ * @Param opts Object hash of options
+ * @Param opts.$container $.Object that contains assets with [data-preload]. Defaults to $(window)
  */
-sadui.loader = function(conf){
+sadui.loader = function(opts){
 
-    conf.loaders = [];
-    
-    if (typeof conf.mode === 'undefined') conf.mode = null;
+    var defaults = {
+        $container: $(document)
+    };
 
-    switch (conf.mode) {
+    var conf = $.extend(defaults, opts);
 
-        case 'visible':
-            conf.$el = $('[data-preload]:visible', conf.$container);
-            break;
+    var srcs = [];
 
-        default:
-            conf.$el = $('[data-preload]', conf.$container);
-            break;
+    // Makes an array of asset srcs
+    $('[data-preload]', conf.$container).each(function(){
+        srcs.push( $(this).data('preload') );
+    });
 
-    }
-
-    var load_assets = function(src) {
+    conf.load_image = function(src) {
         
-        var deferred = $.Deferred();
+        var dfr = $.Deferred();
         var sprite = new Image();
 
         sprite.onload = function (d) {
-            deferred.resolve();
+            dfr.resolve();
         };
 
         sprite.onerror = function () {
-            deferred.reject();
+            dfr.reject();
         };
 
-        if (typeof src !== 'undefined') sprite.src = src;
+        if (typeof src === 'string' && src !== '' && src.length > 4) {
+            sprite.src = src;
+        }
 
-        return deferred.promise();
+        return dfr.promise();
     };
 
-    conf.bind_preload = function(){
+    conf.load_images = function() {
 
-        conf.$el.each(function(){
-            var $this = $(this);
+        var dfr = $.Deferred();
 
-            // Skip if element or preload isn't set
-            if (typeof $this === 'undefined' || 
-                $this.length <= 0 ||
-                // typeof $this.data('preload') !== 'undefined' ||
-                typeof $this.data('preload') !== 'string') return true;
+        var deferreds = [];
 
-            var obj = $this.data('preload').split(',');
+        $.each(srcs, function(i,src){
             
-            var src = obj[0],
-                rule = (typeof obj[1] !== 'undefined') ? obj[1]:'image';
+            if (typeof src === 'string' && src !== '' && src.length > 4) {
+                deferreds.push( conf.load_image(srcs[i]) );
+            }
 
-            // init deferred loader for this element
-            var d = load_assets(src);
+        });
 
-            // asset loaded successfully
-            d.done(function(){
+        $.when.apply($, deferreds).done(function(){
 
-                // console.log('doned:',$this);
+            $('[data-preload]', conf.$container).each(function(){
+
+                var $this = $(this);
+
+                var src = $this.data('preload');
+                
+                var rule = (typeof $this.attr('data-preload-rule') !== 'undefined' && $this.attr('data-preload-rule').length > 0) ? $this.data('preload-rule') : 'image';
 
                 if (rule === 'backgroundImage') {
                     $this.css('background-image', "url('"+ src +"')");
@@ -71,24 +77,14 @@ sadui.loader = function(conf){
                 } else if (rule === 'image') {
                     $this.attr('src', src);
                 }
-                
-                // } else if (rule === 'mp3' || rule === 'ogg') {
-                // }
 
-                // remove preload data attr
-                $this.removeAttr('data-preload');
-                    
             });
 
-            // asset failed to load
-            d.fail(function(){
-                // console.log('failed:',$this);
-            });
 
-            // add this deferred to master deferred object (loaders)
-            conf.loaders.push(d.promise());
-
+            dfr.resolve();
         });
+
+        return dfr.promise();
 
     };
 

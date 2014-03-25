@@ -250,6 +250,30 @@
    -->
         <section class="loader-view" id="loader_view">
           <h3>Loader</h3>
+
+          <h4>Requires</h4>
+          <ul>
+            <li>components/loader.js</li>
+          </ul>
+          
+          <div id="loader_example_single" class="loader-example">
+            <h4>Single asset</h4>
+            <ul>
+              <li><img data-preload="images/sample-image-1-full.jpg" src="images/ajax-loader.gif" alt=""></li>
+              <li><img data-preload="http://www.webbaviation.co.uk/newcastle/WhyAyeMan-cb12133.jpg" src="images/ajax-loader.gif" alt=""></li>
+              <li><img data-preload="http://www.asphaltandrubber.com/wp-content/gallery/ktm-390-duke-in-high-resolution/2013-ktm-390-duke-high-resolution-08.jpg" src="images/ajax-loader.gif" alt=""></li>
+            </ul>
+          </div>
+
+          <h4>Chained assets</h4>
+<!--             <ul>
+              <li><img data-preload="images/sample-image-1-full.jpg" src="images/ajax-loader.gif" alt=""></li>
+              <li><img data-preload="images/sample-image-2-full.jpg" src="images/ajax-loader.gif" alt=""></li>
+              <li><img data-preload="images/sample-image-3-full.jpg" src="images/ajax-loader.gif" alt=""></li>
+              <li><img data-preload="images/sample-image-4-full.jpg" src="images/ajax-loader.gif" alt=""></li>
+            </ul>
+ -->          <h4>Multiple asset with single loader</h4>
+
         </section>
 
         <section class="modal-view" id="modal_view">
@@ -429,7 +453,7 @@
   <script src="../vendor/assets/javascripts/sadui/helpers/single_scroll.js"></script>
   <script src="../vendor/assets/javascripts/sadui/components/carousel.js"></script>
   <script src="../vendor/assets/javascripts/sadui/components/expand_text.js"></script>
-  <!--script src="../vendor/assets/javascripts/sadui/components/loader.js"></script-->
+  <script src="../vendor/assets/javascripts/sadui/components/loader.js"></script>
   <script src="../vendor/assets/javascripts/sadui/components/modal.js"></script>
   <script src="../vendor/assets/javascripts/sadui/components/pretty_checkradio.js"></script>
   <script src="../vendor/assets/javascripts/sadui/components/pretty_dropdown.js"></script>

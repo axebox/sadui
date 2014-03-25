@@ -34,6 +34,40 @@ $(function(){
 
   (function(){
 
+    $view = $('#loader_view');
+
+    $('#loader_example_single li', $view).each(function(){
+      var $this, $img, loader, promise, src;
+
+      $this = $(this);
+
+      $img = $('[data-preload]', $this);
+
+      loader = new sadui.loader();
+      // images = new sadui.loader({
+      //   $container: $('#loader_example_single')
+      // });
+
+      src = $img.data('preload');
+
+      promise = loader.load_image( src );
+
+      // When assets have loaded
+      promise.done(function(d){
+        $img.attr('src', src);
+      });
+
+      promise.fail(function(d){
+        console.log('asset failed', d);
+      });
+
+
+    });
+
+  })();
+
+  (function(){
+
     $view = $('#modal_view');
 
     var modal = new sadui.modal({

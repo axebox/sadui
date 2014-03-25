@@ -1342,26 +1342,53 @@ html, html body, body {
   margin-left: 0;
 }
 
-/* line 100, ../../../../scss/sample/sample.scss */
+/* line 94, ../../../../scss/sample/sample.scss */
+.loader-view .loader-example ul, .loader-view .loader-example li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 99, ../../../../scss/sample/sample.scss */
+.loader-view .loader-example li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 160px;
+  margin-left: 20px;
+}
+/* line 103, ../../../../scss/sample/sample.scss */
+.loader-view .loader-example li:first-child {
+  margin-left: 0;
+}
+/* line 107, ../../../../scss/sample/sample.scss */
+.loader-view .loader-example img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 123, ../../../../scss/sample/sample.scss */
 .carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back, .carousel--example-background .carousel-navigation-item-back, .carousel--example-vertical .carousel-navigation-item-back {
   float: left;
 }
-/* line 104, ../../../../scss/sample/sample.scss */
+/* line 127, ../../../../scss/sample/sample.scss */
 .carousel--example-base .carousel-navigation-item-forward, .carousel--example-fluid .carousel-navigation-item-forward, .carousel--example-background .carousel-navigation-item-forward, .carousel--example-vertical .carousel-navigation-item-forward {
   float: right;
 }
 
-/* line 128, ../../../../scss/sample/sample.scss */
+/* line 151, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content-item {
   width: 23.72881%;
   margin-right: 1.69492%;
 }
-/* line 132, ../../../../scss/sample/sample.scss */
+/* line 155, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content-item img {
   width: 100%;
   height: auto;
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-1 {
   -webkit-transform: translate3d(-25.42373%, 0, 1em);
   -moz-transform: translate3d(-25.42373%, 0, 1em);
@@ -1369,7 +1396,7 @@ html, html body, body {
   -o-transform: translate3d(-25.42373%, 0, 1em);
   transform: translate3d(-25.42373%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-2 {
   -webkit-transform: translate3d(-50.84746%, 0, 1em);
   -moz-transform: translate3d(-50.84746%, 0, 1em);
@@ -1377,7 +1404,7 @@ html, html body, body {
   -o-transform: translate3d(-50.84746%, 0, 1em);
   transform: translate3d(-50.84746%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-3 {
   -webkit-transform: translate3d(-76.27119%, 0, 1em);
   -moz-transform: translate3d(-76.27119%, 0, 1em);
@@ -1385,7 +1412,7 @@ html, html body, body {
   -o-transform: translate3d(-76.27119%, 0, 1em);
   transform: translate3d(-76.27119%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-4 {
   -webkit-transform: translate3d(-101.69492%, 0, 1em);
   -moz-transform: translate3d(-101.69492%, 0, 1em);
@@ -1393,7 +1420,7 @@ html, html body, body {
   -o-transform: translate3d(-101.69492%, 0, 1em);
   transform: translate3d(-101.69492%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-5 {
   -webkit-transform: translate3d(-127.11864%, 0, 1em);
   -moz-transform: translate3d(-127.11864%, 0, 1em);
@@ -1401,7 +1428,7 @@ html, html body, body {
   -o-transform: translate3d(-127.11864%, 0, 1em);
   transform: translate3d(-127.11864%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-6 {
   -webkit-transform: translate3d(-152.54237%, 0, 1em);
   -moz-transform: translate3d(-152.54237%, 0, 1em);
@@ -1409,7 +1436,7 @@ html, html body, body {
   -o-transform: translate3d(-152.54237%, 0, 1em);
   transform: translate3d(-152.54237%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-7 {
   -webkit-transform: translate3d(-177.9661%, 0, 1em);
   -moz-transform: translate3d(-177.9661%, 0, 1em);
@@ -1417,7 +1444,7 @@ html, html body, body {
   -o-transform: translate3d(-177.9661%, 0, 1em);
   transform: translate3d(-177.9661%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-8 {
   -webkit-transform: translate3d(-203.38983%, 0, 1em);
   -moz-transform: translate3d(-203.38983%, 0, 1em);
@@ -1425,7 +1452,7 @@ html, html body, body {
   -o-transform: translate3d(-203.38983%, 0, 1em);
   transform: translate3d(-203.38983%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-9 {
   -webkit-transform: translate3d(-228.81356%, 0, 1em);
   -moz-transform: translate3d(-228.81356%, 0, 1em);
@@ -1433,7 +1460,7 @@ html, html body, body {
   -o-transform: translate3d(-228.81356%, 0, 1em);
   transform: translate3d(-228.81356%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-10 {
   -webkit-transform: translate3d(-254.23729%, 0, 1em);
   -moz-transform: translate3d(-254.23729%, 0, 1em);
@@ -1441,7 +1468,7 @@ html, html body, body {
   -o-transform: translate3d(-254.23729%, 0, 1em);
   transform: translate3d(-254.23729%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-11 {
   -webkit-transform: translate3d(-279.66102%, 0, 1em);
   -moz-transform: translate3d(-279.66102%, 0, 1em);
@@ -1449,7 +1476,7 @@ html, html body, body {
   -o-transform: translate3d(-279.66102%, 0, 1em);
   transform: translate3d(-279.66102%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-12 {
   -webkit-transform: translate3d(-305.08475%, 0, 1em);
   -moz-transform: translate3d(-305.08475%, 0, 1em);
@@ -1457,7 +1484,7 @@ html, html body, body {
   -o-transform: translate3d(-305.08475%, 0, 1em);
   transform: translate3d(-305.08475%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-13 {
   -webkit-transform: translate3d(-330.50847%, 0, 1em);
   -moz-transform: translate3d(-330.50847%, 0, 1em);
@@ -1465,7 +1492,7 @@ html, html body, body {
   -o-transform: translate3d(-330.50847%, 0, 1em);
   transform: translate3d(-330.50847%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-14 {
   -webkit-transform: translate3d(-355.9322%, 0, 1em);
   -moz-transform: translate3d(-355.9322%, 0, 1em);
@@ -1473,7 +1500,7 @@ html, html body, body {
   -o-transform: translate3d(-355.9322%, 0, 1em);
   transform: translate3d(-355.9322%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-15 {
   -webkit-transform: translate3d(-381.35593%, 0, 1em);
   -moz-transform: translate3d(-381.35593%, 0, 1em);
@@ -1481,7 +1508,7 @@ html, html body, body {
   -o-transform: translate3d(-381.35593%, 0, 1em);
   transform: translate3d(-381.35593%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-16 {
   -webkit-transform: translate3d(-406.77966%, 0, 1em);
   -moz-transform: translate3d(-406.77966%, 0, 1em);
@@ -1489,7 +1516,7 @@ html, html body, body {
   -o-transform: translate3d(-406.77966%, 0, 1em);
   transform: translate3d(-406.77966%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-17 {
   -webkit-transform: translate3d(-432.20339%, 0, 1em);
   -moz-transform: translate3d(-432.20339%, 0, 1em);
@@ -1497,7 +1524,7 @@ html, html body, body {
   -o-transform: translate3d(-432.20339%, 0, 1em);
   transform: translate3d(-432.20339%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-18 {
   -webkit-transform: translate3d(-457.62712%, 0, 1em);
   -moz-transform: translate3d(-457.62712%, 0, 1em);
@@ -1505,7 +1532,7 @@ html, html body, body {
   -o-transform: translate3d(-457.62712%, 0, 1em);
   transform: translate3d(-457.62712%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-19 {
   -webkit-transform: translate3d(-483.05085%, 0, 1em);
   -moz-transform: translate3d(-483.05085%, 0, 1em);
@@ -1513,7 +1540,7 @@ html, html body, body {
   -o-transform: translate3d(-483.05085%, 0, 1em);
   transform: translate3d(-483.05085%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-20 {
   -webkit-transform: translate3d(-508.47458%, 0, 1em);
   -moz-transform: translate3d(-508.47458%, 0, 1em);
@@ -1521,7 +1548,7 @@ html, html body, body {
   -o-transform: translate3d(-508.47458%, 0, 1em);
   transform: translate3d(-508.47458%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-21 {
   -webkit-transform: translate3d(-533.89831%, 0, 1em);
   -moz-transform: translate3d(-533.89831%, 0, 1em);
@@ -1529,7 +1556,7 @@ html, html body, body {
   -o-transform: translate3d(-533.89831%, 0, 1em);
   transform: translate3d(-533.89831%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-22 {
   -webkit-transform: translate3d(-559.32203%, 0, 1em);
   -moz-transform: translate3d(-559.32203%, 0, 1em);
@@ -1537,7 +1564,7 @@ html, html body, body {
   -o-transform: translate3d(-559.32203%, 0, 1em);
   transform: translate3d(-559.32203%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-23 {
   -webkit-transform: translate3d(-584.74576%, 0, 1em);
   -moz-transform: translate3d(-584.74576%, 0, 1em);
@@ -1545,7 +1572,7 @@ html, html body, body {
   -o-transform: translate3d(-584.74576%, 0, 1em);
   transform: translate3d(-584.74576%, 0, 1em);
 }
-/* line 141, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-24 {
   -webkit-transform: translate3d(-610.16949%, 0, 1em);
   -moz-transform: translate3d(-610.16949%, 0, 1em);

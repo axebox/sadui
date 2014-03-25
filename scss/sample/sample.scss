@@ -88,6 +88,29 @@ html, html body, body {
     }
 }
 
+.loader-view {
+    .loader-example {
+
+        ul, li {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            @include inline-block;
+            width: 160px;
+            margin-left: $margin;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
 .modal--sm {
     @extend .modal;
 }
