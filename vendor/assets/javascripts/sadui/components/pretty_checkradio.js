@@ -36,7 +36,7 @@ sadui.pretty_checkradio = function(opts){
 
                 if (_$this.attr('disabled')) return false;
 
-                var $group = $('[name="'+name+'"]', conf.$el);
+                var $group = $('.is-input[name="'+name+'"]', conf.$el);
 
                 if ($group.length > 1) {
 
