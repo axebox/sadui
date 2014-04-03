@@ -31,11 +31,12 @@ sadui.pretty_checkradio = function(opts){
 
             $('.is-input', $this).on('change', function(ev){
 
-                var _$this = $(this);
+                var _$this = $(this),
+                    name = _$this.attr('name');
 
                 if (_$this.attr('disabled')) return false;
 
-                var $group = $('[name='+_$this.attr('name')+']', conf.$el);
+                var $group = $('[name="'+name+'"]', conf.$el);
 
                 if ($group.length > 1) {
 
