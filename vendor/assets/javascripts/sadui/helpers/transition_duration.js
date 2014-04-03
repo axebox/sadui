@@ -10,7 +10,7 @@
 sadui.transition_duration = function(opts){
 
     var defaults = {
-        properties = [
+        properties: [
             'transition-duration',
             '-webkit-transtion-duration',
             '-moz-transtion-duration',
