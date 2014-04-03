@@ -1,4 +1,6 @@
-# Require any additional compass plugins here.
+# SADUI Sample Configuration
+
+# Compass Plugins
 require "compass-normalize"
 require "susy"
 # require "animation"
@@ -8,9 +10,12 @@ require "susy"
 css_dir =               "vendor/assets/stylesheets"
 sass_dir =              "scss"
 # fonts_dir =             "public/wp-content/themes/eaglerock/assets/fonts"
-images_dir =            "vendor/assets/images/src"
-generated_images_dir =  "vendor/assets/images"
+images_dir =            "sample/images"
+generated_images_dir =  "sample/images"
 javascripts_dir =       "vendor/assets/javascripts"
+# images_dir =            "vendor/assets/images/src"
+# generated_images_dir =  "vendor/assets/images"
+# javascripts_dir =       "vendor/assets/javascripts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

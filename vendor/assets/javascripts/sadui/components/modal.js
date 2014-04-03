@@ -107,12 +107,17 @@ sadui.modal = function(opts){
             conf.callback_beforeshow_fn;
         }
 
+        // Just referencing offset is supposed to resolve css animation issues
+        data.$current_modal.offset().height;
+
         switch (directive) {
             case 'hide':
 
                 conf.active = false;
 
-                data.$current_modal.removeClass('is-visible');
+                data.$current_modal
+                    .removeClass('is-visible')
+                    .css('top', 'inherit');
                     
                 conf.$overlay.removeClass('is-visible');
 

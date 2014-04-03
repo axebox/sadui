@@ -20,7 +20,7 @@
     .pretty-dropdown-menu {
 
         // reset
-        &, li {
+        &, ul, li {
             list-style-type: none;
             margin: 0;
             padding: 0;
@@ -31,15 +31,21 @@
         left: 0;
         right: 0;
 
-        display: none;
+        overflow: hidden;
+
+        > ul {
+            height: 0;
+            visibility: hidden;
+        }
     
-        > li {
+        > ul li {
             &.is-selected {}
         }
     }
 
-    &.has-menu-visible .pretty-dropdown-menu {
-        display: block;
+    &.has-menu-visible .pretty-dropdown-menu > ul {
+        height: inherit;
+        visibility: visible;
     }
 
     .pretty-dropdown-label {}

@@ -1,0 +1,47 @@
+// @include transform-origin(100%,100%,0);
+// @include transition-delay(1)
+
+%fx-transition-fade {
+    @include opacity(0);
+    @include transition-property(opacity);
+    @include transition-duration($transitionDurationBase / 2);
+    @include transition-timing-function(ease-out);
+    &.is-visible {
+        @include opacity(1);
+    }
+}
+
+%fx-transition-zoom {
+    @include opacity(0);
+    @include scale(0,0);
+    @include transition-property(opacity scale);
+    @include transition-duration($transitionDurationBase / 2);
+    @include transition-timing-function(ease-out);
+    &.is-visible {
+        @include opacity(1);
+        @include scale(1,1);
+    }
+}
+
+%fx-transition-rolldown {
+    @include opacity(0);
+    @include transform(scale(0.85, 0.85) rotate3d(2, 0, 0, -90deg) translate3d(0, -100%, 0));
+    &.is-visible {
+        @include opacity(1);
+        @include transform(scale(1.0, 1.0) rotate3d(0, 0, 0, 0deg) translate3d(0, 0, 0));
+        @include transition-property(opacity scale rotate3d translate3d);
+        @include transition-duration($transitionDurationBase);
+        @include transition-timing-function(in-ease-out);
+
+    }
+}
+
+%fx-transition-slidedown {
+    @include transform(translate3d(0, -100%, 0));
+    @include transition-property(translate3d);
+    @include transition-duration($transitionDurationBase);
+    @include transition-timing-function(in-ease-out);
+    &.is-visible {
+        @include transform(translate3d(0, 0, 0));
+    }
+}

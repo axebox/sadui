@@ -17,17 +17,15 @@ $(function(){
     $view = $('#pretty_dropdown_view');
 
     var pretty_dropdown_example_1 = new sadui.pretty_dropdown({
-      $el: $('.pretty-dropdown-example-1', $view)
+      $el: $('.pretty-dropdown--example-1', $view)
     });
 
-  })();
-
-  (function(){
-
-    $view = $('#pretty_dropdown_view');
-
     var pretty_dropdown_example_2 = new sadui.pretty_dropdown({
-      $el: $('.pretty-dropdown-example-2', $view)
+      $el: $('.pretty-dropdown--example2', $view)
+    });
+
+    var pretty_dropdown_example_3 = new sadui.pretty_dropdown({
+      $el: $('.pretty-dropdown--example3', $view)
     });
 
   })();

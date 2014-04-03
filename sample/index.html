@@ -42,9 +42,6 @@
   </head>
 </html>
 <body>
-    <div class="hero">
-      <img src="images/sadie.jpg">
-    </div>
 
     <div class="wrapper">
 
@@ -290,20 +287,24 @@
           <p><a href="#" class="is-modal-trigger" rel="#modal_example_1">Trigger Base Example Modal</a></p>
           <p><a href="#" class="is-modal-trigger" rel="#modal_example_2">Trigger Center Positioned Example Modal</a></p>
           
-          <div id="modal_example_1" class="modal">
-            <div class="button is-modal-close-trigger">
-              <span class="button-label">Close</span>
+          <div id="modal_example_1" class="modal--example1">
+            <div class="modal-wrapper">
+              <div class="button is-modal-close-trigger">
+                <span class="button-label">Close</span>
+              </div>
+              <h4>Modal Example 1</h4>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
             </div>
-            <h4>Modal Example 1</h4>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
           </div>
 
-          <div id="modal_example_2" class="modal--sm">
-            <div class="button is-modal-close-trigger">
-              <span class="button-label">Close</span>
+          <div id="modal_example_2" class="modal--example2">
+            <div class="modal-wrapper">
+              <div class="button is-modal-close-trigger">
+                <span class="button-label">Close</span>
+              </div>
+              <h4>Modal Example 2</h4>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
             </div>
-            <h4>Modal Example 2</h4>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
           </div>
 
         </section>
@@ -378,8 +379,8 @@
         <section class="pretty-dropdown-view" id="pretty_dropdown_view">
           <h3>Pretty Dropdown</h3>
 
-          <div class="pretty-dropdown pretty-dropdown-example-1">
-            <select class="is-dropdown">
+          <div class="pretty-dropdown--example1">
+            <select class="is-dropdown" id="test_trigger1">
               <option selected value="item_1">Default</option>
               <option value="item_2">Item 2</option>
               <option value="item_3">Item 3</option>
@@ -392,8 +393,8 @@
             </div>
           </div>
 
-          <div class="pretty-dropdown pretty-dropdown-example-2">
-            <select class="is-dropdown" id="test_trigger">
+          <div class="pretty-dropdown--example2">
+            <select class="is-dropdown" id="test_trigger2">
               <option value="item_1">Item 1</option>
               <option selected value="item_2">With styled menu</option>
               <option value="item_3">Item 3</option>
@@ -404,7 +405,26 @@
                 <span class="pretty-dropdown-icon">&gt;</span>
               </span>
             </div>
-            <ul class="pretty-dropdown-menu is-menu"></ul>
+            <div class="pretty-dropdown-menu">
+              <ul class="is-menu"></ul>
+            </div>
+          </div>
+
+          <div class="pretty-dropdown--example3">
+            <select class="is-dropdown" id="test_trigger3">
+              <option value="item_1">Item 1</option>
+              <option selected value="item_2">With another animation</option>
+              <option value="item_3">Item 3</option>
+            </select>
+            <div class="pretty-dropdown-layer">
+              <div class="pretty-dropdown-label is-label is-menu-trigger">All</div>
+              <span class="pretty-dropdown-icon-container is-menu-trigger">
+                <span class="pretty-dropdown-icon">&gt;</span>
+              </span>
+            </div>
+            <div class="pretty-dropdown-menu">
+              <ul class="is-menu"></ul>
+            </div>
           </div>
 
         </section>
@@ -451,6 +471,20 @@
   <script src="../vendor/assets/javascripts/sadui/util.js"></script>
   <script src="../vendor/assets/javascripts/sadui/helpers/breakpoints.js"></script>
   <script src="../vendor/assets/javascripts/sadui/helpers/single_scroll.js"></script>
+  <script src="../vendor/assets/javascripts/sadui/helpers/transition_duration.js"></script>
+  <script>
+  $.fn.emulateTransitionEnd = function(duration) {
+    var called = false, $el = this;
+    $(this).one('webkitTransitionEnd', function() { called = true; });
+    var callback = function() { if (!called) $($el).trigger('webkitTransitionEnd'); };
+    setTimeout(callback, duration);
+  };
+  $.fn.redraw = function(){
+    $(this).each(function(){
+      var redraw = this.offsetHeight;
+    });
+  };
+  </script>
   <script src="../vendor/assets/javascripts/sadui/components/carousel.js"></script>
   <script src="../vendor/assets/javascripts/sadui/components/expand_text.js"></script>
   <script src="../vendor/assets/javascripts/sadui/components/loader.js"></script>

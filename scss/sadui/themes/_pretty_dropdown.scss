@@ -16,12 +16,13 @@
     }
 
     .pretty-dropdown-menu {
-        background-color: $colorInactive;
-        @include border-radius(0.1em);
-
-        > li {
-            &.is-selected {
-                background-color: $colorActive;
+        > ul {
+            background-color: $colorInactive;
+            @include border-radius(0.1em);
+            li {
+                &.is-selected {
+                    background-color: $colorActive;
+                }
             }
         }
     }

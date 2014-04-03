@@ -12,6 +12,8 @@
  *     div.pretty-dropdown-label.is-label
  *     span.pretty-dropdown-icon-container
  *       span.pretty-dropdown-icon &gt;
+ *   div.pretty-dropdown-menu
+ *     ul.is-menu
  * 
  * You may like to prepopulate .is-label element on server output
  * 
@@ -100,6 +102,7 @@ sadui.pretty_dropdown = function(opts){
 
     var open_menu = function(){
         conf.$el.addClass('has-menu-visible');
+        conf.$menu.addClass('is-visible');
         conf.menu_state = 'open';
 
         $(document).on('click.sadui.prettyDropdown', function(){
@@ -109,6 +112,7 @@ sadui.pretty_dropdown = function(opts){
 
     var close_menu = function(){
         conf.$el.removeClass('has-menu-visible');
+        conf.$menu.removeClass('is-visible');
         conf.menu_state = 'closed';
 
         $(document).off('click.sadui.prettyDropdown');

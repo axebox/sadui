@@ -4,16 +4,5 @@
 
     margin-top: $sadui_margin;
     margin-bottom: $sadui_margin;
-
-    @include opacity(0);
-    @include transition-property(opacity);
-    @include transition-duration($transitionDurationBase / 2);
-    @include transition-timing-function(ease-out);
-
-    &.is-visible {
-        @include opacity(1);
-        @include transition-property(opacity);
-        @include transition-duration($transitionDurationBase / 2);
-        @include transition-timing-function(ease-out);
-    }
+    
 }

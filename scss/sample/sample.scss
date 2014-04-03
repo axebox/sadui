@@ -29,10 +29,14 @@ $grid-padding   : $margin;  // grid-padding equal to gutters
 // SADUI Theme Conf
 $sadui_margin: $margin;
 
+// Load all effects
+@import "sadui/effects";
+
 @import "sadui/themes";
 
-html, html body, body {
-    background-color: $colorBlack;
+body {
+    background: $colorBlack image-url("sadie.jpg") no-repeat top center;
+    background-size: contain;
 }
 
 .wrapper {
@@ -40,19 +44,8 @@ html, html body, body {
     margin: ($margin * 15) auto $margin;
     padding: $margin;
     z-index: $zTemplate;
-    position: relative;
+    // position: relative;// breaks modal
     background-color: rgba($colorBlack, 0.75);
-}
-
-.hero {
-    width: 100%;
-    position: absolute;
-    z-index: $zHell;
-    top: 0;
-    img {
-        width: 100%;
-        height: auto;
-    }
 }
 
 #header {
@@ -80,11 +73,29 @@ html, html body, body {
 /* Views */
 
 .pretty-dropdown-view {
-    .pretty-dropdown {
+    > * {
         margin-left: $margin;
         &:first-of-type {
             margin-left: 0;
         }
+    }
+}
+
+.pretty-dropdown--example1 {
+    @extend .pretty-dropdown;
+}
+
+.pretty-dropdown--example2 {
+    @extend .pretty-dropdown;
+    .is-menu {
+        @extend %fx-transition-fade;
+    }
+}
+
+.pretty-dropdown--example3 {
+    @extend .pretty-dropdown;
+    .is-menu {
+        @extend %fx-transition-slidedown;
     }
 }
 
@@ -111,8 +122,20 @@ html, html body, body {
     }
 }
 
-.modal--sm {
+.modal {
+    color: $colorBlack;
+}
+
+.modal--example1 {
     @extend .modal;
+    @extend %fx-transition-fade;
+    width: $container - ($margin * 2);
+}
+
+.modal--example2 {
+    @extend .modal;
+    @extend %fx-transition-rolldown;
+    width: $container - ($margin * 2);
 }
 
 %carousel-example {
