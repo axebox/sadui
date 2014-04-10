@@ -242,8 +242,14 @@ sadui.modal = function(opts){
         update_data();
     };
 
+    // expose init
+    conf.init = init();
+
     if (conf.autoinit) {
         init();
     }
+
+    // provide interface on object
+    return conf;
 
 };
