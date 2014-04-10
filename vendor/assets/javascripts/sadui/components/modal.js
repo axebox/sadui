@@ -158,12 +158,20 @@ sadui.modal = function(opts){
 
     };
 
-    conf.show_modal = function(){
+    conf.show_modal = function(modal_id){
+        
+        // target internal modal 
+        conf.$current_modal = conf.$modals[modal_id];
+
         show_hide_modal('show');
     };
 
-    conf.close_modal = function(){
-       show_hide_modal('hide');
+    conf.close_modal = function(modal_id){
+
+        // target internal modal 
+        conf.$current_modal = conf.$modals[modal_id];
+
+        show_hide_modal('hide');
     };
 
     // resize img height if longer than viewport
@@ -233,7 +241,7 @@ sadui.modal = function(opts){
         $(conf.triggerClass, conf.$container).each(function(i){
             var modal_id = $(this).attr('rel');
 
-            conf.$modals[i] = $(modal_id);
+            conf.$modals[modal_id] = $(modal_id);
         });
 
         bind();
