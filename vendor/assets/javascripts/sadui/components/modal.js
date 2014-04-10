@@ -108,7 +108,9 @@ sadui.modal = function(opts){
         }
 
         // Just referencing offset is supposed to resolve css animation issues
-        data.$current_modal.offset().height;
+        if (typeof data.$current_modal !== 'undefined') {
+            data.$current_modal.offset().height;
+        }
 
         switch (directive) {
             case 'hide':
