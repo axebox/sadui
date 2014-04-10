@@ -159,7 +159,7 @@ sadui.modal = function(opts){
     };
 
     conf.show_modal = function(modal_id){
-        
+
         // target internal modal 
         conf.$current_modal = conf.$modals[modal_id];
 
@@ -167,10 +167,6 @@ sadui.modal = function(opts){
     };
 
     conf.close_modal = function(modal_id){
-
-        // target internal modal 
-        conf.$current_modal = conf.$modals[modal_id];
-
         show_hide_modal('hide');
     };
 
