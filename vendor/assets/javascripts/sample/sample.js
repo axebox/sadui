@@ -73,6 +73,20 @@ $(function(){
       $overlay: $('.overlay')
     });
 
+    var api = $view.data('modal');
+
+    $('.is-test-trigger-open', $view).on('click', function(ev){
+      ev.preventDefault();
+      modal_ID = $(this).attr('rel');
+      api.show_modal(modal_ID);
+    });
+
+    $('.is-test-trigger-close', $view).on('click', function(ev){
+      ev.preventDefault();
+      modal_ID = $(this).attr('rel');
+      api.close_modal(modal_ID);
+    });
+
   })();
 
   (function(){
