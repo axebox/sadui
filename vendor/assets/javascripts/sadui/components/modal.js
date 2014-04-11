@@ -37,7 +37,7 @@ sadui.modal = function(opts){
                 ev.preventDefault();
 
                 // set modal
-                conf.$current_modal = $($(this).attr('rel'));
+                conf.$current_modal = $($(this).data('modalRel'));
                 update_data();
 
                 show_hide_modal();
@@ -234,8 +234,8 @@ sadui.modal = function(opts){
     var init = function(){
 
         // Collect modals
-        $(conf.triggerClass, conf.$container).each(function(i){
-            var modal_id = $(this).attr('rel');
+        $('[data-modal-rel]', conf.$container).each(function(i){
+            var modal_id = $(this).data('modalRel');
 
             conf.$modals[modal_id] = $(modal_id);
         });

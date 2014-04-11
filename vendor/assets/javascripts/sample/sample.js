@@ -77,14 +77,8 @@ $(function(){
 
     $('.is-test-trigger-open', $view).on('click', function(ev){
       ev.preventDefault();
-      modal_ID = $(this).attr('rel');
+      modal_ID = '#modal_example_1';
       api.show_modal(modal_ID);
-    });
-
-    $('.is-test-trigger-close', $view).on('click', function(ev){
-      ev.preventDefault();
-      modal_ID = $(this).attr('rel');
-      api.close_modal(modal_ID);
     });
 
   })();
