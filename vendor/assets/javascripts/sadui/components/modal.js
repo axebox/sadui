@@ -147,14 +147,36 @@ sadui.modal = function(opts){
 
         var data = conf.$container.data('modal');
 
-        if (conf.position !== 'center') return false;
+        o = {
+            css: {}
+        };
 
-        var modal_height = data.$current_modal.outerHeight(true);
-        var viewport_height = $(window).height();
+        switch (conf.position) {
 
-        data.$current_modal.css({
-            top: Math.floor((viewport_height / 2) - (modal_height / 2))
-        });
+            case "center":
+
+                o.modal_height = data.$current_modal.outerHeight(true);
+                o.viewport_height = $(window).height();
+
+                o.css.top = Math.floor(((o.viewport_height / 2) - (o.modal_height / 2)) / 2);
+
+                break;
+
+            case "absolutecenter":
+
+                o.modal_height = data.$current_modal.outerHeight(true);
+                o.viewport_height = $(window).height();
+
+                o.css.top = Math.floor((o.viewport_height / 2) - (o.modal_height / 2));
+
+                break;
+
+        }
+
+        // Apply Position
+        data.$current_modal.animate(o.css);
+
+        return o;
 
     };
 
