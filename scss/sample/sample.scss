@@ -136,6 +136,13 @@ body {
     @extend .modal;
     @extend %fx-transition-rolldown;
     width: $container - ($margin * 2);
+
+    .is-content {
+        display: none;
+        &.is-visible {
+            display: block;
+        }
+    }
 }
 
 %carousel-example {

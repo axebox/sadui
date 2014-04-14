@@ -24,7 +24,8 @@ sadui.modal = function(opts){
         position:       'center',
         active:         false,
         triggerClass:   '.is-modal-trigger',
-        $modals:        {}
+        $modals:        {},
+        show_count:     0
     };
 
     var conf = $.extend(defaults, opts);
@@ -135,6 +136,8 @@ sadui.modal = function(opts){
 
                 conf.$overlay.addClass('is-visible');
 
+                conf.show_count++;
+
                 break;
 
         }
@@ -143,40 +146,44 @@ sadui.modal = function(opts){
 
     // vertically center position modal
     // can expand this feature to support custom positioning at a later date
-    conf.position_modal = function(){
+    conf.position_modal = function(directive){
 
         var data = conf.$container.data('modal');
 
-        o = {
-            css: {}
-        };
+        var css = {}
+
+        if (typeof directive === 'undefined') {
+            directive = 'css';
+        }
+
+        if (conf.show_count < 1) {
+            directive = 'css';
+        }
 
         switch (conf.position) {
 
             case "center":
 
-                o.modal_height = data.$current_modal.outerHeight(true);
-                o.viewport_height = $(window).height();
+                modal_height = data.$current_modal.outerHeight(true);
+                viewport_height = $(window).height();
 
-                o.css.top = Math.floor(((o.viewport_height / 2) - (o.modal_height / 2)) / 2);
+                css.top = Math.floor(((viewport_height / 2) - (modal_height / 2)) / 2);
 
                 break;
 
             case "absolutecenter":
 
-                o.modal_height = data.$current_modal.outerHeight(true);
-                o.viewport_height = $(window).height();
+                modal_height = data.$current_modal.outerHeight(true);
+                viewport_height = $(window).height();
 
-                o.css.top = Math.floor((o.viewport_height / 2) - (o.modal_height / 2));
+                css.top = Math.floor((viewport_height / 2) - (modal_height / 2));
 
                 break;
 
         }
 
         // Apply Position
-        data.$current_modal.animate(o.css);
-
-        return o;
+        data.$current_modal[directive](css);
 
     };
 

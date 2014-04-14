@@ -81,6 +81,15 @@ $(function(){
       api.show_modal(modal_ID);
     });
 
+    $('.is-content-trigger', '#modal_example_2').on('click', function(ev){
+      if ($('.is-content', '#modal_example_2').hasClass('is-visible')) {
+        $('.is-content', '#modal_example_2').removeClass('is-visible');
+      } else {
+        $('.is-content', '#modal_example_2').addClass('is-visible');
+      }
+      api.position_modal();
+    })
+
   })();
 
   (function(){
