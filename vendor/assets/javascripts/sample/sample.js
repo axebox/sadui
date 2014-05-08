@@ -33,7 +33,7 @@ $(function(){
   (function(){
 
     $view = $('#loader_view');
-
+    
     $('#loader_example_single li', $view).each(function(){
       var $this, $img, loader, promise, src;
 
@@ -59,6 +59,40 @@ $(function(){
         console.log('asset failed', d);
       });
 
+
+    });
+
+  })();
+
+  (function(){
+
+    var $view, $trigger;
+
+    $view = $('#loader_example_multiple');
+    $trigger = $('.is-loader-example-multiple-trigger');
+
+    $trigger.on('click', function(ev){
+      ev.preventDefault();
+
+      images = new sadui.loader({
+        $container: $view
+      });
+
+      promise = images.load_images();
+
+      // When assets have loaded
+      promise.done(function(d){
+
+        $('[data-preload]', $view).each(function(){
+          src = $(this).data('preload');
+          $(this).attr('src', src);
+        });
+
+      });
+
+      promise.fail(function(d){
+        console.log('asset failed', d);
+      });
 
     });
 
