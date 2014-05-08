@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.0'
 
 # Specify your gem's dependencies in sadui.gemspec
-gemspec
+# gemspec
 
 # gem "sass"
 gem "sass","~> 3.2.3"
