@@ -4,7 +4,8 @@
     @include user-select(none);
 }
 
-.bullet-menu-horizontal {
+.bullet-menu--horizontal {
+    @extend .bullet-menu;
     .bullet-item {
         @include inline-block;
     }
