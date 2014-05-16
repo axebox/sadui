@@ -169,6 +169,18 @@ body {
 .carousel--example-base {
     @extend .carousel;
     @extend %carousel-example;
+
+    .carousel-content {
+        width: 9999em;
+    }
+
+    .carousel-content-item {
+        float: left;
+        margin-left: 10px;
+        &:first-child {
+            margin-left: 0;
+        }
+    }
 }
 
 // This example uses susy percentage based grids

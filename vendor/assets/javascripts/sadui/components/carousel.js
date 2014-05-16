@@ -281,23 +281,34 @@ sadui.carousel = function(opts){
 
     var refresh_content = function(){
 
+        conf.item_width = 0;
+
         // Set selected fluid cssclass. CSS will handle animation
         if (conf.hasFluid){
+
             conf.$content.removeClass (function (index, cssclass) {
                 return (cssclass.match (/\bis-selected-item\S+/g) || []).join(' ');
             });
 
             conf.$content.addClass('is-selected-item-' + conf.index);
+
         }
 
-        // Adjust content position
-        if (!conf.hasFluid){
-            // 
-        }
-        
         // Set left most item in carousel content
         $('.carousel-content-item', conf.$content).removeClass('is-selected');
         $('.carousel-content-item', conf.$content).eq( conf.index ).addClass('is-selected');
+
+        // Adjust content position
+        if (!conf.hasFluid){
+
+            // figure out position
+            conf.item_width = $('.carousel-content-item', conf.$content).eq(conf.index).outerWidth(true);
+
+            // apply
+            conf.$content.css('transform', 'translate3d(-' + conf.item_width * conf.index + 'px, 0, 0)');
+
+        }
+
     };
 
     var refresh_navigation = function(){
@@ -438,6 +449,8 @@ sadui.carousel = function(opts){
 
         update_data();
     };
+
+    conf.init = init();
 
     if (conf.autoinit) {
         init();

@@ -17,14 +17,14 @@
 /* Carousel */
 /* Default Colors */
 /* line 3, ../../../../scss/sadui/components/_bullet.scss */
-.bullet-menu {
+.bullet-menu, .bullet-menu--horizontal {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
 
-/* line 8, ../../../../scss/sadui/components/_bullet.scss */
-.bullet-menu-horizontal .bullet-item {
+/* line 9, ../../../../scss/sadui/components/_bullet.scss */
+.bullet-menu--horizontal .bullet-item {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -33,26 +33,26 @@
   *display: inline;
 }
 
-/* line 14, ../../../../scss/sadui/components/_bullet.scss */
+/* line 15, ../../../../scss/sadui/components/_bullet.scss */
 .bullet-menu-vertical .bullet-item {
   display: block;
   clear: both;
 }
 
-/* line 20, ../../../../scss/sadui/components/_bullet.scss */
+/* line 21, ../../../../scss/sadui/components/_bullet.scss */
 .bullet-item {
   cursor: pointer;
   position: relative;
 }
-/* line 25, ../../../../scss/sadui/components/_bullet.scss */
+/* line 26, ../../../../scss/sadui/components/_bullet.scss */
 .bullet-item:hover .bullet {
   background-color: #3b3b3b;
 }
-/* line 32, ../../../../scss/sadui/components/_bullet.scss */
+/* line 33, ../../../../scss/sadui/components/_bullet.scss */
 .bullet-item.is-selected .bullet, .bullet-item.is-selected:hover .bullet {
   background-color: #3333cc;
 }
-/* line 37, ../../../../scss/sadui/components/_bullet.scss */
+/* line 38, ../../../../scss/sadui/components/_bullet.scss */
 .bullet-item input[type="radio"] {
   visibility: hidden;
   position: absolute;
@@ -60,7 +60,7 @@
   height: 0.85rem;
 }
 
-/* line 45, ../../../../scss/sadui/components/_bullet.scss */
+/* line 46, ../../../../scss/sadui/components/_bullet.scss */
 .bullet-item-label {
   display: -moz-inline-stack;
   display: inline-block;
@@ -70,7 +70,7 @@
   *display: inline;
 }
 
-/* line 49, ../../../../scss/sadui/components/_bullet.scss */
+/* line 50, ../../../../scss/sadui/components/_bullet.scss */
 .bullet {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1368,22 +1368,22 @@ body {
 }
 
 /* Views */
-/* line 76, ../../../../scss/sample/sample.scss */
+/* line 83, ../../../../scss/sample/sample.scss */
 .pretty-dropdown-view > * {
   margin-left: 20px;
 }
-/* line 78, ../../../../scss/sample/sample.scss */
+/* line 85, ../../../../scss/sample/sample.scss */
 .pretty-dropdown-view > *:first-of-type {
   margin-left: 0;
 }
 
-/* line 105, ../../../../scss/sample/sample.scss */
+/* line 112, ../../../../scss/sample/sample.scss */
 .loader-view .loader-example ul, .loader-view .loader-example li {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-/* line 110, ../../../../scss/sample/sample.scss */
+/* line 117, ../../../../scss/sample/sample.scss */
 .loader-view .loader-example li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1394,59 +1394,73 @@ body {
   width: 160px;
   margin-left: 20px;
 }
-/* line 114, ../../../../scss/sample/sample.scss */
+/* line 121, ../../../../scss/sample/sample.scss */
 .loader-view .loader-example li:first-child {
   margin-left: 0;
 }
-/* line 118, ../../../../scss/sample/sample.scss */
+/* line 125, ../../../../scss/sample/sample.scss */
 .loader-view .loader-example img {
   width: 100%;
   height: auto;
 }
 
-/* line 125, ../../../../scss/sample/sample.scss */
+/* line 132, ../../../../scss/sample/sample.scss */
 .modal, .modal--example1, .modal--example2 {
   color: black;
 }
 
-/* line 129, ../../../../scss/sample/sample.scss */
+/* line 136, ../../../../scss/sample/sample.scss */
 .modal--example1 {
   width: 720px;
 }
 
-/* line 135, ../../../../scss/sample/sample.scss */
+/* line 142, ../../../../scss/sample/sample.scss */
 .modal--example2 {
   width: 720px;
 }
-/* line 140, ../../../../scss/sample/sample.scss */
+/* line 147, ../../../../scss/sample/sample.scss */
 .modal--example2 .is-content {
   display: none;
 }
-/* line 142, ../../../../scss/sample/sample.scss */
+/* line 149, ../../../../scss/sample/sample.scss */
 .modal--example2 .is-content.is-visible {
   display: block;
 }
 
-/* line 153, ../../../../scss/sample/sample.scss */
+/* line 160, ../../../../scss/sample/sample.scss */
 .carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back, .carousel--example-background .carousel-navigation-item-back, .carousel--example-vertical .carousel-navigation-item-back {
   float: left;
 }
-/* line 157, ../../../../scss/sample/sample.scss */
+/* line 164, ../../../../scss/sample/sample.scss */
 .carousel--example-base .carousel-navigation-item-forward, .carousel--example-fluid .carousel-navigation-item-forward, .carousel--example-background .carousel-navigation-item-forward, .carousel--example-vertical .carousel-navigation-item-forward {
   float: right;
 }
 
-/* line 181, ../../../../scss/sample/sample.scss */
+/* line 173, ../../../../scss/sample/sample.scss */
+.carousel--example-base .carousel-content {
+  width: 9999em;
+}
+/* line 177, ../../../../scss/sample/sample.scss */
+.carousel--example-base .carousel-content-item {
+  float: left;
+  margin-left: 10px;
+}
+/* line 180, ../../../../scss/sample/sample.scss */
+.carousel--example-base .carousel-content-item:first-child {
+  margin-left: 0;
+}
+
+/* line 200, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content-item {
   width: 23.72881%;
   margin-right: 1.69492%;
 }
-/* line 185, ../../../../scss/sample/sample.scss */
+/* line 204, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content-item img {
   width: 100%;
   height: auto;
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-1 {
   -webkit-transform: translate3d(-25.42373%, 0, 1em);
   -moz-transform: translate3d(-25.42373%, 0, 1em);
@@ -1454,7 +1468,7 @@ body {
   -o-transform: translate3d(-25.42373%, 0, 1em);
   transform: translate3d(-25.42373%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-2 {
   -webkit-transform: translate3d(-50.84746%, 0, 1em);
   -moz-transform: translate3d(-50.84746%, 0, 1em);
@@ -1462,7 +1476,7 @@ body {
   -o-transform: translate3d(-50.84746%, 0, 1em);
   transform: translate3d(-50.84746%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-3 {
   -webkit-transform: translate3d(-76.27119%, 0, 1em);
   -moz-transform: translate3d(-76.27119%, 0, 1em);
@@ -1470,7 +1484,7 @@ body {
   -o-transform: translate3d(-76.27119%, 0, 1em);
   transform: translate3d(-76.27119%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-4 {
   -webkit-transform: translate3d(-101.69492%, 0, 1em);
   -moz-transform: translate3d(-101.69492%, 0, 1em);
@@ -1478,7 +1492,7 @@ body {
   -o-transform: translate3d(-101.69492%, 0, 1em);
   transform: translate3d(-101.69492%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-5 {
   -webkit-transform: translate3d(-127.11864%, 0, 1em);
   -moz-transform: translate3d(-127.11864%, 0, 1em);
@@ -1486,7 +1500,7 @@ body {
   -o-transform: translate3d(-127.11864%, 0, 1em);
   transform: translate3d(-127.11864%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-6 {
   -webkit-transform: translate3d(-152.54237%, 0, 1em);
   -moz-transform: translate3d(-152.54237%, 0, 1em);
@@ -1494,7 +1508,7 @@ body {
   -o-transform: translate3d(-152.54237%, 0, 1em);
   transform: translate3d(-152.54237%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-7 {
   -webkit-transform: translate3d(-177.9661%, 0, 1em);
   -moz-transform: translate3d(-177.9661%, 0, 1em);
@@ -1502,7 +1516,7 @@ body {
   -o-transform: translate3d(-177.9661%, 0, 1em);
   transform: translate3d(-177.9661%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-8 {
   -webkit-transform: translate3d(-203.38983%, 0, 1em);
   -moz-transform: translate3d(-203.38983%, 0, 1em);
@@ -1510,7 +1524,7 @@ body {
   -o-transform: translate3d(-203.38983%, 0, 1em);
   transform: translate3d(-203.38983%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-9 {
   -webkit-transform: translate3d(-228.81356%, 0, 1em);
   -moz-transform: translate3d(-228.81356%, 0, 1em);
@@ -1518,7 +1532,7 @@ body {
   -o-transform: translate3d(-228.81356%, 0, 1em);
   transform: translate3d(-228.81356%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-10 {
   -webkit-transform: translate3d(-254.23729%, 0, 1em);
   -moz-transform: translate3d(-254.23729%, 0, 1em);
@@ -1526,7 +1540,7 @@ body {
   -o-transform: translate3d(-254.23729%, 0, 1em);
   transform: translate3d(-254.23729%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-11 {
   -webkit-transform: translate3d(-279.66102%, 0, 1em);
   -moz-transform: translate3d(-279.66102%, 0, 1em);
@@ -1534,7 +1548,7 @@ body {
   -o-transform: translate3d(-279.66102%, 0, 1em);
   transform: translate3d(-279.66102%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-12 {
   -webkit-transform: translate3d(-305.08475%, 0, 1em);
   -moz-transform: translate3d(-305.08475%, 0, 1em);
@@ -1542,7 +1556,7 @@ body {
   -o-transform: translate3d(-305.08475%, 0, 1em);
   transform: translate3d(-305.08475%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-13 {
   -webkit-transform: translate3d(-330.50847%, 0, 1em);
   -moz-transform: translate3d(-330.50847%, 0, 1em);
@@ -1550,7 +1564,7 @@ body {
   -o-transform: translate3d(-330.50847%, 0, 1em);
   transform: translate3d(-330.50847%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-14 {
   -webkit-transform: translate3d(-355.9322%, 0, 1em);
   -moz-transform: translate3d(-355.9322%, 0, 1em);
@@ -1558,7 +1572,7 @@ body {
   -o-transform: translate3d(-355.9322%, 0, 1em);
   transform: translate3d(-355.9322%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-15 {
   -webkit-transform: translate3d(-381.35593%, 0, 1em);
   -moz-transform: translate3d(-381.35593%, 0, 1em);
@@ -1566,7 +1580,7 @@ body {
   -o-transform: translate3d(-381.35593%, 0, 1em);
   transform: translate3d(-381.35593%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-16 {
   -webkit-transform: translate3d(-406.77966%, 0, 1em);
   -moz-transform: translate3d(-406.77966%, 0, 1em);
@@ -1574,7 +1588,7 @@ body {
   -o-transform: translate3d(-406.77966%, 0, 1em);
   transform: translate3d(-406.77966%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-17 {
   -webkit-transform: translate3d(-432.20339%, 0, 1em);
   -moz-transform: translate3d(-432.20339%, 0, 1em);
@@ -1582,7 +1596,7 @@ body {
   -o-transform: translate3d(-432.20339%, 0, 1em);
   transform: translate3d(-432.20339%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-18 {
   -webkit-transform: translate3d(-457.62712%, 0, 1em);
   -moz-transform: translate3d(-457.62712%, 0, 1em);
@@ -1590,7 +1604,7 @@ body {
   -o-transform: translate3d(-457.62712%, 0, 1em);
   transform: translate3d(-457.62712%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-19 {
   -webkit-transform: translate3d(-483.05085%, 0, 1em);
   -moz-transform: translate3d(-483.05085%, 0, 1em);
@@ -1598,7 +1612,7 @@ body {
   -o-transform: translate3d(-483.05085%, 0, 1em);
   transform: translate3d(-483.05085%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-20 {
   -webkit-transform: translate3d(-508.47458%, 0, 1em);
   -moz-transform: translate3d(-508.47458%, 0, 1em);
@@ -1606,7 +1620,7 @@ body {
   -o-transform: translate3d(-508.47458%, 0, 1em);
   transform: translate3d(-508.47458%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-21 {
   -webkit-transform: translate3d(-533.89831%, 0, 1em);
   -moz-transform: translate3d(-533.89831%, 0, 1em);
@@ -1614,7 +1628,7 @@ body {
   -o-transform: translate3d(-533.89831%, 0, 1em);
   transform: translate3d(-533.89831%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-22 {
   -webkit-transform: translate3d(-559.32203%, 0, 1em);
   -moz-transform: translate3d(-559.32203%, 0, 1em);
@@ -1622,7 +1636,7 @@ body {
   -o-transform: translate3d(-559.32203%, 0, 1em);
   transform: translate3d(-559.32203%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-23 {
   -webkit-transform: translate3d(-584.74576%, 0, 1em);
   -moz-transform: translate3d(-584.74576%, 0, 1em);
@@ -1630,7 +1644,7 @@ body {
   -o-transform: translate3d(-584.74576%, 0, 1em);
   transform: translate3d(-584.74576%, 0, 1em);
 }
-/* line 194, ../../../../scss/sample/sample.scss */
+/* line 213, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-24 {
   -webkit-transform: translate3d(-610.16949%, 0, 1em);
   -moz-transform: translate3d(-610.16949%, 0, 1em);
