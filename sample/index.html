@@ -3,42 +3,6 @@
   <head>
     <title>SADUI Samples</title>
     <link href="../vendor/assets/stylesheets/sample/sample.css" rel="stylesheet" />
-    <script>
-
-      var Globals = {};
-
-      // flag for debugging
-      Globals.debug           = true;
-
-      Globals.layoutState     = 'clear';
-      Globals.baseSpeed       = 1000;
-      Globals.animSpeed       = Globals.baseSpeed;
-
-      /* layers */
-      Globals.zBase           = 1000;
-      Globals.zHell           = Globals.zBase - 100;
-      Globals.zTemplate       = Globals.zBase;
-      Globals.zModule         = Globals.zBase + 100;
-      Globals.zTemplateTop    = Globals.zBase + 200;
-      Globals.zDialog         = Globals.zBase + 300;
-      Globals.zTooltip        = Globals.zBase + 400;
-
-      Globals.breakpoints = {
-          'phone': {
-              name: 'phone',
-              breakpoint: 481
-          },
-          'tablet': {
-              name: 'tablet',
-              breakpoint: 768
-          },
-          'desktop': {
-              name: 'desktop'
-              // breakpoint: 
-          }
-      };
-
-    </script>
   </head>
 </html>
 <body>
@@ -129,6 +93,39 @@
 
           <h4>Base</h4>
           <div id="carousel_example_base" class="carousel--example-base">
+            <div class="carousel-navigation-item-back is-carousel-back">
+              <span class="label" title="Back">&lt;</span>
+            </div>
+            <div class="carousel-navigation-item-forward is-carousel-forward">
+              <span class="label" title="Forward">&gt;</span>
+            </div>
+            <ul class="carousel-pagination">
+              <li class="carousel-pagination-item" data-carousel-item="1"></li>
+              <li class="carousel-pagination-item" data-carousel-item="2"></li>
+              <li class="carousel-pagination-item" data-carousel-item="3"></li>
+              <li class="carousel-pagination-item" data-carousel-item="4"></li>
+              <li class="carousel-pagination-item" data-carousel-item="5"></li>
+              <li class="carousel-pagination-item" data-carousel-item="6"></li>
+            </ul>
+            <div class="carousel-content-wrapper">
+              <ul class="carousel-content">
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-3-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-4-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-3-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-4-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-1-thumb.jpg" alt=""></li>
+                <li class="carousel-content-item"><img src="images/sample-image-2-thumb.jpg" alt=""></li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="carousel_example_base2" class="carousel--example-base">
             <div class="carousel-navigation-item-back is-carousel-back">
               <span class="label" title="Back">&lt;</span>
             </div>
@@ -513,6 +510,43 @@
   
   <!-- SADUI -->
   <script src="../vendor/assets/javascripts/sadui/sadui.js"></script>
+
+  <script>
+    // override sadui.Globals
+
+    // flag for debugging
+    sadui.Globals.debug           = true;
+
+    sadui.Globals.baseSpeed       = 1000;
+    sadui.Globals.animSpeed       = sadui.Globals.baseSpeed;
+
+    /* layers */
+    sadui.Globals.zBase           = 1000;
+    sadui.Globals.zHell           = sadui.Globals.zBase - 100;
+    sadui.Globals.zTemplate       = sadui.Globals.zBase;
+    sadui.Globals.zModule         = sadui.Globals.zBase + 100;
+    sadui.Globals.zTemplateTop    = sadui.Globals.zBase + 200;
+    sadui.Globals.zDialog         = sadui.Globals.zBase + 300;
+    sadui.Globals.zTooltip        = sadui.Globals.zBase + 400;
+
+    sadui.Globals.breakpoints = {
+        'phone': {
+            name: 'phone',
+            breakpoint: 481
+        },
+        'tablet': {
+            name: 'tablet',
+            breakpoint: 768
+        },
+        'desktop': {
+            name: 'desktop'
+            // breakpoint: 
+        }
+    };
+
+  </script>
+
+
   <script src="../vendor/assets/javascripts/sadui/util.js"></script>
   <script src="../vendor/assets/javascripts/sadui/helpers/breakpoints.js"></script>
   <script src="../vendor/assets/javascripts/sadui/helpers/single_scroll.js"></script>

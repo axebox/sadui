@@ -131,11 +131,11 @@ $(function(){
     $view = $('#carousel_view');
 
     var carousel_example_base = new sadui.carousel({
-      $container: $('#carousel_example_base'),
-      $pagination: $('.carousel-pagination', '#carousel_example_base'),
-      $navigation: $('[class^="carousel-navigation"]', '#carousel_example_base'),
-      $content: $('.carousel-content', '#carousel_example_base'),
-      $background: $('.carousel-background', '#carousel_example_base'),
+      $container: $('.carousel--example-base'),
+      $pagination: $('.carousel-pagination', '.carousel--example-base'),
+      $navigation: $('[class^="carousel-navigation"]', '.carousel--example-base'),
+      $content: $('.carousel-content', '.carousel--example-base'),
+      $background: $('.carousel-background', '.carousel--example-base'),
       orientation: 'horizontal',
       visibleItems: 4,
       playback: false

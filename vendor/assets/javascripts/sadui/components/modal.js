@@ -243,8 +243,8 @@ sadui.modal = function(opts){
 
     var bind_resize_img = function(){
 
-        $.each(Globals.breakpoints, function(name){
-            var obj = Globals.breakpoints[name];
+        $.each(sadui.Globals.breakpoints, function(name){
+            var obj = sadui.Globals.breakpoints[name];
 
             if (typeof obj.Callbacks === 'object') {
 

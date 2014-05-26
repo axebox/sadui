@@ -351,7 +351,7 @@ sadui.carousel = function(opts){
         $('.carousel-background-item', conf.$background).one('transitionend', function(){
             setTimeout(function(){
                 $('.is-selected', conf.$background).remove().insertBefore( $('.carousel-background-item:first', conf.$background) );
-            }, Globals.animSpeed / 2);
+            }, sadui.Globals.animSpeed / 2);
         });
     };
 
@@ -359,7 +359,7 @@ sadui.carousel = function(opts){
         conf.playback_timer = setTimeout(function(){
             set_index('forward');
             jump_to_item();
-        }, Globals.baseSpeed*5);
+        }, sadui.Globals.baseSpeed*5);
         return 'play';
     };
 

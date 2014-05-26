@@ -5,21 +5,21 @@
  */
 
 // Add $.Callbacks() obj to each breakpoint
-$.each(Globals.breakpoints, function(i,v){
+$.each(sadui.Globals.breakpoints, function(i,v){
     var name = i;
     v.Callbacks = $.Callbacks('unique');
 });
 
 var update_data = function(){
-    if (Globals.debug) $('body').data('Globals', Globals);
+    if (sadui.Globals.debug) $('body').data('Globals', sadui.Globals);
 };
 
 // Set up template breakpoints
 Response.action(function(){
     
-    if (Response.viewportW() <= Globals.breakpoints.phone.breakpoint) {
+    if (Response.viewportW() <= sadui.Globals.breakpoints.phone.breakpoint) {
 
-        Globals.breakpoints.device = 'phone';
+        sadui.Globals.breakpoints.device = 'phone';
 
         // Update DOM
         $('body')
@@ -27,9 +27,9 @@ Response.action(function(){
             .removeClass('is-device-tablet')
             .addClass('is-device-phone');
 
-    } else if (Response.viewportW() <= Globals.breakpoints.tablet.breakpoint) {
+    } else if (Response.viewportW() <= sadui.Globals.breakpoints.tablet.breakpoint) {
 
-        Globals.breakpoints.device = 'tablet';
+        sadui.Globals.breakpoints.device = 'tablet';
 
         // Update DOM
         $('body')
@@ -39,7 +39,7 @@ Response.action(function(){
 
     } else {
 
-        Globals.breakpoints.device = 'desktop';
+        sadui.Globals.breakpoints.device = 'desktop';
 
         $('body')
             .addClass('is-device-desktop')
@@ -51,15 +51,15 @@ Response.action(function(){
     date.setTime( date.getTime()+ 60 * 60 * 24 * 7 ); // 60 seconds to a minute, 60 minutes to an hour, 24 hours to a day, and 7 days
 
     // if (document.cookie.indexOf("device") >= 0)
-    document.cookie='device=' + Globals.breakpoints.device + '; max-age=' + date.toGMTString() + '; expires=' + date.toGMTString() + '; path=/';
+    document.cookie='device=' + sadui.Globals.breakpoints.device + '; max-age=' + date.toGMTString() + '; expires=' + date.toGMTString() + '; path=/';
 
     // Execute registered breakpoint callbacks
-    $.each(Globals.breakpoints, function(name){
-        var obj = Globals.breakpoints[name];
+    $.each(sadui.Globals.breakpoints, function(name){
+        var obj = sadui.Globals.breakpoints[name];
 
-        if (typeof obj.Callbacks === 'object' && Globals.breakpoints.device === name) {
+        if (typeof obj.Callbacks === 'object' && sadui.Globals.breakpoints.device === name) {
             obj.Callbacks.fire(obj);
-            // console.log('fired ' + name + ', device is ' + Globals.breakpoints.device);
+            // console.log('fired ' + name + ', device is ' + sadui.Globals.breakpoints.device);
 
             update_data();
         }
