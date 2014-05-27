@@ -68,6 +68,7 @@ sadui.carousel = function(opts){
 
             conf.$navigation.off('click').on('click', function(ev){
                 ev.preventDefault();
+                ev.stopPropagation();
 
                 var $this = $(this);
 
