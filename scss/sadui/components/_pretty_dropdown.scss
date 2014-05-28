@@ -52,6 +52,9 @@
     .pretty-dropdown-icon {}
 
     select {
+        // reset
+        border: 0 none;
+
         width: 100%;
         position: absolute;
         z-index: $zTemplate + 1;
