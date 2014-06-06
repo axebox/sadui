@@ -434,7 +434,7 @@ sadui.carousel = function(opts){
         }
 
         // tab index allows $container to achieve focus event
-        conf.$container.attr('tabIndex', '-1');
+        // conf.$container.attr('tabIndex', '-1');
 
         // set up background
         // store original index because we'll be moving these elements around and they'll lose their index
