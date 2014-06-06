@@ -12,10 +12,10 @@ sadui.transition_duration = function(opts){
     var defaults = {
         properties: [
             'transition-duration',
-            '-webkit-transtion-duration',
-            '-moz-transtion-duration',
-            '-ms-transtion-duration',
-            '-o-transtion-duration',
+            '-webkit-transition-duration',
+            '-moz-transition-duration',
+            '-ms-transition-duration',
+            '-o-transition-duration',
         ]
     };
 
@@ -42,20 +42,20 @@ sadui.transition_duration = function(opts){
     // // check the vendor transition duration properties
     // } else {
 
-    //     if (conf.$el.css('-webkit-transtion-duration')) {
-    //         return get_duration('-webkit-transtion-duration');
+    //     if (conf.$el.css('-webkit-transition-duration')) {
+    //         return get_duration('-webkit-transition-duration');
     //     }
 
-    //     if (conf.$el.css('-moz-transtion-duration')) {
-    //         return get_duration('-moz-transtion-duration');
+    //     if (conf.$el.css('-moz-transition-duration')) {
+    //         return get_duration('-moz-transition-duration');
     //     }
 
-    //     if (conf.$el.css('-ms-transtion-duration')) {
-    //         return get_duration('-ms-transtion-duration');
+    //     if (conf.$el.css('-ms-transition-duration')) {
+    //         return get_duration('-ms-transition-duration');
     //     }
 
-    //     if (conf.$el.css('-o-transtion-duration')) {
-    //         return get_duration('-o-transtion-duration');
+    //     if (conf.$el.css('-o-transition-duration')) {
+    //         return get_duration('-o-transition-duration');
     //     }
     // }
 
