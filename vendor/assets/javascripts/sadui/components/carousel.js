@@ -33,7 +33,8 @@
  * String opts.orientation orientation of the carousel '[horizontal]|vertical'
  * Integer opts.visibleItems number of visible items per slide
  * Boolean opts.playback [false]
- * Boolean opts.drag [false]
+ * //Boolean opts.drag [false]
+ * Boolean opts.paginationPages [false]
  * Boolean opts.autoinit [true]
  * @return Object opts internal configuration object
 */
@@ -44,6 +45,7 @@ sadui.carousel = function(opts){
         index: 0,
         totalItems: 0,
         totalScreens: 0,
+        paginationPages: false,
         fluid: false,
         autoinit: true
     };
@@ -56,9 +58,18 @@ sadui.carousel = function(opts){
         if (conf.hasPagination) {
 
             $('.carousel-pagination-item', conf.$pagination).off('click').on('click', function(ev){
+
+                // item index
                 var ix = $(ev.currentTarget).index();
+            
+                // page index
+                if (conf.paginationPages && conf.visibleItems) {
+                    ix = ix * conf.visibleItems;
+                } 
+
                 set_index( ix );
                 jump_to_item(ev);
+
             });
 
         }
@@ -306,7 +317,10 @@ sadui.carousel = function(opts){
             conf.item_width = $('.carousel-content-item', conf.$content).eq(conf.index).outerWidth(true);
 
             // apply
-            conf.$content.css('transform', 'translate3d(-' + conf.item_width * conf.index + 'px, 0, 0)');
+            conf.$content.css({
+                // 'left': conf.item_width * conf.index
+                'transform': 'translate3d(-' + conf.item_width * conf.index + 'px, 0, 0)'
+            });
 
         }
 
@@ -340,7 +354,37 @@ sadui.carousel = function(opts){
         if (!conf.hasPagination) return false;
 
         $('.carousel-pagination-item', conf.$pagination).removeClass('is-selected');
-        $('.carousel-pagination-item', conf.$pagination).eq( conf.index ).addClass('is-selected');
+
+        if (conf.paginationPages && conf.visibleItems) {
+            $('.carousel-pagination-item', conf.$pagination).eq( conf.index / conf.visibleItems ).addClass('is-selected');
+        } else {
+            $('.carousel-pagination-item', conf.$pagination).eq( conf.index * conf.visibleItems ).addClass('is-selected');
+        }
+    };
+
+    // constructs pagination items
+    var build_pagination = function(){
+        if (!conf.hasPaginationPages) return false;
+
+        $('.carousel-pagination-item', conf.$pagination).removeClass('is-selected');
+
+        var pagination_items = [];
+        for (var i = conf.totalScreens - 1; i >= 0; i--) {
+            pagination_items.push( $('.carousel-pagination-item', conf.$pagination).eq(0).clone() );
+        }
+
+        // empty pagination items
+        conf.$pagination.empty();
+
+        // build pagination items from num pages
+        $.each(pagination_items, function(i,v){
+            conf.$pagination.append(pagination_items[i]);
+        });
+
+        // set selected pagination item
+        // todo: use stored conf.page
+        conf.page = 0;//todo
+        $('.carousel-pagination-item', conf.$pagination).eq(conf.page).addClass('is-selected');
     };
 
     var refresh_background = function(){
@@ -413,12 +457,13 @@ sadui.carousel = function(opts){
 
     var init = function(){
 
-        conf.hasPagination  = (typeof conf.$pagination !== 'undefined' && conf.$pagination.length > 0) ? true:false;
-        conf.hasNavigation  = (typeof conf.$navigation !== 'undefined' && conf.$navigation.length > 1) ? true:false;
-        conf.hasBackground  = (typeof conf.$background !== 'undefined' && conf.$background.length > 0) ? true:false;
-        conf.hasPlayback    = (typeof conf.playback !== 'undefined' && conf.playback === true) ? true:false;
-        conf.hasCircular    = (typeof conf.circular !== 'undefined' && conf.circular === true) ? true:false;
-        conf.hasFluid       = (typeof conf.fluid !== 'undefined' && conf.fluid === true) ? true:false;
+        conf.hasPagination          = (typeof conf.$pagination !== 'undefined' && conf.$pagination.length > 0) ? true:false;
+        conf.hasPaginationPages     = (typeof conf.paginationPages !== 'undefined' && conf.paginationPages === true) ? true:false;
+        conf.hasNavigation          = (typeof conf.$navigation !== 'undefined' && conf.$navigation.length > 1) ? true:false;
+        conf.hasBackground          = (typeof conf.$background !== 'undefined' && conf.$background.length > 0) ? true:false;
+        conf.hasPlayback            = (typeof conf.playback !== 'undefined' && conf.playback === true) ? true:false;
+        conf.hasCircular            = (typeof conf.circular !== 'undefined' && conf.circular === true) ? true:false;
+        conf.hasFluid               = (typeof conf.fluid !== 'undefined' && conf.fluid === true) ? true:false;
         // conf.hasDrag        = (typeof conf.drag !== 'undefined' && conf.drag === true) ? true:false;
 
         if (typeof $('.carousel-content-item', conf.$content) !== 'undefined' && $('.carousel-content-item', conf.$content).length > 0) {
@@ -443,6 +488,8 @@ sadui.carousel = function(opts){
                 $(this).addClass('is-index-' + i);
             });
         }
+        var d = 0;
+        build_pagination();
 
         bind();
 

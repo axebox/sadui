@@ -30,39 +30,39 @@ $(function(){
 
   })();
 
-  (function(){
+  // (function(){
 
-    $view = $('#loader_view');
+  //   $view = $('#loader_view');
     
-    $('#loader_example_single li', $view).each(function(){
-      var $this, $img, loader, promise, src;
+  //   $('#loader_example_single li', $view).each(function(){
+  //     var $this, $img, loader, promise, src;
 
-      $this = $(this);
+  //     $this = $(this);
 
-      $img = $('[data-preload]', $this);
+  //     $img = $('[data-preload]', $this);
 
-      loader = new sadui.loader();
-      // images = new sadui.loader({
-      //   $container: $('#loader_example_single')
-      // });
+  //     loader = new sadui.loader();
+  //     // images = new sadui.loader({
+  //     //   $container: $('#loader_example_single')
+  //     // });
 
-      src = $img.data('preload');
+  //     src = $img.data('preload');
 
-      promise = loader.load_image( src );
+  //     promise = loader.load_image( src );
 
-      // When assets have loaded
-      promise.done(function(d){
-        $img.attr('src', src);
-      });
+  //     // When assets have loaded
+  //     promise.done(function(d){
+  //       $img.attr('src', src);
+  //     });
 
-      promise.fail(function(d){
-        console.log('asset failed', d);
-      });
+  //     promise.fail(function(d){
+  //       console.log('asset failed', d);
+  //     });
 
 
-    });
+  //   });
 
-  })();
+  // })();
 
   (function(){
 
@@ -139,6 +139,18 @@ $(function(){
       orientation: 'horizontal',
       visibleItems: 4,
       playback: false
+    });
+
+    var carousel_example_pages = new sadui.carousel({
+      $container:       $('.carousel--example-pages'),
+      $pagination:      $('.carousel-pagination', '.carousel--example-pages'),
+      $navigation:      $('[class^="carousel-navigation"]', '.carousel--example-pages'),
+      $content:         $('.carousel-content', '.carousel--example-pages'),
+      $background:      $('.carousel-background', '.carousel--example-pages'),
+      orientation:      'horizontal',
+      visibleItems:     4,
+      paginationPages:  true,
+      playback:         false
     });
 
     var carousel_example_fluid = new sadui.carousel({

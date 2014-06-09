@@ -153,6 +153,8 @@ body {
 }
 
 %carousel-example {
+    position: relative;
+
     .carousel-navigation-item-back,
     .carousel-navigation-item-forward {
     }
@@ -163,6 +165,11 @@ body {
 
     .carousel-navigation-item-forward {
         float: right;
+    }
+
+    .carousel-pagination {
+        left: 30px;
+        @include horizontal-list;
     }
 }
 
@@ -224,6 +231,11 @@ body {
 }
 
 .carousel--example-vertical {
+    @extend .carousel;
+    @extend %carousel-example;
+}
+
+.carousel--example-pages {
     @extend .carousel;
     @extend %carousel-example;
 }

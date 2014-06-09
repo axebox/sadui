@@ -153,20 +153,20 @@
 /* Carousel */
 /* Default Colors */
 /* line 5, ../../../../scss/sadui/components/_carousel.scss */
-.carousel, .carousel--example-base, .carousel--example-fluid, .carousel--example-background, .carousel--example-vertical {
+.carousel, .carousel--example-base, .carousel--example-fluid, .carousel--example-background, .carousel--example-vertical, .carousel--example-pages {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
   overflow: visible;
 }
 /* line 8, ../../../../scss/sadui/components/_carousel.scss */
-.carousel *, .carousel--example-base *, .carousel--example-fluid *, .carousel--example-background *, .carousel--example-vertical * {
+.carousel *, .carousel--example-base *, .carousel--example-fluid *, .carousel--example-background *, .carousel--example-vertical *, .carousel--example-pages * {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 /* line 18, ../../../../scss/sadui/components/_carousel.scss */
-.carousel, .carousel--example-base, .carousel--example-fluid, .carousel--example-background, .carousel--example-vertical, .carousel *:focus, .carousel--example-base *:focus, .carousel--example-fluid *:focus, .carousel--example-background *:focus, .carousel--example-vertical *:focus {
+.carousel, .carousel--example-base, .carousel--example-fluid, .carousel--example-background, .carousel--example-vertical, .carousel--example-pages, .carousel *:focus, .carousel--example-base *:focus, .carousel--example-fluid *:focus, .carousel--example-background *:focus, .carousel--example-vertical *:focus, .carousel--example-pages *:focus {
   outline-width: 0;
 }
 
@@ -575,6 +575,7 @@
 }
 /* line 54, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown select, .pretty-dropdown--example1 select, .pretty-dropdown--example2 select, .pretty-dropdown--example3 select {
+  border: 0 none;
   width: 100%;
   position: absolute;
   z-index: 1001;
@@ -588,11 +589,11 @@
   line-height: 100%;
   background-color: transparent;
 }
-/* line 70, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 73, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown.has-menu select, .has-menu.pretty-dropdown--example1 select, .has-menu.pretty-dropdown--example2 select, .has-menu.pretty-dropdown--example3 select {
   visibility: hidden;
 }
-/* line 75, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 78, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-icon-container, .pretty-dropdown--example1 .pretty-dropdown-icon-container, .pretty-dropdown--example2 .pretty-dropdown-icon-container, .pretty-dropdown--example3 .pretty-dropdown-icon-container {
   display: block;
   position: absolute;
@@ -600,7 +601,7 @@
   top: 0;
   text-align: center;
 }
-/* line 83, ../../../../scss/sadui/components/_pretty_dropdown.scss */
+/* line 86, ../../../../scss/sadui/components/_pretty_dropdown.scss */
 .pretty-dropdown .pretty-dropdown-icon-container .pretty-dropdown-icon, .pretty-dropdown--example1 .pretty-dropdown-icon-container .pretty-dropdown-icon, .pretty-dropdown--example2 .pretty-dropdown-icon-container .pretty-dropdown-icon, .pretty-dropdown--example3 .pretty-dropdown-icon-container .pretty-dropdown-icon {
   text-indent: -119988px;
   overflow: hidden;
@@ -1122,12 +1123,13 @@ th {
 /* Carousel */
 /* Default Colors */
 /* line 5, ../../../../scss/sadui/themes/_carousel.scss */
-.carousel .carousel-navigation-item-back, .carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back, .carousel--example-background .carousel-navigation-item-back, .carousel--example-vertical .carousel-navigation-item-back,
+.carousel .carousel-navigation-item-back, .carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back, .carousel--example-background .carousel-navigation-item-back, .carousel--example-vertical .carousel-navigation-item-back, .carousel--example-pages .carousel-navigation-item-back,
 .carousel .carousel-navigation-item-forward,
 .carousel--example-base .carousel-navigation-item-forward,
 .carousel--example-fluid .carousel-navigation-item-forward,
 .carousel--example-background .carousel-navigation-item-forward,
-.carousel--example-vertical .carousel-navigation-item-forward {
+.carousel--example-vertical .carousel-navigation-item-forward,
+.carousel--example-pages .carousel-navigation-item-forward {
   background-color: blue;
 }
 
@@ -1427,40 +1429,76 @@ body {
   display: block;
 }
 
-/* line 160, ../../../../scss/sample/sample.scss */
-.carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back, .carousel--example-background .carousel-navigation-item-back, .carousel--example-vertical .carousel-navigation-item-back {
+/* line 155, ../../../../scss/sample/sample.scss */
+.carousel--example-base, .carousel--example-fluid, .carousel--example-background, .carousel--example-vertical, .carousel--example-pages {
+  position: relative;
+}
+/* line 162, ../../../../scss/sample/sample.scss */
+.carousel--example-base .carousel-navigation-item-back, .carousel--example-fluid .carousel-navigation-item-back, .carousel--example-background .carousel-navigation-item-back, .carousel--example-vertical .carousel-navigation-item-back, .carousel--example-pages .carousel-navigation-item-back {
   float: left;
 }
-/* line 164, ../../../../scss/sample/sample.scss */
-.carousel--example-base .carousel-navigation-item-forward, .carousel--example-fluid .carousel-navigation-item-forward, .carousel--example-background .carousel-navigation-item-forward, .carousel--example-vertical .carousel-navigation-item-forward {
+/* line 166, ../../../../scss/sample/sample.scss */
+.carousel--example-base .carousel-navigation-item-forward, .carousel--example-fluid .carousel-navigation-item-forward, .carousel--example-background .carousel-navigation-item-forward, .carousel--example-vertical .carousel-navigation-item-forward, .carousel--example-pages .carousel-navigation-item-forward {
   float: right;
 }
+/* line 170, ../../../../scss/sample/sample.scss */
+.carousel--example-base .carousel-pagination, .carousel--example-fluid .carousel-pagination, .carousel--example-background .carousel-pagination, .carousel--example-vertical .carousel-pagination, .carousel--example-pages .carousel-pagination {
+  left: 30px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 60, ../../../bundle/ruby/2.1.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.carousel--example-base .carousel-pagination li, .carousel--example-fluid .carousel-pagination li, .carousel--example-background .carousel-pagination li, .carousel--example-vertical .carousel-pagination li, .carousel--example-pages .carousel-pagination li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+/* line 48, ../../../bundle/ruby/2.1.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.carousel--example-base .carousel-pagination li:first-child, .carousel--example-fluid .carousel-pagination li:first-child, .carousel--example-background .carousel-pagination li:first-child, .carousel--example-vertical .carousel-pagination li:first-child, .carousel--example-pages .carousel-pagination li:first-child, .carousel--example-base .carousel-pagination li.first, .carousel--example-fluid .carousel-pagination li.first, .carousel--example-background .carousel-pagination li.first, .carousel--example-vertical .carousel-pagination li.first, .carousel--example-pages .carousel-pagination li.first {
+  padding-left: 0;
+}
+/* line 49, ../../../bundle/ruby/2.1.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.carousel--example-base .carousel-pagination li:last-child, .carousel--example-fluid .carousel-pagination li:last-child, .carousel--example-background .carousel-pagination li:last-child, .carousel--example-vertical .carousel-pagination li:last-child, .carousel--example-pages .carousel-pagination li:last-child {
+  padding-right: 0;
+}
+/* line 50, ../../../bundle/ruby/2.1.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.carousel--example-base .carousel-pagination li.last, .carousel--example-fluid .carousel-pagination li.last, .carousel--example-background .carousel-pagination li.last, .carousel--example-vertical .carousel-pagination li.last, .carousel--example-pages .carousel-pagination li.last {
+  padding-right: 0;
+}
 
-/* line 173, ../../../../scss/sample/sample.scss */
+/* line 180, ../../../../scss/sample/sample.scss */
 .carousel--example-base .carousel-content {
   width: 9999em;
 }
-/* line 177, ../../../../scss/sample/sample.scss */
+/* line 184, ../../../../scss/sample/sample.scss */
 .carousel--example-base .carousel-content-item {
   float: left;
   margin-left: 10px;
 }
-/* line 180, ../../../../scss/sample/sample.scss */
+/* line 187, ../../../../scss/sample/sample.scss */
 .carousel--example-base .carousel-content-item:first-child {
   margin-left: 0;
 }
 
-/* line 200, ../../../../scss/sample/sample.scss */
+/* line 207, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content-item {
   width: 23.72881%;
   margin-right: 1.69492%;
 }
-/* line 204, ../../../../scss/sample/sample.scss */
+/* line 211, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content-item img {
   width: 100%;
   height: auto;
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-1 {
   -webkit-transform: translate3d(-25.42373%, 0, 1em);
   -moz-transform: translate3d(-25.42373%, 0, 1em);
@@ -1468,7 +1506,7 @@ body {
   -o-transform: translate3d(-25.42373%, 0, 1em);
   transform: translate3d(-25.42373%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-2 {
   -webkit-transform: translate3d(-50.84746%, 0, 1em);
   -moz-transform: translate3d(-50.84746%, 0, 1em);
@@ -1476,7 +1514,7 @@ body {
   -o-transform: translate3d(-50.84746%, 0, 1em);
   transform: translate3d(-50.84746%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-3 {
   -webkit-transform: translate3d(-76.27119%, 0, 1em);
   -moz-transform: translate3d(-76.27119%, 0, 1em);
@@ -1484,7 +1522,7 @@ body {
   -o-transform: translate3d(-76.27119%, 0, 1em);
   transform: translate3d(-76.27119%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-4 {
   -webkit-transform: translate3d(-101.69492%, 0, 1em);
   -moz-transform: translate3d(-101.69492%, 0, 1em);
@@ -1492,7 +1530,7 @@ body {
   -o-transform: translate3d(-101.69492%, 0, 1em);
   transform: translate3d(-101.69492%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-5 {
   -webkit-transform: translate3d(-127.11864%, 0, 1em);
   -moz-transform: translate3d(-127.11864%, 0, 1em);
@@ -1500,7 +1538,7 @@ body {
   -o-transform: translate3d(-127.11864%, 0, 1em);
   transform: translate3d(-127.11864%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-6 {
   -webkit-transform: translate3d(-152.54237%, 0, 1em);
   -moz-transform: translate3d(-152.54237%, 0, 1em);
@@ -1508,7 +1546,7 @@ body {
   -o-transform: translate3d(-152.54237%, 0, 1em);
   transform: translate3d(-152.54237%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-7 {
   -webkit-transform: translate3d(-177.9661%, 0, 1em);
   -moz-transform: translate3d(-177.9661%, 0, 1em);
@@ -1516,7 +1554,7 @@ body {
   -o-transform: translate3d(-177.9661%, 0, 1em);
   transform: translate3d(-177.9661%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-8 {
   -webkit-transform: translate3d(-203.38983%, 0, 1em);
   -moz-transform: translate3d(-203.38983%, 0, 1em);
@@ -1524,7 +1562,7 @@ body {
   -o-transform: translate3d(-203.38983%, 0, 1em);
   transform: translate3d(-203.38983%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-9 {
   -webkit-transform: translate3d(-228.81356%, 0, 1em);
   -moz-transform: translate3d(-228.81356%, 0, 1em);
@@ -1532,7 +1570,7 @@ body {
   -o-transform: translate3d(-228.81356%, 0, 1em);
   transform: translate3d(-228.81356%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-10 {
   -webkit-transform: translate3d(-254.23729%, 0, 1em);
   -moz-transform: translate3d(-254.23729%, 0, 1em);
@@ -1540,7 +1578,7 @@ body {
   -o-transform: translate3d(-254.23729%, 0, 1em);
   transform: translate3d(-254.23729%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-11 {
   -webkit-transform: translate3d(-279.66102%, 0, 1em);
   -moz-transform: translate3d(-279.66102%, 0, 1em);
@@ -1548,7 +1586,7 @@ body {
   -o-transform: translate3d(-279.66102%, 0, 1em);
   transform: translate3d(-279.66102%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-12 {
   -webkit-transform: translate3d(-305.08475%, 0, 1em);
   -moz-transform: translate3d(-305.08475%, 0, 1em);
@@ -1556,7 +1594,7 @@ body {
   -o-transform: translate3d(-305.08475%, 0, 1em);
   transform: translate3d(-305.08475%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-13 {
   -webkit-transform: translate3d(-330.50847%, 0, 1em);
   -moz-transform: translate3d(-330.50847%, 0, 1em);
@@ -1564,7 +1602,7 @@ body {
   -o-transform: translate3d(-330.50847%, 0, 1em);
   transform: translate3d(-330.50847%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-14 {
   -webkit-transform: translate3d(-355.9322%, 0, 1em);
   -moz-transform: translate3d(-355.9322%, 0, 1em);
@@ -1572,7 +1610,7 @@ body {
   -o-transform: translate3d(-355.9322%, 0, 1em);
   transform: translate3d(-355.9322%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-15 {
   -webkit-transform: translate3d(-381.35593%, 0, 1em);
   -moz-transform: translate3d(-381.35593%, 0, 1em);
@@ -1580,7 +1618,7 @@ body {
   -o-transform: translate3d(-381.35593%, 0, 1em);
   transform: translate3d(-381.35593%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-16 {
   -webkit-transform: translate3d(-406.77966%, 0, 1em);
   -moz-transform: translate3d(-406.77966%, 0, 1em);
@@ -1588,7 +1626,7 @@ body {
   -o-transform: translate3d(-406.77966%, 0, 1em);
   transform: translate3d(-406.77966%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-17 {
   -webkit-transform: translate3d(-432.20339%, 0, 1em);
   -moz-transform: translate3d(-432.20339%, 0, 1em);
@@ -1596,7 +1634,7 @@ body {
   -o-transform: translate3d(-432.20339%, 0, 1em);
   transform: translate3d(-432.20339%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-18 {
   -webkit-transform: translate3d(-457.62712%, 0, 1em);
   -moz-transform: translate3d(-457.62712%, 0, 1em);
@@ -1604,7 +1642,7 @@ body {
   -o-transform: translate3d(-457.62712%, 0, 1em);
   transform: translate3d(-457.62712%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-19 {
   -webkit-transform: translate3d(-483.05085%, 0, 1em);
   -moz-transform: translate3d(-483.05085%, 0, 1em);
@@ -1612,7 +1650,7 @@ body {
   -o-transform: translate3d(-483.05085%, 0, 1em);
   transform: translate3d(-483.05085%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-20 {
   -webkit-transform: translate3d(-508.47458%, 0, 1em);
   -moz-transform: translate3d(-508.47458%, 0, 1em);
@@ -1620,7 +1658,7 @@ body {
   -o-transform: translate3d(-508.47458%, 0, 1em);
   transform: translate3d(-508.47458%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-21 {
   -webkit-transform: translate3d(-533.89831%, 0, 1em);
   -moz-transform: translate3d(-533.89831%, 0, 1em);
@@ -1628,7 +1666,7 @@ body {
   -o-transform: translate3d(-533.89831%, 0, 1em);
   transform: translate3d(-533.89831%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-22 {
   -webkit-transform: translate3d(-559.32203%, 0, 1em);
   -moz-transform: translate3d(-559.32203%, 0, 1em);
@@ -1636,7 +1674,7 @@ body {
   -o-transform: translate3d(-559.32203%, 0, 1em);
   transform: translate3d(-559.32203%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-23 {
   -webkit-transform: translate3d(-584.74576%, 0, 1em);
   -moz-transform: translate3d(-584.74576%, 0, 1em);
@@ -1644,7 +1682,7 @@ body {
   -o-transform: translate3d(-584.74576%, 0, 1em);
   transform: translate3d(-584.74576%, 0, 1em);
 }
-/* line 213, ../../../../scss/sample/sample.scss */
+/* line 220, ../../../../scss/sample/sample.scss */
 .carousel--example-fluid .carousel-content.is-selected-item-24 {
   -webkit-transform: translate3d(-610.16949%, 0, 1em);
   -moz-transform: translate3d(-610.16949%, 0, 1em);
