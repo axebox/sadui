@@ -150,7 +150,13 @@ $(function(){
       orientation:      'horizontal',
       visibleItems:     4,
       paginationPages:  true,
-      playback:         false
+      playback:         false,
+      callback_beforeslide_fn: function(){
+        console.log('callback_beforeslide_fn');
+      },
+      callback_afterslide_fn: function(){
+        console.log('callback_afterslide_fn');
+      }
     });
 
     var carousel_example_fluid = new sadui.carousel({

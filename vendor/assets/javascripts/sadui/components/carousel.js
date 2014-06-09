@@ -24,18 +24,24 @@
  * API accessible through $el.data('carousel')
  * 
  * @param Object opts generic hash that contains these options:
+ *
  * $.Object opts.$container $('.carousel');
  * $.Object opts.$pagination $('.carousel-pagination')
  * $.Object opts.$navigation $('[class^="carousel-navigation"]')
  * $.Object opts.$handle $('.carousel-handle')
  * $.Object opts.$content $('.carousel-content')
  * $.Object opts.$background $('.carousel-background')
+ *
  * String opts.orientation orientation of the carousel '[horizontal]|vertical'
  * Integer opts.visibleItems number of visible items per slide
  * Boolean opts.playback [false]
  * //Boolean opts.drag [false]
  * Boolean opts.paginationPages [false]
  * Boolean opts.autoinit [true]
+ *
+ * Function opts.callback_beforeslide_fn the function to be called before slide is finished
+ * Function opts.callback_afterslide_fn the function to be called after slide is finished
+ *
  * @return Object opts internal configuration object
 */
 
@@ -287,6 +293,10 @@ sadui.carousel = function(opts){
                 conf.play();
             }
 
+            if ($.isFunction(conf.callback_afterslide_fn)) {
+                conf.callback_afterslide_fn();
+            }
+
         });
 
     };
@@ -294,6 +304,10 @@ sadui.carousel = function(opts){
     var refresh_content = function(){
 
         conf.item_width = 0;
+
+        if ($.isFunction(conf.callback_beforeslide_fn)) {
+            conf.callback_beforeslide_fn();
+        }
 
         // Set selected fluid cssclass. CSS will handle animation
         if (conf.hasFluid){
@@ -321,7 +335,6 @@ sadui.carousel = function(opts){
                 // 'left': conf.item_width * conf.index
                 'transform': 'translate3d(-' + conf.item_width * conf.index + 'px, 0, 0)'
             });
-
         }
 
     };
