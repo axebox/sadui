@@ -1690,3 +1690,18 @@ body {
   -o-transform: translate3d(-610.16949%, 0, 1em);
   transform: translate3d(-610.16949%, 0, 1em);
 }
+
+/* line 242, ../../../../scss/sample/sample.scss */
+.carousel--example-pages .carousel-content-item {
+  width: 148px;
+  margin-left: 5px;
+}
+/* line 245, ../../../../scss/sample/sample.scss */
+.carousel--example-pages .carousel-content-item:first-child {
+  margin-left: 0;
+}
+/* line 248, ../../../../scss/sample/sample.scss */
+.carousel--example-pages .carousel-content-item img {
+  width: 100%;
+  height: auto;
+}

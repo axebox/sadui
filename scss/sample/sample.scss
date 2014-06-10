@@ -238,5 +238,17 @@ body {
 .carousel--example-pages {
     @extend .carousel;
     @extend %carousel-example;
+
+    .carousel-content-item {
+        width: 148px; 
+        margin-left: 5px;
+        &:first-child {
+            margin-left: 0;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
 }
 

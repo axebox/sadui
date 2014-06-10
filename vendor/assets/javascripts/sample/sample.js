@@ -148,7 +148,8 @@ $(function(){
       $content:         $('.carousel-content', '.carousel--example-pages'),
       $background:      $('.carousel-background', '.carousel--example-pages'),
       orientation:      'horizontal',
-      visibleItems:     4,
+      circular:         true,
+      visibleItems:     5,
       paginationPages:  true,
       playback:         false,
       callback_beforeslide_fn: function(){
