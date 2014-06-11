@@ -356,12 +356,18 @@ sadui.carousel = function(opts){
             // figure out position
             conf.item_width = $('.carousel-content-item', conf.$content).eq(conf.index).outerWidth(true);
 
+            var prop = '-' + conf.item_width * conf.index + 'px';
+
             // apply
-            // todo: cross browser
-            conf.$content.css({
-                // 'left': conf.item_width * conf.index
-                'transform': 'translate3d(-' + conf.item_width * conf.index + 'px, 0, 0)'
-            });
+            if (Modernizr.csstransforms3d) {
+                conf.$content.css({
+                    transform: 'translate3d(' + prop + ', 0, 0)'
+                })
+            } else {
+                conf.$content.animate({
+                    left: prop
+                });
+            }
         }
 
     };
