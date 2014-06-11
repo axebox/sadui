@@ -67,13 +67,14 @@ sadui.carousel = function(opts){
 
                 // item index
                 var ix = $(ev.currentTarget).index();
-            
+
                 // page index
-                if (conf.paginationPages && conf.visibleItems) {
+                if (conf.hasPaginationPages && conf.visibleItems) {
                     ix = ix * conf.visibleItems;
                 } 
 
                 set_index( ix );
+                set_page();
                 jump_to_item(ev);
 
             });
@@ -139,6 +140,25 @@ sadui.carousel = function(opts){
     //     return $element;
     // };
 
+    // sets conf.page
+    var set_page = function(){
+
+        // abort if no pages
+        if (!conf.hasPaginationPages) return false;
+
+        var page = 1;
+        for (var i = conf.visibleItems; i < conf.totalItems; i+=conf.visibleItems) {
+            if (conf.index < i ) {
+                break;
+            }
+            page++;
+        }
+
+        conf.page = page;
+
+        return page;
+    };
+
     /* 
      * Set the internal index of the left-most carousel item in the viewport
      * @Param directive String back|forward OR....
@@ -159,6 +179,8 @@ sadui.carousel = function(opts){
                         conf.index--;
                     }
 
+                    set_page();
+
                     break;
                 
                 case 'forward':
@@ -169,6 +191,8 @@ sadui.carousel = function(opts){
                         conf.index++;    
                     }
 
+                    set_page();
+
                     break;
 
                 // the carouselID
@@ -176,49 +200,52 @@ sadui.carousel = function(opts){
 
                     conf.index = $('.carousel-content-item[data-carousel-item="'+ directive +'"]', conf.$content).index();
 
+                    set_page();
+
                     break;
             }
 
         }
 
-        if (conf.hasCircular && conf.index > conf.totalItems ) {
+        // circular
+        if (conf.hasCircular && conf.index > conf.totalItems) {
             conf.index = 0;
+
+        // } else if (conf.hasCircular && conf.hasPaginationPages && conf.index > conf.totalItems ) {
+        //     conf.index = 0;
         }
 
-        function get_last_screen(){
+        // function get_last_screen(){
 
-            var last_screen;
-            var m = (conf.totalItems / conf.visibleItems);
-            var screens = Math.ceil(m);
-            var differential = screens - m;
+        //     var last_screen;
+        //     var m = (conf.totalItems / conf.visibleItems);
+        //     var screens = Math.ceil(m);
+        //     var differential = screens - m;
 
-            console.log(m, screens, differential);
-            return last_screen;
-        }
+        //     // console.log(m, screens, differential);
+        //     return last_screen;
+        // }
 
         // index boundaries
         // - set to 0 if its somehow lower than 0
         // - set index to the last slide, which is totalItems - visibleItems
         if (conf.visibleItems > 1) {
-            // When there are multiple visible items
 
+            // When there are multiple visible items
             if (conf.index <= 0) {
                 conf.index = 0;
-
-            // } else {
-
-                // if ( conf.index >=  ){
-                //     conf.index = get_last_screen();
-                // }
-
-                // if ( (conf.index >= conf.totalItems) + conf.visibleItems ) {
-                // conf.index = conf.totalItems - conf.visibleItems;
-
             }
 
+            // adjust index for last pages
+            if (conf.hasPaginationPages && conf.page === conf.totalScreens) {
 
-        } else {
-            // When visibleItem is 1
+                blah = conf.index - (conf.visibleItems - conf.lastScreenItems) - 1;
+                conf.index = blah;
+            }
+        }
+
+        // When visibleItem is 1
+        if (conf.visibleItems <= 1) {
 
             if (conf.index <= 0) {
                 conf.index = 0;
@@ -227,7 +254,6 @@ sadui.carousel = function(opts){
                 conf.index = conf.totalItems;
 
             }
-
         }
 
         // should really just use conf.index instead of returning this function
@@ -331,6 +357,7 @@ sadui.carousel = function(opts){
             conf.item_width = $('.carousel-content-item', conf.$content).eq(conf.index).outerWidth(true);
 
             // apply
+            // todo: cross browser
             conf.$content.css({
                 // 'left': conf.item_width * conf.index
                 'transform': 'translate3d(-' + conf.item_width * conf.index + 'px, 0, 0)'
@@ -368,8 +395,8 @@ sadui.carousel = function(opts){
 
         $('.carousel-pagination-item', conf.$pagination).removeClass('is-selected');
 
-        if (conf.paginationPages && conf.visibleItems) {
-            $('.carousel-pagination-item', conf.$pagination).eq( conf.index / conf.visibleItems ).addClass('is-selected');
+        if (conf.hasPaginationPages && conf.visibleItems) {
+            $('.carousel-pagination-item', conf.$pagination).eq( conf.page-1 ).addClass('is-selected');
         } else {
             $('.carousel-pagination-item', conf.$pagination).eq( conf.index * conf.visibleItems ).addClass('is-selected');
         }
@@ -395,8 +422,6 @@ sadui.carousel = function(opts){
         });
 
         // set selected pagination item
-        // todo: use stored conf.page
-        conf.page = 0;//todo
         $('.carousel-pagination-item', conf.$pagination).eq(conf.page).addClass('is-selected');
     };
 
@@ -489,6 +514,17 @@ sadui.carousel = function(opts){
             conf.totalScreens = Math.ceil( (conf.totalItems / conf.visibleItems) );
         } else {
             conf.totalScreens = conf.totalItems;
+        }
+
+        if (conf.hasPaginationPages) {
+            
+            conf.lastScreenItems = (conf.totalScreens * conf.visibleItems) - (conf.totalItems+2);
+            
+            // default
+            conf.page = 0;
+
+            // calculates items on last screen
+            conf.lastScreenItems = (conf.visibleItems * conf.totalScreens) - (conf.totalItems+1);
         }
 
         // tab index allows $container to achieve focus event

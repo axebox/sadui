@@ -53,6 +53,10 @@
     white-space: nowrap;
 
     &.is-animate {
+
+        // smoother webkit transitions
+        -webkit-backface-visibility: hidden;
+
         @include transition-property(translate3d);
         @include transition-duration($transitionDurationBase);
         @include transition-timing-function(ease-in-out);            

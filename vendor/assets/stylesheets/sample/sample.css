@@ -195,6 +195,7 @@
 }
 /* line 55, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-content.is-animate {
+  -webkit-backface-visibility: hidden;
   -webkit-transition-property: translate3d;
   -moz-transition-property: translate3d;
   -o-transition-property: translate3d;
@@ -209,7 +210,7 @@
   transition-timing-function: ease-in-out;
 }
 
-/* line 62, ../../../../scss/sadui/components/_carousel.scss */
+/* line 66, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-content-item {
   display: -moz-inline-stack;
   display: inline-block;
@@ -221,18 +222,18 @@
   height: 100%;
 }
 
-/* line 68, ../../../../scss/sadui/components/_carousel.scss */
+/* line 72, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-navigation-item-back, .carousel-navigation-item-forward {
   cursor: pointer;
   width: 20px;
   height: 20px;
 }
-/* line 79, ../../../../scss/sadui/components/_carousel.scss */
+/* line 83, ../../../../scss/sadui/components/_carousel.scss */
 .is-disabled.carousel-navigation-item-back, .is-disabled.carousel-navigation-item-forward, [disabled].carousel-navigation-item-back, [disabled].carousel-navigation-item-forward {
   visibility: hidden;
   cursor: default;
 }
-/* line 83, ../../../../scss/sadui/components/_carousel.scss */
+/* line 87, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-navigation-item-back .label, .carousel-navigation-item-forward .label {
   text-indent: -119988px;
   overflow: hidden;
@@ -245,29 +246,29 @@
   position: absolute;
 }
 
-/* line 93, ../../../../scss/sadui/components/_carousel.scss */
+/* line 97, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-navigation-item-back {
   left: 0;
 }
 
-/* line 100, ../../../../scss/sadui/components/_carousel.scss */
+/* line 104, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-navigation-item-forward {
   right: 0;
 }
 
-/* line 108, ../../../../scss/sadui/components/_carousel.scss */
+/* line 112, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-pagination {
   position: absolute;
 }
 
-/* line 111, ../../../../scss/sadui/components/_carousel.scss */
+/* line 115, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-background {
   z-index: 1100;
   left: 0;
   right: 0;
   height: 100%;
 }
-/* line 116, ../../../../scss/sadui/components/_carousel.scss */
+/* line 120, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-background .carousel-background-item {
   height: 100%;
   background-repeat: no-repeat;
@@ -275,7 +276,7 @@
   background-size: cover;
 }
 
-/* line 124, ../../../../scss/sadui/components/_carousel.scss */
+/* line 128, ../../../../scss/sadui/components/_carousel.scss */
 .carousel-pagination {
   z-index: 1120;
 }

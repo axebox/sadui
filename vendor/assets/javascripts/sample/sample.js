@@ -130,16 +130,16 @@ $(function(){
 
     $view = $('#carousel_view');
 
-    var carousel_example_base = new sadui.carousel({
-      $container: $('.carousel--example-base'),
-      $pagination: $('.carousel-pagination', '.carousel--example-base'),
-      $navigation: $('[class^="carousel-navigation"]', '.carousel--example-base'),
-      $content: $('.carousel-content', '.carousel--example-base'),
-      $background: $('.carousel-background', '.carousel--example-base'),
-      orientation: 'horizontal',
-      visibleItems: 4,
-      playback: false
-    });
+    // var carousel_example_base = new sadui.carousel({
+    //   $container: $('.carousel--example-base'),
+    //   $pagination: $('.carousel-pagination', '.carousel--example-base'),
+    //   $navigation: $('[class^="carousel-navigation"]', '.carousel--example-base'),
+    //   $content: $('.carousel-content', '.carousel--example-base'),
+    //   $background: $('.carousel-background', '.carousel--example-base'),
+    //   orientation: 'horizontal',
+    //   visibleItems: 4,
+    //   playback: false
+    // });
 
     var carousel_example_pages = new sadui.carousel({
       $container:       $('.carousel--example-pages'),
@@ -160,17 +160,17 @@ $(function(){
       }
     });
 
-    var carousel_example_fluid = new sadui.carousel({
-      $container: $('#carousel_example_fluid'),
-      $pagination: $('.carousel-pagination', '#carousel_example_fluid'),
-      $navigation: $('[class^="carousel-navigation"]', '#carousel_example_fluid'),
-      $content: $('.carousel-content', '#carousel_example_fluid'),
-      $background: $('.carousel-background', '#carousel_example_fluid'),
-      orientation: 'horizontal',
-      visibleItems: 4,
-      fluid: true,
-      playback: false
-    });
+    // var carousel_example_fluid = new sadui.carousel({
+    //   $container: $('#carousel_example_fluid'),
+    //   $pagination: $('.carousel-pagination', '#carousel_example_fluid'),
+    //   $navigation: $('[class^="carousel-navigation"]', '#carousel_example_fluid'),
+    //   $content: $('.carousel-content', '#carousel_example_fluid'),
+    //   $background: $('.carousel-background', '#carousel_example_fluid'),
+    //   orientation: 'horizontal',
+    //   visibleItems: 4,
+    //   fluid: true,
+    //   playback: false
+    // });
 
   })();
 
