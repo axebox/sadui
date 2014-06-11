@@ -208,23 +208,26 @@ sadui.carousel = function(opts){
         }
 
         // circular
-        if (conf.hasCircular && conf.index > conf.totalItems) {
-            conf.index = 0;
+        // sets index to first item or last item
 
-        // } else if (conf.hasCircular && conf.hasPaginationPages && conf.index > conf.totalItems ) {
-        //     conf.index = 0;
+        // works
+        if (conf.hasCircular && !conf.hasPaginationPages && conf.index > conf.totalItems) {
+            conf.index = 0;
         }
 
-        // function get_last_screen(){
+        if (conf.hasCircular && conf.hasPaginationPages) {
 
-        //     var last_screen;
-        //     var m = (conf.totalItems / conf.visibleItems);
-        //     var screens = Math.ceil(m);
-        //     var differential = screens - m;
+            // if first item, set to last item
+            if (conf.index < 0) {
+                conf.index = conf.totalItems -1;
+                conf.page = conf.totalScreens;
 
-        //     // console.log(m, screens, differential);
-        //     return last_screen;
-        // }
+            // if last item, set to first item
+            } else if (conf.index > conf.totalItems) {
+                conf.index = 0;
+                conf.page = 1;
+            }
+        }
 
         // index boundaries
         // - set to 0 if its somehow lower than 0
@@ -232,15 +235,14 @@ sadui.carousel = function(opts){
         if (conf.visibleItems > 1) {
 
             // When there are multiple visible items
-            if (conf.index <= 0) {
+            if (conf.index <= 0 && !conf.hasCircular) {
                 conf.index = 0;
             }
 
             // adjust index for last pages
             if (conf.hasPaginationPages && conf.page === conf.totalScreens) {
 
-                blah = conf.index - (conf.visibleItems - conf.lastScreenItems) - 1;
-                conf.index = blah;
+                conf.index = conf.index - (conf.visibleItems - conf.lastScreenItems) - 1;
             }
         }
 
@@ -255,6 +257,8 @@ sadui.carousel = function(opts){
 
             }
         }
+
+        console.log('conf.index:' + conf.index, 'conf.page:' + conf.page);
 
         // should really just use conf.index instead of returning this function
         return conf.index;
@@ -373,7 +377,7 @@ sadui.carousel = function(opts){
     };
 
     var refresh_navigation = function(){
-        if (!conf.hasNavigation) return false;
+        if (!conf.hasNavigation || conf.hasCircular) return false;
             
         conf.$navigation.each(function(i,el){
 
