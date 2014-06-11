@@ -258,8 +258,6 @@ sadui.carousel = function(opts){
             }
         }
 
-        console.log('conf.index:' + conf.index, 'conf.page:' + conf.page);
-
         // should really just use conf.index instead of returning this function
         return conf.index;
     };
