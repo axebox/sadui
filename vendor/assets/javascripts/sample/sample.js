@@ -128,6 +128,22 @@ $(function(){
 
   (function(){
 
+    var short_characters = new sadui.short_text({
+      $el:      $('.is-text', $('#expand_text_example_characters')),
+      method:   'characters',
+      truncate: 300
+    });
+
+    // var short_words = new sadui.short_text({
+    //   $el:      $('.is-text', $('#expand_text_example_words')),
+    //   method:   'words',
+    //   truncate: 20
+    // });
+
+  })();
+
+  (function(){
+
     $view = $('#carousel_view');
 
     // var carousel_example_base = new sadui.carousel({
